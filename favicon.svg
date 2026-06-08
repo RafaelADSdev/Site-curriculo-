@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .text-ra { font-family: system-ui, -apple-system, sans-serif; font-weight: 900; font-size: 16px; fill: #ffffff; }
+    .text-bracket { font-family: monospace; font-weight: 900; font-size: 14px; fill: #a855f7; }
+  </style>
+  <text x="1" y="22" class="text-ra">RA</text>
+  <text x="19" y="22" class="text-bracket">/&gt;</text>
+</svg>

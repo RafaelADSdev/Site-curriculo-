@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rafael Arcanjo | Desenvolvedor Frontend &amp; Suporte de TI</title>
+    <meta name="description" content="Currículo digital e portfólio de Rafael Arcanjo, desenvolvedor frontend e profissional de suporte de TI com experiência em React, infraestrutura, dados e automações.">
+    <meta name="keywords" content="Rafael Arcanjo, Desenvolvedor Frontend, Suporte de TI, React, UX/UI, Senac, Portfólio">
+    <meta name="author" content="Rafael Arcanjo">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#030303">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Rafael Arcanjo">
+    <meta property="og:title" content="Rafael Arcanjo | Desenvolvedor Frontend &amp; Suporte de TI">
+    <meta property="og:description" content="Projetos, experiência, certificados e formas de contato de Rafael Arcanjo.">
+    <meta property="og:image" content="assets/avatar.png">
+    <meta property="og:image:alt" content="Foto profissional de Rafael Arcanjo">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Rafael Arcanjo | Desenvolvedor Frontend &amp; Suporte de TI">
+    <meta name="twitter:description" content="Currículo digital com projetos, experiência e certificados.">
+    <meta name="twitter:image" content="assets/avatar.png">
+
+    <!-- Google Fonts: Outfit (Display), Inter (Body) and JetBrains Mono (Code/Badges) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="assets/avatar.png">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Rafael Arcanjo",
+        "jobTitle": "Desenvolvedor Frontend e Suporte de TI",
+        "email": "mailto:rafaelarcanjods05@gmail.com",
+        "sameAs": [
+            "https://github.com/RafaelADSdev",
+            "https://www.linkedin.com/in/rafael-arcanjo-0647962a0/"
+        ],
+        "knowsAbout": ["React", "TypeScript", "Suporte de TI", "Power BI", "Supabase", "n8n"]
+    }
+    </script>
+</head>
+<body>
+    <!-- Aurora background glows -->
+    <div class="aurora aurora-1"></div>
+    <div class="aurora aurora-2"></div>
+    <div class="aurora aurora-3"></div>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo" aria-label="Ir para o início">
+                <span class="logo-text">RA</span><span class="logo-bracket">/&gt;</span>
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Início</a>
+                <a href="#about" class="nav-link">Sobre</a>
+                <a href="#services" class="nav-link">Serviços</a>
+                <a href="#stack" class="nav-link">Stack</a>
+                <a href="#experience" class="nav-link">Carreira</a>
+                <a href="#certifications" class="nav-link">Certificados</a>
+                <a href="#projects" class="nav-link">Projetos</a>
+                <a href="#contact" class="nav-link">Contato</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="curriculo.pdf" class="btn btn-sm btn-gradient" id="downloadCv" download="Curriculo-Rafael-Arcanjo.pdf" aria-label="Baixar currículo em PDF">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="btn-icon-svg"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <span>Currículo</span>
+                </a>
+                <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Abrir Menu" aria-controls="navMenu" aria-expanded="false">
+                    <i data-lucide="menu" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- 1. Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="container hero-grid">
+                <div class="hero-content fade-in-up">
+                    <div class="badge-tag">
+                        <span class="pulse-dot"></span>
+                        <span>Disponível para novos projetos</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Rafael Arcanjo
+                    </h1>
+                    <h2 class="hero-subtitle">
+                        Desenvolvedor Frontend &amp; Suporte de TI
+                    </h2>
+                    <p class="hero-description">
+                        Graduando em Análise e Desenvolvimento de Sistemas pela Faculdade Senac (2026.1). Especializado em criar interfaces responsivas e de alto desempenho no ecossistema React, integrando soluções seguras de suporte, infraestrutura local e análise de dados operacionais.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-gradient">
+                            <span>Ver projetos</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="btn-icon-svg-right"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                        <a href="#contact" class="btn btn-ghost">
+                            <span>Falar comigo</span>
+                        </a>
+                        
+                        <!-- Socials directly inline SVG -->
+                        <div class="hero-social-links">
+                            <a href="https://github.com/RafaelADSdev" target="_blank" rel="noopener" class="social-icon-link" aria-label="GitHub">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/rafael-arcanjo-0647962a0/" target="_blank" rel="noopener" class="social-icon-link" aria-label="LinkedIn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-image-wrapper fade-in-up delay-200">
+                    <div class="avatar-container">
+                        <div class="avatar-border-glow"></div>
+                        <img src="assets/avatar.png" alt="Rafael Arcanjo" class="avatar-image" width="270" height="270" decoding="async" fetchpriority="high">
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#about" class="scroll-indicator" aria-label="Ir para Sobre mim">
+                <i data-lucide="chevron-down" class="bounce-arrow"></i>
+            </a>
+        </section>
+
+        <!-- 2. Sobre mim Section -->
+        <section id="about" class="about-section scroll-reveal">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">01 // SOBRE MIM</span>
+                    <h2 class="section-title">Minha Trajetória</h2>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p class="lead-text">
+                            Desenvolvedor focado em construir aplicações web funcionais, atrativas e de fácil manutenção, aliado a uma sólida base de suporte técnico em TI.
+                        </p>
+                        <p>
+                            Minha jornada une a dedicação acadêmica no curso de Análise e Desenvolvimento de Sistemas na Faculdade Senac com a prática diária no gerenciamento de redes, diagnóstico de hardware/software e suporte corporativo no meu cargo atual de TI. Essa dualidade me permite entender profundamente o comportamento do usuário e a robustez que um sistema precisa ter nos bastidores.
+                        </p>
+                        <p>
+                            Atualmente, dedico meus estudos ao aprofundamento no ecossistema React.js, TypeScript e integrações de APIs, buscando sempre entregar interfaces com alta acessibilidade, excelente tempo de carregamento (SEO) e animações que melhoram a usabilidade.
+                        </p>
+                    </div>
+                    
+                    <div class="stats-panel">
+                        <div class="stat-item">
+                            <span class="stat-number gradient-accent-text">2026.1</span>
+                            <span class="stat-label">Conclusão de ADS Senac</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number gradient-accent-text">10+</span>
+                            <span class="stat-label">Projetos Desenvolvidos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number gradient-accent-text">100%</span>
+                            <span class="stat-label">Compromisso com Qualidade</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Serviços Section -->
+        <section id="services" class="services-section scroll-reveal">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">02 // SERVIÇOS</span>
+                    <h2 class="section-title">O que eu faço</h2>
+                </div>
+                
+                <div class="services-grid">
+                    <!-- Card 1 -->
+                    <div class="ref-card">
+                        <div class="card-glow"></div>
+                        <div class="card-icon-box text-purple">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </div>
+                        <h3>Front-end &amp; UX</h3>
+                        <p>Desenvolvimento de interfaces modernas e interativas com foco em responsividade, usabilidade e otimização SEO. Criação de layouts pixel-perfect utilizando HTML5, CSS3, ES6 JavaScript e React.</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="ref-card">
+                        <div class="card-glow"></div>
+                        <div class="card-icon-box text-purple">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                        </div>
+                        <h3>Suporte &amp; Infraestrutura</h3>
+                        <p>Configuração e gerenciamento de servidores de rede, manutenção preventiva e corretiva de hardware e software, suporte ao usuário corporativo e resolução ágil de problemas em ambientes Windows/Linux.</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="ref-card">
+                        <div class="card-glow"></div>
+                        <div class="card-icon-box text-purple">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                        </div>
+                        <h3>Dados &amp; Business Intelligence</h3>
+                        <p>Modelagem de dados operacionais e de chamados de suporte. Construção de relatórios executivos interativos em Power BI e planilhas automatizadas com Excel para tomada de decisões.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Stack Tecnológica Section -->
+        <section id="stack" class="stack-section scroll-reveal">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">03 // HARD SKILLS</span>
+                    <h2 class="section-title">Stack Tecnológica</h2>
+                </div>
+                
+                <div class="stack-grid">
+                    <!-- Group 1 -->
+                    <div class="stack-category">
+                        <h3>Front-end</h3>
+                        <div class="pills-container">
+                            <span class="stack-pill">HTML5</span>
+                            <span class="stack-pill">CSS3 / Flexbox</span>
+                            <span class="stack-pill">JavaScript ES6+</span>
+                            <span class="stack-pill">React JS</span>
+                            <span class="stack-pill">TypeScript</span>
+                            <span class="stack-pill">Responsive Design</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Group 2 -->
+                    <div class="stack-category">
+                        <h3>Dados &amp; BI</h3>
+                        <div class="pills-container">
+                            <span class="stack-pill">Power BI</span>
+                            <span class="stack-pill">Excel Avançado</span>
+                            <span class="stack-pill">SQL</span>
+                            <span class="stack-pill">ETL / Power Query</span>
+                            <span class="stack-pill">Modelagem de Dados</span>
+                            <span class="stack-pill">CRM Bitrix</span>
+                        </div>
+                    </div>
+
+                    <!-- Group 3 -->
+                    <div class="stack-category">
+                        <h3>Infra &amp; Suporte</h3>
+                        <div class="pills-container">
+                            <span class="stack-pill">Windows Server</span>
+                            <span class="stack-pill">Linux Command Line</span>
+                            <span class="stack-pill">Protocolos TCP/IP</span>
+                            <span class="stack-pill">Hardware Diagnóstico</span>
+                            <span class="stack-pill">Shell Scripting</span>
+                            <span class="stack-pill">Git / GitHub</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Carreira e Educação (Timeline) -->
+        <section id="experience" class="timeline-section scroll-reveal">
+            <div class="container">
+                <div class="timeline-grid-layout">
+                    <!-- Career Timeline -->
+                    <div class="timeline-column">
+                        <div class="section-header">
+                            <span class="section-tag">04 // CARREIRA</span>
+                            <h2 class="section-title">Experiência Profissional</h2>
+                        </div>
+                        
+                        <div class="ref-timeline">
+                            <!-- Job 1: Estagiário em Desenvolvimento -->
+                            <div class="ref-timeline-item">
+                                <div class="timeline-dot-active"></div>
+                                <span class="timeline-tag-date">01/Mai/2026 - Atual</span>
+                                <h3>Estagiário em Desenvolvimento</h3>
+                                <span class="timeline-sub-company">HubON</span>
+                                <div class="timeline-desc">
+                                    <p>Auxílio no desenvolvimento frontend de aplicações e produtos digitais da empresa, focando em manutenções corretivas, melhorias de interface e experiência do usuário:</p>
+                                    <ul>
+                                        <li>› Auxílio na codificação e componentização de interfaces com foco em React JS, HTML5 e CSS3, integrando soluções de backend com Supabase e automações de fluxos via n8n.</li>
+                                        <li>› Identificação e correção de bugs visuais e de fluxo de dados nas plataformas internas.</li>
+                                        <li>› Colaboração direta em testes de interface e ajustes de responsividade em layouts web.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Job 2: Suporte de TI -->
+                            <div class="ref-timeline-item">
+                                <div class="timeline-dot"></div>
+                                <span class="timeline-tag-date">05/Jan/2026 - 30/Abr/2026</span>
+                                <h3>Suporte de TI</h3>
+                                <span class="timeline-sub-company">HubON</span>
+                                <div class="timeline-desc">
+                                    <p>Suporte de infraestrutura e serviços de redes de computadores, além do diagnóstico ágil e manutenção de sistemas corporativos locais:</p>
+                                    <ul>
+                                        <li>› Diagnóstico avançado de falhas em hardware, software e cabeamento estruturado de redes.</li>
+                                        <li>› Administração de usuários no Active Directory, suporte ao CRM Bitrix, gerenciamento de permissões de arquivos e acessos.</li>
+                                        <li>› Desenvolvimento de scripts Shell para instalação automatizada de utilitários em novos setups.</li>
+                                        <li>› Redução do tempo médio de atendimento de chamados (SLA) através da documentação de FAQ.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Job 3: Freelancer -->
+                            <div class="ref-timeline-item">
+                                <div class="timeline-dot"></div>
+                                <span class="timeline-tag-date">2022 - 2024</span>
+                                <h3>Desenvolvedor Frontend Freelance</h3>
+                                <span class="timeline-sub-company">Projetos Autônomos</span>
+                                <div class="timeline-desc">
+                                    <p>Criação de websites estáticos, portfólios corporativos e interfaces de e-commerce locais, otimizando o layout para visualização mobile e SEO orgânico.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Academic Timeline -->
+                    <div class="timeline-column">
+                        <div class="section-header">
+                            <span class="section-tag">05 // EDUCAÇÃO</span>
+                            <h2 class="section-title">Formação Acadêmica</h2>
+                        </div>
+                        
+                        <div class="ref-timeline">
+                            <!-- Education 1 -->
+                            <div class="ref-timeline-item">
+                                <div class="timeline-dot-active"></div>
+                                <span class="timeline-tag-date">2023 - 2026.1</span>
+                                <h3>Análise e Desenvolvimento de Sistemas</h3>
+                                <span class="timeline-sub-company">Faculdade Senac</span>
+                                <div class="timeline-desc">
+                                    <p>Curso superior focado em engenharia de requisitos, lógica estruturada, bancos de dados relacionais e desenvolvimento web completo.</p>
+                                    <div class="timeline-status-badge">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-purple"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                        <span>Conclusão no semestre atual</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Education 2 -->
+                            <div class="ref-timeline-item">
+                                <div class="timeline-dot"></div>
+                                <span class="timeline-tag-date">2023</span>
+                                <h3>Formação Intensiva Frontend React</h3>
+                                <span class="timeline-sub-company">Bootcamps Rocketseat &amp; DIO</span>
+                                <div class="timeline-desc">
+                                    <p>Especialização prática voltada a componentização, Hooks de estado do React, consumo de dados assíncronos e Deploy automatizado na Vercel/GitHub Pages.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5.5. Certificações Section -->
+        <section id="certifications" class="certifications-section scroll-reveal">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">06 // CREDENCIAIS</span>
+                    <h2 class="section-title">Certificados &amp; Cursos</h2>
+                </div>
+                
+                <div class="certifications-grid">
+                    <!-- Cert 1: Udemy Front-end -->
+                    <div class="ref-card cert-card">
+                        <div class="card-glow"></div>
+                        <div class="cert-header">
+                            <div class="card-icon-box text-purple">
+                                <i data-lucide="code"></i>
+                            </div>
+                            <div class="cert-meta">
+                                <span class="cert-issuer">Udemy</span>
+                                <span class="cert-date">Junho 2026</span>
+                            </div>
+                        </div>
+                        <h3 class="cert-title">Formação Front-end - HTML, CSS, JavaScript, React e +</h3>
+                        <div class="cert-details">
+                            <span class="cert-hours">
+                                <i data-lucide="clock"></i> 51.5 horas
+                            </span>
+                            <p class="cert-topics">HTML5, CSS3, JavaScript ES6+, React, Hooks, Redux, Node.js e ferramentas do ecossistema.</p>
+                        </div>
+                        <div class="cert-footer">
+                            <span class="cert-id">Credencial: UC-6fee6159-bb18-4387-8f08-161a3c0e2665</span>
+                        </div>
+                    </div>
+
+                    <!-- Cert 2: Azure AI-900 -->
+                    <div class="ref-card cert-card">
+                        <div class="card-glow"></div>
+                        <div class="cert-header">
+                            <div class="card-icon-box text-purple">
+                                <i data-lucide="brain"></i>
+                            </div>
+                            <div class="cert-meta">
+                                <span class="cert-issuer">Fundação Bradesco &amp; Microsoft</span>
+                                <span class="cert-date">Junho 2026</span>
+                            </div>
+                        </div>
+                        <h3 class="cert-title">AI-900 - Fundamentos de IA no Azure</h3>
+                        <div class="cert-details">
+                            <span class="cert-hours">
+                                <i data-lucide="clock"></i> 16 horas
+                            </span>
+                            <p class="cert-topics">Conceitos fundamentais de Inteligência Artificial, Machine Learning, Visão Computacional, NLP e serviços da Azure AI.</p>
+                        </div>
+                        <div class="cert-footer">
+                            <span class="cert-id">Credencial: 53E09983-CEB4-4F16-90B3-F3123CCEE236</span>
+                        </div>
+                    </div>
+
+                    <!-- Cert 3: Rocketseat n8n -->
+                    <div class="ref-card cert-card">
+                        <div class="card-glow"></div>
+                        <div class="cert-header">
+                            <div class="card-icon-box text-purple">
+                                <i data-lucide="zap"></i>
+                            </div>
+                            <div class="cert-meta">
+                                <span class="cert-issuer">Rocketseat</span>
+                                <span class="cert-date">Outubro 2025</span>
+                            </div>
+                        </div>
+                        <h3 class="cert-title">Automação com n8n</h3>
+                        <div class="cert-details">
+                            <span class="cert-hours">
+                                <i data-lucide="clock"></i> 3 horas
+                            </span>
+                            <p class="cert-topics">Automação de processos, tratamento e validação de dados, controle de fluxo (If, Loop, Merge) e integrações de APIs externas.</p>
+                        </div>
+                        <div class="cert-footer">
+                            <span class="cert-id">Credencial: 5e50294d-238d-41ed-8110-cd3cde5bc53c</span>
+                        </div>
+                    </div>
+
+                    <!-- Cert 4: Rocketseat SENAC TakeOff -->
+                    <div class="ref-card cert-card">
+                        <div class="card-glow"></div>
+                        <div class="cert-header">
+                            <div class="card-icon-box text-purple">
+                                <i data-lucide="cpu"></i>
+                            </div>
+                            <div class="cert-meta">
+                                <span class="cert-issuer">Rocketseat &amp; SENAC</span>
+                                <span class="cert-date">Outubro 2025</span>
+                            </div>
+                        </div>
+                        <h3 class="cert-title">SENAC TakeOff 2025.2</h3>
+                        <div class="cert-details">
+                            <span class="cert-hours">
+                                <i data-lucide="clock"></i> 8 horas
+                            </span>
+                            <p class="cert-topics">Tecnologias Emergentes, Learning Agility, Fundamentos de DevOps, Primeiros passos com Docker e Prompt Engineering.</p>
+                        </div>
+                        <div class="cert-footer">
+                            <span class="cert-id">Credencial: ef22daf8-e907-4ecd-b285-e186ba53bc62</span>
+                        </div>
+                    </div>
+
+                    <!-- Cert 5: Cisco Cybersecurity -->
+                    <div class="ref-card cert-card">
+                        <div class="card-glow"></div>
+                        <div class="cert-header">
+                            <div class="card-icon-box text-purple">
+                                <i data-lucide="shield"></i>
+                            </div>
+                            <div class="cert-meta">
+                                <span class="cert-issuer">Cisco Networking Academy</span>
+                                <span class="cert-date">Setembro 2025</span>
+                            </div>
+                        </div>
+                        <h3 class="cert-title">Gerenciamento de Ameaças Cibernéticas</h3>
+                        <div class="cert-details">
+                            <span class="cert-hours">
+                                <i data-lucide="clock"></i> Carga Completa
+                            </span>
+                            <p class="cert-topics">Princípios de segurança da informação, detecção de ameaças cibernéticas, proteção de dados e políticas de segurança em rede.</p>
+                        </div>
+                        <div class="cert-footer">
+                            <span class="cert-id">Credencial Verificada - Cisco</span>
+                        </div>
+                    </div>
+
+                    <!-- Cert 6: GitHub AI Bradesco -->
+                    <div class="ref-card cert-card">
+                        <div class="card-glow"></div>
+                        <div class="cert-header">
+                            <div class="card-icon-box text-purple">
+                                <i data-lucide="github"></i>
+                            </div>
+                            <div class="cert-meta">
+                                <span class="cert-issuer">Fundação Bradesco &amp; Microsoft</span>
+                                <span class="cert-date">Junho 2026</span>
+                            </div>
+                        </div>
+                        <h3 class="cert-title">Soluções de IA no GitHub</h3>
+                        <div class="cert-details">
+                            <span class="cert-hours">
+                                <i data-lucide="clock"></i> 15 horas
+                            </span>
+                            <p class="cert-topics">IA Generativa no desenvolvimento, automações com GitHub Actions, Copilot e práticas modernas no controle de versão Git.</p>
+                        </div>
+                        <div class="cert-footer">
+                            <span class="cert-id">Credencial: E8F39B20-C39F-4CB8-ABD6-FCC885193B08</span>
+                        </div>
+                    </div>
+
+                    <!-- Cert 7: CPNordeste -->
+                    <div class="ref-card cert-card">
+                        <div class="card-glow"></div>
+                        <div class="cert-header">
+                            <div class="card-icon-box text-purple">
+                                <i data-lucide="calendar"></i>
+                            </div>
+                            <div class="cert-meta">
+                                <span class="cert-issuer">Campus Party Brasil</span>
+                                <span class="cert-date">Setembro 2024</span>
+                            </div>
+                        </div>
+                        <h3 class="cert-title">CPNordeste - Participante</h3>
+                        <div class="cert-details">
+                            <span class="cert-hours">
+                                <i data-lucide="clock"></i> 33 horas
+                            </span>
+                            <p class="cert-topics">Participação presencial em workshops, hackathons e palestras de inovação, empreendedorismo e desenvolvimento na Campus Party.</p>
+                        </div>
+                        <div class="cert-footer">
+                            <span class="cert-id">Participação Presencial</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Projetos Section -->
+        <section id="projects" class="projects-section scroll-reveal">
+            <div class="container">
+                <div class="section-header flex-header">
+                    <div>
+                        <span class="section-tag">07 // TRABALHOS</span>
+                        <h2 class="section-title">Projetos em destaque</h2>
+                    </div>
+                    <div class="projects-filter-bar">
+                        <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">Todos</button>
+                        <button type="button" class="filter-btn" data-filter="frontend" aria-pressed="false">Frontend</button>
+                        <button type="button" class="filter-btn" data-filter="data" aria-pressed="false">Dados / BI</button>
+                    </div>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1: Conta Gotas CRM -->
+                    <div class="ref-project-card" data-category="frontend data">
+                        <div class="project-header-box">
+                            <span class="project-num">01</span>
+                            <span class="project-tag-cat">React / TypeScript</span>
+                        </div>
+                        <h3>Conta Gotas CRM</h3>
+                        <p class="project-short-desc">Plataforma de gerenciamento de leads comerciais e painel de controle financeiro.</p>
+                        
+                        <ul class="project-bullet-details">
+                            <li>› Quadro Kanban interativo com drag-and-drop para alteração de status de leads.</li>
+                            <li>› Painel analítico de cobrança exibindo faturamento mensal e taxas de conversão de leads.</li>
+                            <li>› Estrutura modular em React com TypeScript utilizando context API para controle de estado.</li>
+                        </ul>
+                        
+                        <div class="project-footer-box">
+                            <div class="project-tech-tags">
+                                <span>React</span>
+                                <span>TypeScript</span>
+                                <span>Context API</span>
+                                <span>CSS Grid</span>
+                                <span>BI</span>
+                            </div>
+                            <div class="project-action-links">
+                                <a href="#contact" class="project-link project-link-internal" aria-label="Solicitar detalhes sobre o projeto Conta Gotas CRM">
+                                    <span>Pedir detalhes</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: DevFlow Portfolio -->
+                    <div class="ref-project-card" data-category="frontend">
+                        <div class="project-header-box">
+                            <span class="project-num">02</span>
+                            <span class="project-tag-cat">HTML5 / CSS / Vanilla JS</span>
+                        </div>
+                        <h3>DevFlow Portfolio</h3>
+                        <p class="project-short-desc">Template estático e de alto desempenho projetado para portfólios de desenvolvedores.</p>
+                        
+                        <ul class="project-bullet-details">
+                            <li>› Estrutura responsiva fluida, otimizada para aparelhos móveis.</li>
+                            <li>› Pontuação de 100/100 no Google Lighthouse (Performance, Acessibilidade e SEO).</li>
+                            <li>› Animações nativas suaves em JavaScript sem dependências externas de pacotes pesados.</li>
+                        </ul>
+                        
+                        <div class="project-footer-box">
+                            <div class="project-tech-tags">
+                                <span>HTML5</span>
+                                <span>CSS Variables</span>
+                                <span>JavaScript ES6</span>
+                                <span>Lighthouse 100</span>
+                            </div>
+                            <div class="project-action-links">
+                                <a href="#home" class="project-link project-link-internal" aria-label="Ver este portfólio em execução">
+                                    <span>Ver página</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Gestão de Patrimônio HubON -->
+                    <div class="ref-project-card" data-category="frontend">
+                        <div class="project-header-box">
+                            <span class="project-num">03</span>
+                            <span class="project-tag-cat">HTML5 / CSS3 / Vanilla JS</span>
+                        </div>
+                        <h3>Gestão de Patrimônio HubON</h3>
+                        <p class="project-short-desc">Sistema web para controle e gerenciamento offline do inventário de ativos tecnológicos corporativos.</p>
+                        
+                        <ul class="project-bullet-details">
+                            <li>› Registro completo (CRUD) de notebooks e celulares sem dependência de banco de dados externo.</li>
+                            <li>› Busca inteligente em tempo real e filtros avançados por status de conservação, departamento e ano.</li>
+                            <li>› Upload de fotos via FileReader API com visualização em lightbox e exportação de relatórios em formato CSV.</li>
+                        </ul>
+                        
+                        <div class="project-footer-box">
+                            <div class="project-tech-tags">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>Vanilla JS</span>
+                                <span>FileReader</span>
+                                <span>CSV</span>
+                            </div>
+                            <div class="project-action-links">
+                                <a href="https://github.com/RafaelADSdev/-Gestao-de-Patrimonio-HubON-" target="_blank" rel="noopener" class="project-link" aria-label="Ver Código no Github">
+                                    <span>GitHub</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                </a>
+                                <a href="https://gestao-de-patrimonio-hub-on.vercel.app" target="_blank" rel="noopener" class="project-link" aria-label="Ver Demonstração">
+                                    <span>Demo</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: BBTS – Crédito de Carbono -->
+                    <div class="ref-project-card" data-category="frontend">
+                        <div class="project-header-box">
+                            <span class="project-num">04</span>
+                            <span class="project-tag-cat">JavaScript / Blockchain</span>
+                        </div>
+                        <h3>BBTS – Carbon Credits</h3>
+                        <p class="project-short-desc">Plataforma descentralizada para monitoramento, registro e compensação de pegada de carbono corporativa.</p>
+                        
+                        <ul class="project-bullet-details">
+                            <li>› Dashboard de acompanhamento de emissões totais de CO₂ geradas por consumo de energia e frotas de veículos.</li>
+                            <li>› Tokenização de créditos de carbono no padrão de contratos inteligentes utilizando a rede Ethereum via MetaMask.</li>
+                            <li>› Catálogo completo de projetos sustentáveis parceiros para realizar a compensação ambiental de forma rápida e segura.</li>
+                        </ul>
+                        
+                        <div class="project-footer-box">
+                            <div class="project-tech-tags">
+                                <span>JavaScript ES6</span>
+                                <span>MetaMask</span>
+                                <span>Ethereum API</span>
+                                <span>RESTful API</span>
+                                <span>Node.js</span>
+                            </div>
+                            <div class="project-action-links">
+                                <a href="https://github.com/Clairefairy/BBTS_Frontend" target="_blank" rel="noopener" class="project-link" aria-label="Ver Código no Github">
+                                    <span>GitHub</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                </a>
+                                <a href="https://bbtscompensacao.netlify.app/" target="_blank" rel="noopener" class="project-link" aria-label="Ver Demonstração">
+                                    <span>Demo</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: Forescan -->
+                    <div class="ref-project-card" data-category="frontend data">
+                        <div class="project-header-box">
+                            <span class="project-num">05</span>
+                            <span class="project-tag-cat">Python / Flask / ML</span>
+                        </div>
+                        <h3>Forescan Forensic Analytics</h3>
+                        <p class="project-short-desc">Plataforma PWA voltada para a gestão de casos criminais com suporte a inteligência preditiva por IA.</p>
+                        
+                        <ul class="project-bullet-details">
+                            <li>› Registro, controle e acompanhamento de ocorrências e laudos técnicos integrando backend Python (Flask).</li>
+                            <li>› Análise e classificação preditiva automatizada de tipos de crimes com base no perfil da vítima e local da ocorrência.</li>
+                            <li>› Modelo de Regressão Logística serializado integrado ao fluxo web, com suporte offline via PWA Service Worker.</li>
+                        </ul>
+                        
+                        <div class="project-footer-box">
+                            <div class="project-tech-tags">
+                                <span>Python</span>
+                                <span>Flask</span>
+                                <span>Scikit-Learn</span>
+                                <span>PWA</span>
+                                <span>Machine Learning</span>
+                            </div>
+                            <div class="project-action-links">
+                                <a href="https://github.com/RafaelADSdev/Forescan" target="_blank" rel="noopener" class="project-link" aria-label="Ver Código no Github">
+                                    <span>GitHub</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                </a>
+                                <a href="https://forescan-d1k1.vercel.app" target="_blank" rel="noopener" class="project-link" aria-label="Ver Demonstração">
+                                    <span>Demo</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Contato Section -->
+        <section id="contact" class="contact-section scroll-reveal">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="section-tag">08 // CONTATO</span>
+                    <h2 class="section-title">Vamos conversar?</h2>
+                    <p class="section-subtitle">Estou sempre aberto a oportunidades profissionais, novos projetos freelances ou tirar dúvidas sobre suporte e frontend.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Info Panel -->
+                    <div class="contact-info-panel">
+                        <div class="ref-card contact-card-item">
+                            <div class="contact-icon text-purple">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            </div>
+                            <div class="contact-card-content">
+                                <span class="label">E-mail</span>
+                                <a href="mailto:rafaelarcanjods05@gmail.com" class="value">rafaelarcanjods05@gmail.com</a>
+                                <button type="button" class="copy-btn" id="btnCopyEmail">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                                    <span class="copy-text">Copiar e-mail</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="ref-card contact-card-item">
+                            <div class="contact-icon text-purple">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                            </div>
+                            <div class="contact-card-content">
+                                <span class="label">LinkedIn</span>
+                                <a href="https://www.linkedin.com/in/rafael-arcanjo-0647962a0/" target="_blank" rel="noopener" class="value">Conectar profissionalmente</a>
+                            </div>
+                        </div>
+
+                        <div class="ref-card contact-card-item">
+                            <div class="contact-icon text-purple">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                            </div>
+                            <div class="contact-card-content">
+                                <span class="label">GitHub</span>
+                                <a href="https://github.com/RafaelADSdev" target="_blank" rel="noopener" class="value">github.com/RafaelADSdev</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct Message Form -->
+                    <div class="ref-card form-card-box">
+                        <form id="contactForm" class="contact-form-ref" action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="50d988d3-e87b-462f-9f36-59c63212f3a2">
+                            <input type="hidden" name="subject" value="Nova mensagem pelo currículo digital - Rafael Arcanjo">
+                            <input type="hidden" name="from_name" value="Currículo Digital Rafael Arcanjo">
+                            <input type="checkbox" name="botcheck" class="botcheck-field" tabindex="-1" autocomplete="off">
+                            <div class="form-row">
+                                <div class="form-group-ref">
+                                    <label for="formName">Seu Nome</label>
+                                    <input type="text" id="formName" name="name" required placeholder="João Silva">
+                                </div>
+                                <div class="form-group-ref">
+                                    <label for="formEmail">Seu E-mail</label>
+                                    <input type="email" id="formEmail" name="email" required placeholder="joao@email.com">
+                                </div>
+                            </div>
+                            <div class="form-group-ref">
+                                <label for="formMessage">Sua Mensagem</label>
+                                <textarea id="formMessage" name="message" rows="5" required placeholder="Escreva sua mensagem..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-gradient btn-full" id="btnSubmitForm">
+                                <span>Enviar mensagem</span>
+                            </button>
+                            <div class="form-feedback hidden" id="formFeedback" role="status" aria-live="polite">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-purple"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                <span id="feedbackText">Mensagem enviada com sucesso. Obrigado pelo contato!</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <a href="#home" class="logo" aria-label="Voltar ao início">
+                <span class="logo-text">RA</span><span class="logo-bracket">/&gt;</span>
+            </a>
+            <p class="footer-copy">&copy; 2026 Rafael Arcanjo. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Script File -->
+    <script src="script.js"></script>
+</body>
+</html>
