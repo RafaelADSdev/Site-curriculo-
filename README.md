@@ -87,5 +87,5 @@ Os principais pontos para editar sao:
 ## Contato
 
 - GitHub: `https://github.com/RafaelADSdev`
-- LinkedIn: `https://www.linkedin.com/in/rafael-arcanjo-0647962a0/`
+- LinkedIn: `www.linkedin.com/in/rafaeladsdev`
 - E-mail: `rafaelarcanjods05@gmail.com`
