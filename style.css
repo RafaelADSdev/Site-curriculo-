@@ -385,6 +385,33 @@ section {
     gap: 16px;
 }
 
+.lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-family: var(--font-mono, 'JetBrains Mono', monospace);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.lang-toggle:hover {
+    color: var(--text-primary);
+    border-color: rgba(168, 85, 247, 0.4);
+    background: rgba(168, 85, 247, 0.08);
+}
+
+.lang-toggle svg {
+    opacity: 0.7;
+}
+
 .mobile-toggle {
     display: none;
     background: transparent;

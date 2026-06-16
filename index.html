@@ -61,27 +61,31 @@
     <!-- Navigation Header -->
     <header class="navbar">
         <div class="nav-container">
-            <a href="#home" class="logo" aria-label="Ir para o início">
+            <a href="#home" class="logo" data-i18n-aria="nav.goHome" aria-label="Ir para o início">
                 <span class="logo-text">RA</span><span class="logo-bracket">/&gt;</span>
             </a>
             
             <nav class="nav-menu" id="navMenu">
-                <a href="#home" class="nav-link active">Início</a>
-                <a href="#about" class="nav-link">Sobre</a>
-                <a href="#services" class="nav-link">Serviços</a>
-                <a href="#stack" class="nav-link">Stack</a>
-                <a href="#experience" class="nav-link">Carreira</a>
-                <a href="#certifications" class="nav-link">Certificados</a>
-                <a href="#projects" class="nav-link">Projetos</a>
-                <a href="#contact" class="nav-link">Contato</a>
+                <a href="#home" class="nav-link active" data-i18n="nav.home">Início</a>
+                <a href="#about" class="nav-link" data-i18n="nav.about">Sobre</a>
+                <a href="#services" class="nav-link" data-i18n="nav.services">Serviços</a>
+                <a href="#stack" class="nav-link" data-i18n="nav.stack">Stack</a>
+                <a href="#experience" class="nav-link" data-i18n="nav.experience">Carreira</a>
+                <a href="#certifications" class="nav-link" data-i18n="nav.certifications">Certificados</a>
+                <a href="#projects" class="nav-link" data-i18n="nav.projects">Projetos</a>
+                <a href="#contact" class="nav-link" data-i18n="nav.contact">Contato</a>
             </nav>
 
             <div class="nav-actions">
-                <a href="curriculo.pdf" class="btn btn-sm btn-gradient" id="downloadCv" download="Curriculo-Rafael-Arcanjo.pdf" aria-label="Baixar currículo em PDF">
+                <button type="button" class="lang-toggle" id="langToggle" aria-label="Mudar idioma para inglês" title="Mudar idioma para inglês">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    <span id="langLabel">EN</span>
+                </button>
+                <a href="curriculo.pdf" class="btn btn-sm btn-gradient" id="downloadCv" download="Curriculo-Rafael-Arcanjo.pdf" data-i18n-aria="nav.downloadCv" aria-label="Baixar currículo em PDF">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="btn-icon-svg"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                    <span>Currículo</span>
+                    <span data-i18n="nav.cv">Currículo</span>
                 </a>
-                <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Abrir Menu" aria-controls="navMenu" aria-expanded="false">
+                <button type="button" class="mobile-toggle" id="mobileToggle" data-i18n-aria="nav.openMenu" aria-label="Abrir Menu" aria-controls="navMenu" aria-expanded="false">
                     <i data-lucide="menu" id="menuIcon"></i>
                 </button>
             </div>
@@ -97,24 +101,24 @@
                 <div class="hero-content fade-in-up">
                     <div class="badge-tag">
                         <span class="pulse-dot"></span>
-                        <span>Disponível para novos projetos</span>
+                        <span data-i18n="hero.badge">Disponível para novos projetos</span>
                     </div>
                     <h1 class="hero-title">
                         Rafael Arcanjo
                     </h1>
-                    <h2 class="hero-subtitle">
+                    <h2 class="hero-subtitle" data-i18n="hero.subtitle">
                         Desenvolvedor Frontend &amp; Suporte de TI
                     </h2>
-                    <p class="hero-description">
+                    <p class="hero-description" data-i18n="hero.description">
                         Graduando em Análise e Desenvolvimento de Sistemas pela Faculdade Senac (2026.1). Especializado em criar interfaces responsivas e de alto desempenho no ecossistema React, integrando soluções seguras de suporte, infraestrutura local e análise de dados operacionais.
                     </p>
                     <div class="hero-buttons">
                         <a href="#projects" class="btn btn-gradient">
-                            <span>Ver projetos</span>
+                            <span data-i18n="hero.viewProjects">Ver projetos</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="btn-icon-svg-right"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
                         <a href="#contact" class="btn btn-ghost">
-                            <span>Falar comigo</span>
+                            <span data-i18n="hero.contactMe">Falar comigo</span>
                         </a>
                         
                         <!-- Socials directly inline SVG -->
@@ -137,7 +141,7 @@
                 </div>
             </div>
             
-            <a href="#about" class="scroll-indicator" aria-label="Ir para Sobre mim">
+            <a href="#about" class="scroll-indicator" data-i18n-aria="hero.scrollAbout" aria-label="Ir para Sobre mim">
                 <i data-lucide="chevron-down" class="bounce-arrow"></i>
             </a>
         </section>
@@ -146,19 +150,19 @@
         <section id="about" class="about-section scroll-reveal">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag">01 // SOBRE MIM</span>
-                    <h2 class="section-title">Minha Trajetória</h2>
+                    <span class="section-tag" data-i18n="about.tag">01 // SOBRE MIM</span>
+                    <h2 class="section-title" data-i18n="about.title">Minha Trajetória</h2>
                 </div>
                 
                 <div class="about-grid">
                     <div class="about-text">
-                        <p class="lead-text">
+                        <p class="lead-text" data-i18n="about.lead">
                             Desenvolvedor focado em construir aplicações web funcionais, atrativas e de fácil manutenção, aliado a uma sólida base de suporte técnico em TI.
                         </p>
-                        <p>
+                        <p data-i18n="about.p1">
                             Minha jornada une a dedicação acadêmica no curso de Análise e Desenvolvimento de Sistemas na Faculdade Senac com a prática diária no gerenciamento de redes, diagnóstico de hardware/software e suporte corporativo no meu cargo atual de TI. Essa dualidade me permite entender profundamente o comportamento do usuário e a robustez que um sistema precisa ter nos bastidores.
                         </p>
-                        <p>
+                        <p data-i18n="about.p2">
                             Atualmente, dedico meus estudos ao aprofundamento no ecossistema React.js, TypeScript e integrações de APIs, buscando sempre entregar interfaces com alta acessibilidade, excelente tempo de carregamento (SEO) e animações que melhoram a usabilidade.
                         </p>
                     </div>
@@ -166,15 +170,15 @@
                     <div class="stats-panel">
                         <div class="stat-item">
                             <span class="stat-number gradient-accent-text">2026.1</span>
-                            <span class="stat-label">Conclusão de ADS Senac</span>
+                            <span class="stat-label" data-i18n="about.stat1">Conclusão de ADS Senac</span>
                         </div>
                         <div class="stat-item">
                             <span class="stat-number gradient-accent-text">10+</span>
-                            <span class="stat-label">Projetos Desenvolvidos</span>
+                            <span class="stat-label" data-i18n="about.stat2">Projetos Desenvolvidos</span>
                         </div>
                         <div class="stat-item">
                             <span class="stat-number gradient-accent-text">100%</span>
-                            <span class="stat-label">Compromisso com Qualidade</span>
+                            <span class="stat-label" data-i18n="about.stat3">Compromisso com Qualidade</span>
                         </div>
                     </div>
                 </div>
@@ -185,8 +189,8 @@
         <section id="services" class="services-section scroll-reveal">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag">02 // SERVIÇOS</span>
-                    <h2 class="section-title">O que eu faço</h2>
+                    <span class="section-tag" data-i18n="services.tag">02 // SERVIÇOS</span>
+                    <h2 class="section-title" data-i18n="services.title">O que eu faço</h2>
                 </div>
                 
                 <div class="services-grid">
@@ -196,8 +200,8 @@
                         <div class="card-icon-box text-purple">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
                         </div>
-                        <h3>Front-end &amp; UX</h3>
-                        <p>Desenvolvimento de interfaces modernas e interativas com foco em responsividade, usabilidade e otimização SEO. Criação de layouts pixel-perfect utilizando HTML5, CSS3, ES6 JavaScript e React.</p>
+                        <h3 data-i18n="services.card1Title">Front-end &amp; UX</h3>
+                        <p data-i18n="services.card1Desc">Desenvolvimento de interfaces modernas e interativas com foco em responsividade, usabilidade e otimização SEO. Criação de layouts pixel-perfect utilizando HTML5, CSS3, ES6 JavaScript e React.</p>
                     </div>
 
                     <!-- Card 2 -->
@@ -206,8 +210,8 @@
                         <div class="card-icon-box text-purple">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
                         </div>
-                        <h3>Suporte &amp; Infraestrutura</h3>
-                        <p>Configuração e gerenciamento de servidores de rede, manutenção preventiva e corretiva de hardware e software, suporte ao usuário corporativo e resolução ágil de problemas em ambientes Windows/Linux.</p>
+                        <h3 data-i18n="services.card2Title">Suporte &amp; Infraestrutura</h3>
+                        <p data-i18n="services.card2Desc">Configuração e gerenciamento de servidores de rede, manutenção preventiva e corretiva de hardware e software, suporte ao usuário corporativo e resolução ágil de problemas em ambientes Windows/Linux.</p>
                     </div>
 
                     <!-- Card 3 -->
@@ -216,8 +220,8 @@
                         <div class="card-icon-box text-purple">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
                         </div>
-                        <h3>Dados &amp; Business Intelligence</h3>
-                        <p>Modelagem de dados operacionais e de chamados de suporte. Construção de relatórios executivos interativos em Power BI e planilhas automatizadas com Excel para tomada de decisões.</p>
+                        <h3 data-i18n="services.card3Title">Dados &amp; Business Intelligence</h3>
+                        <p data-i18n="services.card3Desc">Modelagem de dados operacionais e de chamados de suporte. Construção de relatórios executivos interativos em Power BI e planilhas automatizadas com Excel para tomada de decisões.</p>
                     </div>
                 </div>
             </div>
@@ -227,14 +231,14 @@
         <section id="stack" class="stack-section scroll-reveal">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag">03 // HARD SKILLS</span>
-                    <h2 class="section-title">Stack Tecnológica</h2>
+                    <span class="section-tag" data-i18n="stack.tag">03 // HARD SKILLS</span>
+                    <h2 class="section-title" data-i18n="stack.title">Stack Tecnológica</h2>
                 </div>
                 
                 <div class="stack-grid">
                     <!-- Group 1 -->
                     <div class="stack-category">
-                        <h3>Front-end</h3>
+                        <h3 data-i18n="stack.frontend">Front-end</h3>
                         <div class="pills-container">
                             <span class="stack-pill">HTML5</span>
                             <span class="stack-pill">CSS3 / Flexbox</span>
@@ -247,7 +251,7 @@
                     
                     <!-- Group 2 -->
                     <div class="stack-category">
-                        <h3>Dados &amp; BI</h3>
+                        <h3 data-i18n="stack.data">Dados &amp; BI</h3>
                         <div class="pills-container">
                             <span class="stack-pill">Power BI</span>
                             <span class="stack-pill">Excel Avançado</span>
@@ -260,7 +264,7 @@
 
                     <!-- Group 3 -->
                     <div class="stack-category">
-                        <h3>Infra &amp; Suporte</h3>
+                        <h3 data-i18n="stack.infra">Infra &amp; Suporte</h3>
                         <div class="pills-container">
                             <span class="stack-pill">Windows Server</span>
                             <span class="stack-pill">Linux Command Line</span>
@@ -281,23 +285,23 @@
                     <!-- Career Timeline -->
                     <div class="timeline-column">
                         <div class="section-header">
-                            <span class="section-tag">04 // CARREIRA</span>
-                            <h2 class="section-title">Experiência Profissional</h2>
+                            <span class="section-tag" data-i18n="experience.tag">04 // CARREIRA</span>
+                            <h2 class="section-title" data-i18n="experience.title">Experiência Profissional</h2>
                         </div>
                         
                         <div class="ref-timeline">
                             <!-- Job 1: Estagiário em Desenvolvimento -->
                             <div class="ref-timeline-item">
                                 <div class="timeline-dot-active"></div>
-                                <span class="timeline-tag-date">01/Mai/2026 - Atual</span>
-                                <h3>Estagiário em Desenvolvimento</h3>
+                                <span class="timeline-tag-date" data-i18n="experience.job1Date">01/Mai/2026 - Atual</span>
+                                <h3 data-i18n="experience.job1Title">Estagiário em Desenvolvimento</h3>
                                 <span class="timeline-sub-company">HubON</span>
                                 <div class="timeline-desc">
-                                    <p>Auxílio no desenvolvimento frontend de aplicações e produtos digitais da empresa, focando em manutenções corretivas, melhorias de interface e experiência do usuário:</p>
+                                    <p data-i18n="experience.job1Intro">Auxílio no desenvolvimento frontend de aplicações e produtos digitais da empresa, focando em manutenções corretivas, melhorias de interface e experiência do usuário:</p>
                                     <ul>
-                                        <li>› Auxílio na codificação e componentização de interfaces com foco em React JS, HTML5 e CSS3, integrando soluções de backend com Supabase e automações de fluxos via n8n.</li>
-                                        <li>› Identificação e correção de bugs visuais e de fluxo de dados nas plataformas internas.</li>
-                                        <li>› Colaboração direta em testes de interface e ajustes de responsividade em layouts web.</li>
+                                        <li data-i18n="experience.job1Li1">› Auxílio na codificação e componentização de interfaces com foco em React JS, HTML5 e CSS3, integrando soluções de backend com Supabase e automações de fluxos via n8n.</li>
+                                        <li data-i18n="experience.job1Li2">› Identificação e correção de bugs visuais e de fluxo de dados nas plataformas internas.</li>
+                                        <li data-i18n="experience.job1Li3">› Colaboração direta em testes de interface e ajustes de responsividade em layouts web.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -305,16 +309,16 @@
                             <!-- Job 2: Suporte de TI -->
                             <div class="ref-timeline-item">
                                 <div class="timeline-dot"></div>
-                                <span class="timeline-tag-date">05/Jan/2026 - 30/Abr/2026</span>
-                                <h3>Suporte de TI</h3>
+                                <span class="timeline-tag-date" data-i18n="experience.job2Date">05/Jan/2026 - 30/Abr/2026</span>
+                                <h3 data-i18n="experience.job2Title">Suporte de TI</h3>
                                 <span class="timeline-sub-company">HubON</span>
                                 <div class="timeline-desc">
-                                    <p>Suporte de infraestrutura e serviços de redes de computadores, além do diagnóstico ágil e manutenção de sistemas corporativos locais:</p>
+                                    <p data-i18n="experience.job2Intro">Suporte de infraestrutura e serviços de redes de computadores, além do diagnóstico ágil e manutenção de sistemas corporativos locais:</p>
                                     <ul>
-                                        <li>› Diagnóstico avançado de falhas em hardware, software e cabeamento estruturado de redes.</li>
-                                        <li>› Administração de usuários no Active Directory, suporte ao CRM Bitrix, gerenciamento de permissões de arquivos e acessos.</li>
-                                        <li>› Desenvolvimento de scripts Shell para instalação automatizada de utilitários em novos setups.</li>
-                                        <li>› Redução do tempo médio de atendimento de chamados (SLA) através da documentação de FAQ.</li>
+                                        <li data-i18n="experience.job2Li1">› Diagnóstico avançado de falhas em hardware, software e cabeamento estruturado de redes.</li>
+                                        <li data-i18n="experience.job2Li2">› Administração de usuários no Active Directory, suporte ao CRM Bitrix, gerenciamento de permissões de arquivos e acessos.</li>
+                                        <li data-i18n="experience.job2Li3">› Desenvolvimento de scripts Shell para instalação automatizada de utilitários em novos setups.</li>
+                                        <li data-i18n="experience.job2Li4">› Redução do tempo médio de atendimento de chamados (SLA) através da documentação de FAQ.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -322,11 +326,11 @@
                             <!-- Job 3: Freelancer -->
                             <div class="ref-timeline-item">
                                 <div class="timeline-dot"></div>
-                                <span class="timeline-tag-date">2022 - 2024</span>
-                                <h3>Desenvolvedor Frontend Freelance</h3>
-                                <span class="timeline-sub-company">Projetos Autônomos</span>
+                                <span class="timeline-tag-date" data-i18n="experience.job3Date">2022 - 2024</span>
+                                <h3 data-i18n="experience.job3Title">Desenvolvedor Frontend Freelance</h3>
+                                <span class="timeline-sub-company" data-i18n="experience.job3Company">Projetos Autônomos</span>
                                 <div class="timeline-desc">
-                                    <p>Criação de websites estáticos, portfólios corporativos e interfaces de e-commerce locais, otimizando o layout para visualização mobile e SEO orgânico.</p>
+                                    <p data-i18n="experience.job3Desc">Criação de websites estáticos, portfólios corporativos e interfaces de e-commerce locais, otimizando o layout para visualização mobile e SEO orgânico.</p>
                                 </div>
                             </div>
                         </div>
@@ -335,22 +339,22 @@
                     <!-- Academic Timeline -->
                     <div class="timeline-column">
                         <div class="section-header">
-                            <span class="section-tag">05 // EDUCAÇÃO</span>
-                            <h2 class="section-title">Formação Acadêmica</h2>
+                            <span class="section-tag" data-i18n="education.tag">05 // EDUCAÇÃO</span>
+                            <h2 class="section-title" data-i18n="education.title">Formação Acadêmica</h2>
                         </div>
                         
                         <div class="ref-timeline">
                             <!-- Education 1 -->
                             <div class="ref-timeline-item">
                                 <div class="timeline-dot-active"></div>
-                                <span class="timeline-tag-date">2023 - 2026.1</span>
-                                <h3>Análise e Desenvolvimento de Sistemas</h3>
+                                <span class="timeline-tag-date" data-i18n="education.edu1Date">2023 - 2026.1</span>
+                                <h3 data-i18n="education.edu1Title">Análise e Desenvolvimento de Sistemas</h3>
                                 <span class="timeline-sub-company">Faculdade Senac</span>
                                 <div class="timeline-desc">
-                                    <p>Curso superior focado em engenharia de requisitos, lógica estruturada, bancos de dados relacionais e desenvolvimento web completo.</p>
+                                    <p data-i18n="education.edu1Desc">Curso superior focado em engenharia de requisitos, lógica estruturada, bancos de dados relacionais e desenvolvimento web completo.</p>
                                     <div class="timeline-status-badge">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-purple"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                        <span>Conclusão no semestre atual</span>
+                                        <span data-i18n="education.edu1Status">Conclusão no semestre atual</span>
                                     </div>
                                 </div>
                             </div>
@@ -358,11 +362,11 @@
                             <!-- Education 2 -->
                             <div class="ref-timeline-item">
                                 <div class="timeline-dot"></div>
-                                <span class="timeline-tag-date">2023</span>
-                                <h3>Formação Intensiva Frontend React</h3>
+                                <span class="timeline-tag-date" data-i18n="education.edu2Date">2023</span>
+                                <h3 data-i18n="education.edu2Title">Formação Intensiva Frontend React</h3>
                                 <span class="timeline-sub-company">Bootcamps Rocketseat &amp; DIO</span>
                                 <div class="timeline-desc">
-                                    <p>Especialização prática voltada a componentização, Hooks de estado do React, consumo de dados assíncronos e Deploy automatizado na Vercel/GitHub Pages.</p>
+                                    <p data-i18n="education.edu2Desc">Especialização prática voltada a componentização, Hooks de estado do React, consumo de dados assíncronos e Deploy automatizado na Vercel/GitHub Pages.</p>
                                 </div>
                             </div>
                         </div>
@@ -375,8 +379,8 @@
         <section id="certifications" class="certifications-section scroll-reveal">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag">06 // CREDENCIAIS</span>
-                    <h2 class="section-title">Certificados &amp; Cursos</h2>
+                    <span class="section-tag" data-i18n="certifications.tag">06 // CREDENCIAIS</span>
+                    <h2 class="section-title" data-i18n="certifications.title">Certificados &amp; Cursos</h2>
                 </div>
                 
                 <div class="certifications-grid">
@@ -392,15 +396,15 @@
                                 <span class="cert-date">Junho 2026</span>
                             </div>
                         </div>
-                        <h3 class="cert-title">Formação Front-end - HTML, CSS, JavaScript, React e +</h3>
+                        <h3 class="cert-title" data-i18n="certifications.cert1Title">Formação Front-end - HTML, CSS, JavaScript, React e +</h3>
                         <div class="cert-details">
                             <span class="cert-hours">
-                                <i data-lucide="clock"></i> 51.5 horas
+                                <i data-lucide="clock"></i> 51.5 <span data-i18n="certifications.hours">horas</span>
                             </span>
-                            <p class="cert-topics">HTML5, CSS3, JavaScript ES6+, React, Hooks, Redux, Node.js e ferramentas do ecossistema.</p>
+                            <p class="cert-topics" data-i18n="certifications.cert1Topics">HTML5, CSS3, JavaScript ES6+, React, Hooks, Redux, Node.js e ferramentas do ecossistema.</p>
                         </div>
                         <div class="cert-footer">
-                            <span class="cert-id">Credencial: UC-6fee6159-bb18-4387-8f08-161a3c0e2665</span>
+                            <span class="cert-id"><span data-i18n="certifications.credential">Credencial</span>: UC-6fee6159-bb18-4387-8f08-161a3c0e2665</span>
                         </div>
                     </div>
 
@@ -416,15 +420,15 @@
                                 <span class="cert-date">Junho 2026</span>
                             </div>
                         </div>
-                        <h3 class="cert-title">AI-900 - Fundamentos de IA no Azure</h3>
+                        <h3 class="cert-title" data-i18n="certifications.cert2Title">AI-900 - Fundamentos de IA no Azure</h3>
                         <div class="cert-details">
                             <span class="cert-hours">
-                                <i data-lucide="clock"></i> 16 horas
+                                <i data-lucide="clock"></i> 16 <span data-i18n="certifications.hours">horas</span>
                             </span>
-                            <p class="cert-topics">Conceitos fundamentais de Inteligência Artificial, Machine Learning, Visão Computacional, NLP e serviços da Azure AI.</p>
+                            <p class="cert-topics" data-i18n="certifications.cert2Topics">Conceitos fundamentais de Inteligência Artificial, Machine Learning, Visão Computacional, NLP e serviços da Azure AI.</p>
                         </div>
                         <div class="cert-footer">
-                            <span class="cert-id">Credencial: 53E09983-CEB4-4F16-90B3-F3123CCEE236</span>
+                            <span class="cert-id"><span data-i18n="certifications.credential">Credencial</span>: 53E09983-CEB4-4F16-90B3-F3123CCEE236</span>
                         </div>
                     </div>
 
@@ -440,15 +444,15 @@
                                 <span class="cert-date">Outubro 2025</span>
                             </div>
                         </div>
-                        <h3 class="cert-title">Automação com n8n</h3>
+                        <h3 class="cert-title" data-i18n="certifications.cert3Title">Automação com n8n</h3>
                         <div class="cert-details">
                             <span class="cert-hours">
-                                <i data-lucide="clock"></i> 3 horas
+                                <i data-lucide="clock"></i> 3 <span data-i18n="certifications.hours">horas</span>
                             </span>
-                            <p class="cert-topics">Automação de processos, tratamento e validação de dados, controle de fluxo (If, Loop, Merge) e integrações de APIs externas.</p>
+                            <p class="cert-topics" data-i18n="certifications.cert3Topics">Automação de processos, tratamento e validação de dados, controle de fluxo (If, Loop, Merge) e integrações de APIs externas.</p>
                         </div>
                         <div class="cert-footer">
-                            <span class="cert-id">Credencial: 5e50294d-238d-41ed-8110-cd3cde5bc53c</span>
+                            <span class="cert-id"><span data-i18n="certifications.credential">Credencial</span>: 5e50294d-238d-41ed-8110-cd3cde5bc53c</span>
                         </div>
                     </div>
 
@@ -464,15 +468,15 @@
                                 <span class="cert-date">Outubro 2025</span>
                             </div>
                         </div>
-                        <h3 class="cert-title">SENAC TakeOff 2025.2</h3>
+                        <h3 class="cert-title" data-i18n="certifications.cert4Title">SENAC TakeOff 2025.2</h3>
                         <div class="cert-details">
                             <span class="cert-hours">
-                                <i data-lucide="clock"></i> 8 horas
+                                <i data-lucide="clock"></i> 8 <span data-i18n="certifications.hours">horas</span>
                             </span>
-                            <p class="cert-topics">Tecnologias Emergentes, Learning Agility, Fundamentos de DevOps, Primeiros passos com Docker e Prompt Engineering.</p>
+                            <p class="cert-topics" data-i18n="certifications.cert4Topics">Tecnologias Emergentes, Learning Agility, Fundamentos de DevOps, Primeiros passos com Docker e Prompt Engineering.</p>
                         </div>
                         <div class="cert-footer">
-                            <span class="cert-id">Credencial: ef22daf8-e907-4ecd-b285-e186ba53bc62</span>
+                            <span class="cert-id"><span data-i18n="certifications.credential">Credencial</span>: ef22daf8-e907-4ecd-b285-e186ba53bc62</span>
                         </div>
                     </div>
 
@@ -488,15 +492,15 @@
                                 <span class="cert-date">Setembro 2025</span>
                             </div>
                         </div>
-                        <h3 class="cert-title">Gerenciamento de Ameaças Cibernéticas</h3>
+                        <h3 class="cert-title" data-i18n="certifications.cert5Title">Gerenciamento de Ameaças Cibernéticas</h3>
                         <div class="cert-details">
                             <span class="cert-hours">
-                                <i data-lucide="clock"></i> Carga Completa
+                                <i data-lucide="clock"></i> <span data-i18n="certifications.fullLoad">Carga Completa</span>
                             </span>
-                            <p class="cert-topics">Princípios de segurança da informação, detecção de ameaças cibernéticas, proteção de dados e políticas de segurança em rede.</p>
+                            <p class="cert-topics" data-i18n="certifications.cert5Topics">Princípios de segurança da informação, detecção de ameaças cibernéticas, proteção de dados e políticas de segurança em rede.</p>
                         </div>
                         <div class="cert-footer">
-                            <span class="cert-id">Credencial Verificada - Cisco</span>
+                            <span class="cert-id" data-i18n="certifications.verified">Credencial Verificada - Cisco</span>
                         </div>
                     </div>
 
@@ -512,15 +516,15 @@
                                 <span class="cert-date">Junho 2026</span>
                             </div>
                         </div>
-                        <h3 class="cert-title">Soluções de IA no GitHub</h3>
+                        <h3 class="cert-title" data-i18n="certifications.cert6Title">Soluções de IA no GitHub</h3>
                         <div class="cert-details">
                             <span class="cert-hours">
-                                <i data-lucide="clock"></i> 15 horas
+                                <i data-lucide="clock"></i> 15 <span data-i18n="certifications.hours">horas</span>
                             </span>
-                            <p class="cert-topics">IA Generativa no desenvolvimento, automações com GitHub Actions, Copilot e práticas modernas no controle de versão Git.</p>
+                            <p class="cert-topics" data-i18n="certifications.cert6Topics">IA Generativa no desenvolvimento, automações com GitHub Actions, Copilot e práticas modernas no controle de versão Git.</p>
                         </div>
                         <div class="cert-footer">
-                            <span class="cert-id">Credencial: E8F39B20-C39F-4CB8-ABD6-FCC885193B08</span>
+                            <span class="cert-id"><span data-i18n="certifications.credential">Credencial</span>: E8F39B20-C39F-4CB8-ABD6-FCC885193B08</span>
                         </div>
                     </div>
 
@@ -536,15 +540,15 @@
                                 <span class="cert-date">Setembro 2024</span>
                             </div>
                         </div>
-                        <h3 class="cert-title">CPNordeste - Participante</h3>
+                        <h3 class="cert-title" data-i18n="certifications.cert7Title">CPNordeste - Participante</h3>
                         <div class="cert-details">
                             <span class="cert-hours">
-                                <i data-lucide="clock"></i> 33 horas
+                                <i data-lucide="clock"></i> 33 <span data-i18n="certifications.hours">horas</span>
                             </span>
-                            <p class="cert-topics">Participação presencial em workshops, hackathons e palestras de inovação, empreendedorismo e desenvolvimento na Campus Party.</p>
+                            <p class="cert-topics" data-i18n="certifications.cert7Topics">Participação presencial em workshops, hackathons e palestras de inovação, empreendedorismo e desenvolvimento na Campus Party.</p>
                         </div>
                         <div class="cert-footer">
-                            <span class="cert-id">Participação Presencial</span>
+                            <span class="cert-id" data-i18n="certifications.inPerson">Participação Presencial</span>
                         </div>
                     </div>
                 </div>
@@ -556,13 +560,13 @@
             <div class="container">
                 <div class="section-header flex-header">
                     <div>
-                        <span class="section-tag">07 // TRABALHOS</span>
-                        <h2 class="section-title">Projetos em destaque</h2>
+                        <span class="section-tag" data-i18n="projects.tag">07 // TRABALHOS</span>
+                        <h2 class="section-title" data-i18n="projects.title">Projetos em destaque</h2>
                     </div>
                     <div class="projects-filter-bar">
-                        <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">Todos</button>
-                        <button type="button" class="filter-btn" data-filter="frontend" aria-pressed="false">Frontend</button>
-                        <button type="button" class="filter-btn" data-filter="data" aria-pressed="false">Dados / BI</button>
+                        <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true" data-i18n="projects.filterAll">Todos</button>
+                        <button type="button" class="filter-btn" data-filter="frontend" aria-pressed="false" data-i18n="projects.filterFrontend">Frontend</button>
+                        <button type="button" class="filter-btn" data-filter="data" aria-pressed="false" data-i18n="projects.filterData">Dados / BI</button>
                     </div>
                 </div>
 
@@ -574,12 +578,12 @@
                             <span class="project-tag-cat">React / TypeScript</span>
                         </div>
                         <h3>Conta Gotas CRM</h3>
-                        <p class="project-short-desc">Plataforma de gerenciamento de leads comerciais e painel de controle financeiro.</p>
+                        <p class="project-short-desc" data-i18n="projects.p1Desc">Plataforma de gerenciamento de leads comerciais e painel de controle financeiro.</p>
                         
                         <ul class="project-bullet-details">
-                            <li>› Quadro Kanban interativo com drag-and-drop para alteração de status de leads.</li>
-                            <li>› Painel analítico de cobrança exibindo faturamento mensal e taxas de conversão de leads.</li>
-                            <li>› Estrutura modular em React com TypeScript utilizando context API para controle de estado.</li>
+                            <li data-i18n="projects.p1Li1">› Quadro Kanban interativo com drag-and-drop para alteração de status de leads.</li>
+                            <li data-i18n="projects.p1Li2">› Painel analítico de cobrança exibindo faturamento mensal e taxas de conversão de leads.</li>
+                            <li data-i18n="projects.p1Li3">› Estrutura modular em React com TypeScript utilizando context API para controle de estado.</li>
                         </ul>
                         
                         <div class="project-footer-box">
@@ -592,7 +596,7 @@
                             </div>
                             <div class="project-action-links">
                                 <a href="#contact" class="project-link project-link-internal" aria-label="Solicitar detalhes sobre o projeto Conta Gotas CRM">
-                                    <span>Pedir detalhes</span>
+                                    <span data-i18n="projects.requestDetails">Pedir detalhes</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                                 </a>
                             </div>
@@ -606,12 +610,12 @@
                             <span class="project-tag-cat">HTML5 / CSS / Vanilla JS</span>
                         </div>
                         <h3>DevFlow Portfolio</h3>
-                        <p class="project-short-desc">Template estático e de alto desempenho projetado para portfólios de desenvolvedores.</p>
+                        <p class="project-short-desc" data-i18n="projects.p2Desc">Template estático e de alto desempenho projetado para portfólios de desenvolvedores.</p>
                         
                         <ul class="project-bullet-details">
-                            <li>› Estrutura responsiva fluida, otimizada para aparelhos móveis.</li>
-                            <li>› Pontuação de 100/100 no Google Lighthouse (Performance, Acessibilidade e SEO).</li>
-                            <li>› Animações nativas suaves em JavaScript sem dependências externas de pacotes pesados.</li>
+                            <li data-i18n="projects.p2Li1">› Estrutura responsiva fluida, otimizada para aparelhos móveis.</li>
+                            <li data-i18n="projects.p2Li2">› Pontuação de 100/100 no Google Lighthouse (Performance, Acessibilidade e SEO).</li>
+                            <li data-i18n="projects.p2Li3">› Animações nativas suaves em JavaScript sem dependências externas de pacotes pesados.</li>
                         </ul>
                         
                         <div class="project-footer-box">
@@ -623,7 +627,7 @@
                             </div>
                             <div class="project-action-links">
                                 <a href="#home" class="project-link project-link-internal" aria-label="Ver este portfólio em execução">
-                                    <span>Ver página</span>
+                                    <span data-i18n="projects.viewPage">Ver página</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                                 </a>
                             </div>
@@ -637,12 +641,12 @@
                             <span class="project-tag-cat">HTML5 / CSS3 / Vanilla JS</span>
                         </div>
                         <h3>Gestão de Patrimônio HubON</h3>
-                        <p class="project-short-desc">Sistema web para controle e gerenciamento offline do inventário de ativos tecnológicos corporativos.</p>
+                        <p class="project-short-desc" data-i18n="projects.p3Desc">Sistema web para controle e gerenciamento offline do inventário de ativos tecnológicos corporativos.</p>
                         
                         <ul class="project-bullet-details">
-                            <li>› Registro completo (CRUD) de notebooks e celulares sem dependência de banco de dados externo.</li>
-                            <li>› Busca inteligente em tempo real e filtros avançados por status de conservação, departamento e ano.</li>
-                            <li>› Upload de fotos via FileReader API com visualização em lightbox e exportação de relatórios em formato CSV.</li>
+                            <li data-i18n="projects.p3Li1">› Registro completo (CRUD) de notebooks e celulares sem dependência de banco de dados externo.</li>
+                            <li data-i18n="projects.p3Li2">› Busca inteligente em tempo real e filtros avançados por status de conservação, departamento e ano.</li>
+                            <li data-i18n="projects.p3Li3">› Upload de fotos via FileReader API com visualização em lightbox e exportação de relatórios em formato CSV.</li>
                         </ul>
                         
                         <div class="project-footer-box">
@@ -655,11 +659,11 @@
                             </div>
                             <div class="project-action-links">
                                 <a href="https://github.com/RafaelADSdev/-Gestao-de-Patrimonio-HubON-" target="_blank" rel="noopener" class="project-link" aria-label="Ver Código no Github">
-                                    <span>GitHub</span>
+                                    <span data-i18n="projects.github">GitHub</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                                 </a>
                                 <a href="https://gestao-de-patrimonio-hub-on.vercel.app" target="_blank" rel="noopener" class="project-link" aria-label="Ver Demonstração">
-                                    <span>Demo</span>
+                                    <span data-i18n="projects.demo">Demo</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                                 </a>
                             </div>
@@ -673,12 +677,12 @@
                             <span class="project-tag-cat">JavaScript / Blockchain</span>
                         </div>
                         <h3>BBTS – Carbon Credits</h3>
-                        <p class="project-short-desc">Plataforma descentralizada para monitoramento, registro e compensação de pegada de carbono corporativa.</p>
+                        <p class="project-short-desc" data-i18n="projects.p4Desc">Plataforma descentralizada para monitoramento, registro e compensação de pegada de carbono corporativa.</p>
                         
                         <ul class="project-bullet-details">
-                            <li>› Dashboard de acompanhamento de emissões totais de CO₂ geradas por consumo de energia e frotas de veículos.</li>
-                            <li>› Tokenização de créditos de carbono no padrão de contratos inteligentes utilizando a rede Ethereum via MetaMask.</li>
-                            <li>› Catálogo completo de projetos sustentáveis parceiros para realizar a compensação ambiental de forma rápida e segura.</li>
+                            <li data-i18n="projects.p4Li1">› Dashboard de acompanhamento de emissões totais de CO₂ geradas por consumo de energia e frotas de veículos.</li>
+                            <li data-i18n="projects.p4Li2">› Tokenização de créditos de carbono no padrão de contratos inteligentes utilizando a rede Ethereum via MetaMask.</li>
+                            <li data-i18n="projects.p4Li3">› Catálogo completo de projetos sustentáveis parceiros para realizar a compensação ambiental de forma rápida e segura.</li>
                         </ul>
                         
                         <div class="project-footer-box">
@@ -691,11 +695,11 @@
                             </div>
                             <div class="project-action-links">
                                 <a href="https://github.com/Clairefairy/BBTS_Frontend" target="_blank" rel="noopener" class="project-link" aria-label="Ver Código no Github">
-                                    <span>GitHub</span>
+                                    <span data-i18n="projects.github">GitHub</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                                 </a>
                                 <a href="https://bbtscompensacao.netlify.app/" target="_blank" rel="noopener" class="project-link" aria-label="Ver Demonstração">
-                                    <span>Demo</span>
+                                    <span data-i18n="projects.demo">Demo</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                                 </a>
                             </div>
@@ -709,12 +713,12 @@
                             <span class="project-tag-cat">Python / Flask / ML</span>
                         </div>
                         <h3>Forescan Forensic Analytics</h3>
-                        <p class="project-short-desc">Plataforma PWA voltada para a gestão de casos criminais com suporte a inteligência preditiva por IA.</p>
+                        <p class="project-short-desc" data-i18n="projects.p5Desc">Plataforma PWA voltada para a gestão de casos criminais com suporte a inteligência preditiva por IA.</p>
                         
                         <ul class="project-bullet-details">
-                            <li>› Registro, controle e acompanhamento de ocorrências e laudos técnicos integrando backend Python (Flask).</li>
-                            <li>› Análise e classificação preditiva automatizada de tipos de crimes com base no perfil da vítima e local da ocorrência.</li>
-                            <li>› Modelo de Regressão Logística serializado integrado ao fluxo web, com suporte offline via PWA Service Worker.</li>
+                            <li data-i18n="projects.p5Li1">› Registro, controle e acompanhamento de ocorrências e laudos técnicos integrando backend Python (Flask).</li>
+                            <li data-i18n="projects.p5Li2">› Análise e classificação preditiva automatizada de tipos de crimes com base no perfil da vítima e local da ocorrência.</li>
+                            <li data-i18n="projects.p5Li3">› Modelo de Regressão Logística serializado integrado ao fluxo web, com suporte offline via PWA Service Worker.</li>
                         </ul>
                         
                         <div class="project-footer-box">
@@ -727,11 +731,11 @@
                             </div>
                             <div class="project-action-links">
                                 <a href="https://github.com/RafaelADSdev/Forescan" target="_blank" rel="noopener" class="project-link" aria-label="Ver Código no Github">
-                                    <span>GitHub</span>
+                                    <span data-i18n="projects.github">GitHub</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                                 </a>
                                 <a href="https://forescan-d1k1.vercel.app" target="_blank" rel="noopener" class="project-link" aria-label="Ver Demonstração">
-                                    <span>Demo</span>
+                                    <span data-i18n="projects.demo">Demo</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                                 </a>
                             </div>
@@ -745,9 +749,9 @@
         <section id="contact" class="contact-section scroll-reveal">
             <div class="container">
                 <div class="section-header center">
-                    <span class="section-tag">08 // CONTATO</span>
-                    <h2 class="section-title">Vamos conversar?</h2>
-                    <p class="section-subtitle">Estou sempre aberto a oportunidades profissionais, novos projetos freelances ou tirar dúvidas sobre suporte e frontend.</p>
+                    <span class="section-tag" data-i18n="contact.tag">08 // CONTATO</span>
+                    <h2 class="section-title" data-i18n="contact.title">Vamos conversar?</h2>
+                    <p class="section-subtitle" data-i18n="contact.subtitle">Estou sempre aberto a oportunidades profissionais, novos projetos freelances ou tirar dúvidas sobre suporte e frontend.</p>
                 </div>
 
                 <div class="contact-grid">
@@ -758,11 +762,11 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                             </div>
                             <div class="contact-card-content">
-                                <span class="label">E-mail</span>
+                                <span class="label" data-i18n="contact.email">E-mail</span>
                                 <a href="mailto:rafaelarcanjods05@gmail.com" class="value">rafaelarcanjods05@gmail.com</a>
                                 <button type="button" class="copy-btn" id="btnCopyEmail">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                                    <span class="copy-text">Copiar e-mail</span>
+                                    <span class="copy-text" data-i18n="contact.copyEmail">Copiar e-mail</span>
                                 </button>
                             </div>
                         </div>
@@ -772,8 +776,8 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                             </div>
                             <div class="contact-card-content">
-                                <span class="label">LinkedIn</span>
-                                <a href="https://www.linkedin.com/in/rafael-arcanjo-0647962a0/" target="_blank" rel="noopener" class="value">Conectar profissionalmente</a>
+                                <span class="label" data-i18n="contact.linkedin">LinkedIn</span>
+                                <a href="https://www.linkedin.com/in/rafael-arcanjo-0647962a0/" target="_blank" rel="noopener" class="value" data-i18n="contact.linkedinValue">Conectar profissionalmente</a>
                             </div>
                         </div>
 
@@ -782,7 +786,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
                             </div>
                             <div class="contact-card-content">
-                                <span class="label">GitHub</span>
+                                <span class="label" data-i18n="contact.github">GitHub</span>
                                 <a href="https://github.com/RafaelADSdev" target="_blank" rel="noopener" class="value">github.com/RafaelADSdev</a>
                             </div>
                         </div>
@@ -797,24 +801,24 @@
                             <input type="checkbox" name="botcheck" class="botcheck-field" tabindex="-1" autocomplete="off">
                             <div class="form-row">
                                 <div class="form-group-ref">
-                                    <label for="formName">Seu Nome</label>
-                                    <input type="text" id="formName" name="name" required placeholder="João Silva">
+                                    <label for="formName" data-i18n="contact.formName">Seu Nome</label>
+                                    <input type="text" id="formName" name="name" required data-i18n-placeholder="contact.formPlaceholderName" placeholder="João Silva">
                                 </div>
                                 <div class="form-group-ref">
-                                    <label for="formEmail">Seu E-mail</label>
-                                    <input type="email" id="formEmail" name="email" required placeholder="joao@email.com">
+                                    <label for="formEmail" data-i18n="contact.formEmail">Seu E-mail</label>
+                                    <input type="email" id="formEmail" name="email" required data-i18n-placeholder="contact.formPlaceholderEmail" placeholder="joao@email.com">
                                 </div>
                             </div>
                             <div class="form-group-ref">
-                                <label for="formMessage">Sua Mensagem</label>
-                                <textarea id="formMessage" name="message" rows="5" required placeholder="Escreva sua mensagem..."></textarea>
+                                <label for="formMessage" data-i18n="contact.formMessage">Sua Mensagem</label>
+                                <textarea id="formMessage" name="message" rows="5" required data-i18n-placeholder="contact.formPlaceholderMessage" placeholder="Escreva sua mensagem..."></textarea>
                             </div>
                             <button type="submit" class="btn btn-gradient btn-full" id="btnSubmitForm">
-                                <span>Enviar mensagem</span>
+                                <span data-i18n="contact.submit">Enviar mensagem</span>
                             </button>
                             <div class="form-feedback hidden" id="formFeedback" role="status" aria-live="polite">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-purple"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                <span id="feedbackText">Mensagem enviada com sucesso. Obrigado pelo contato!</span>
+                                <span id="feedbackText" data-i18n="contact.success">Mensagem enviada com sucesso. Obrigado pelo contato!</span>
                             </div>
                         </form>
                     </div>
@@ -827,14 +831,15 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container footer-container">
-            <a href="#home" class="logo" aria-label="Voltar ao início">
+            <a href="#home" class="logo" data-i18n-aria="footer.backHome" aria-label="Voltar ao início">
                 <span class="logo-text">RA</span><span class="logo-bracket">/&gt;</span>
             </a>
-            <p class="footer-copy">&copy; 2026 Rafael Arcanjo. Todos os direitos reservados.</p>
+            <p class="footer-copy" data-i18n="footer.rights">&copy; 2026 Rafael Arcanjo. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <!-- Script File -->
+    <!-- Script Files -->
+    <script src="i18n.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

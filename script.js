@@ -158,20 +158,20 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================================================== */
     const btnCopyEmail = document.getElementById('btnCopyEmail');
     if (btnCopyEmail) {
+        const getCopyLabel = () => (window.i18n ? window.i18n.t('contact.copyEmail') : 'Copiar e-mail');
+        const getCopiedLabel = () => (window.i18n ? window.i18n.t('contact.emailCopied') : 'E-mail copiado!');
+
         btnCopyEmail.addEventListener('click', () => {
             const email = 'rafaelarcanjods05@gmail.com';
             const copyText = btnCopyEmail.querySelector('.copy-text');
             const restoreCopyState = () => {
-                if (copyText) copyText.textContent = 'Copiar e-mail';
+                if (copyText) copyText.textContent = getCopyLabel();
                 btnCopyEmail.style.color = '';
             };
             
             const onCopySuccess = () => {
-                // Visual feedback
-                if (copyText) copyText.textContent = 'E-mail copiado!';
+                if (copyText) copyText.textContent = getCopiedLabel();
                 btnCopyEmail.style.color = 'var(--text-primary)';
-
-                // Restore state after 2 seconds
                 setTimeout(restoreCopyState, 2000);
             };
 
@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (contactForm && btnSubmitForm) {
         const submitLabel = btnSubmitForm.querySelector('span');
-        const defaultSubmitText = submitLabel ? submitLabel.textContent : 'Enviar mensagem';
+        const getSubmitText = () => (window.i18n ? window.i18n.t('contact.submit') : 'Enviar mensagem');
 
         const showFormFeedback = (message, type = 'success') => {
             if (!formFeedback) return;
@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             btnSubmitForm.disabled = true;
-            if (submitLabel) submitLabel.textContent = 'Enviando...';
+            if (submitLabel) submitLabel.textContent = window.i18n ? window.i18n.t('contact.sending') : 'Enviando...';
 
             try {
                 const response = await fetch(contactForm.action, {
@@ -252,17 +252,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (response.ok && result.success) {
                     contactForm.reset();
-                    showFormFeedback('Mensagem enviada com sucesso. Obrigado pelo contato!');
+                    showFormFeedback(window.i18n ? window.i18n.t('contact.success') : 'Mensagem enviada com sucesso. Obrigado pelo contato!');
                 } else {
-                    const errorMessage = result.message || 'Não foi possível enviar a mensagem agora. Tente novamente em instantes.';
+                    const errorMessage = result.message || (window.i18n ? window.i18n.t('contact.errorGeneric') : 'Não foi possível enviar a mensagem agora. Tente novamente em instantes.');
                     showFormFeedback(errorMessage, 'error');
                 }
             } catch (err) {
                 console.error('Falha ao enviar mensagem: ', err);
-                showFormFeedback('Não foi possível conectar ao serviço de envio. Verifique sua conexão e tente novamente.', 'error');
+                showFormFeedback(window.i18n ? window.i18n.t('contact.errorConnection') : 'Não foi possível conectar ao serviço de envio. Verifique sua conexão e tente novamente.', 'error');
             } finally {
                 btnSubmitForm.disabled = false;
-                if (submitLabel) submitLabel.textContent = defaultSubmitText;
+                if (submitLabel) submitLabel.textContent = getSubmitText();
             }
         });
     }
@@ -275,7 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
         downloadCvBtn.addEventListener('click', (e) => {
             if (downloadCvBtn.getAttribute('href') === '#') {
                 e.preventDefault();
-                alert('Currículo em PDF indisponível no momento.');
+                alert(window.i18n ? window.i18n.t('ui.cvUnavailable') : 'Currículo em PDF indisponível no momento.');
             }
         });
     }
