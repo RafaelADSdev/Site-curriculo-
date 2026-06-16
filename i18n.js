@@ -1,8 +1,8 @@
 const translations = {
     pt: {
         meta: {
-            title: 'Rafael Arcanjo | Desenvolvedor Frontend & Suporte de TI',
-            description: 'Currículo digital e portfólio de Rafael Arcanjo, desenvolvedor frontend e profissional de suporte de TI com experiência em React, infraestrutura, dados e automações.',
+            title: 'Rafael Arcanjo | Desenvolvedor Web & Suporte de TI',
+            description: 'Currículo digital e portfólio de Rafael Arcanjo, desenvolvedor web e profissional de suporte de TI com experiência em React, infraestrutura, dados e automações.',
             ogDescription: 'Projetos, experiência, certificados e formas de contato de Rafael Arcanjo.',
             twitterDescription: 'Currículo digital com projetos, experiência e certificados.'
         },
@@ -23,7 +23,7 @@ const translations = {
         },
         hero: {
             badge: 'Disponível para novos projetos',
-            subtitle: 'Desenvolvedor Frontend & Suporte de TI',
+            subtitle: 'Desenvolvedor Web & Suporte de TI',
             description: 'Graduando em Análise e Desenvolvimento de Sistemas pela Faculdade Senac (2026.1). Especializado em criar interfaces responsivas e de alto desempenho no ecossistema React, integrando soluções seguras de suporte, infraestrutura local e análise de dados operacionais.',
             viewProjects: 'Ver projetos',
             contactMe: 'Falar comigo',
@@ -73,7 +73,7 @@ const translations = {
             job2Li3: '› Desenvolvimento de scripts Shell para instalação automatizada de utilitários em novos setups.',
             job2Li4: '› Redução do tempo médio de atendimento de chamados (SLA) através da documentação de FAQ.',
             job3Date: '2022 - 2024',
-            job3Title: 'Desenvolvedor Frontend Freelance',
+            job3Title: 'Desenvolvedor Web Freelance',
             job3Company: 'Projetos Autônomos',
             job3Desc: 'Criação de websites estáticos, portfólios corporativos e interfaces de e-commerce locais, otimizando o layout para visualização mobile e SEO orgânico.'
         },
@@ -145,7 +145,7 @@ const translations = {
         contact: {
             tag: '08 // CONTATO',
             title: 'Vamos conversar?',
-            subtitle: 'Estou sempre aberto a oportunidades profissionais, novos projetos freelances ou tirar dúvidas sobre suporte e frontend.',
+            subtitle: 'Estou sempre aberto a oportunidades profissionais, novos projetos freelances ou tirar dúvidas sobre suporte e desenvolvimento web.',
             email: 'E-mail',
             linkedin: 'LinkedIn',
             linkedinValue: 'Conectar profissionalmente',
@@ -176,8 +176,8 @@ const translations = {
     },
     en: {
         meta: {
-            title: 'Rafael Arcanjo | Frontend Developer & IT Support',
-            description: 'Digital resume and portfolio of Rafael Arcanjo, frontend developer and IT support professional with experience in React, infrastructure, data, and automation.',
+            title: 'Rafael Arcanjo | Web Developer & IT Support',
+            description: 'Digital resume and portfolio of Rafael Arcanjo, web developer and IT support professional with experience in React, infrastructure, data, and automation.',
             ogDescription: 'Projects, experience, certifications, and contact information for Rafael Arcanjo.',
             twitterDescription: 'Digital resume with projects, experience, and certifications.'
         },
@@ -198,7 +198,7 @@ const translations = {
         },
         hero: {
             badge: 'Available for new projects',
-            subtitle: 'Frontend Developer & IT Support',
+            subtitle: 'Web Developer & IT Support',
             description: 'Undergraduate student in Systems Analysis and Development at Faculdade Senac (2026.1). Specialized in building responsive, high-performance interfaces in the React ecosystem, integrating secure support solutions, local infrastructure, and operational data analysis.',
             viewProjects: 'View projects',
             contactMe: 'Get in touch',
@@ -248,7 +248,7 @@ const translations = {
             job2Li3: '› Shell script development for automated installation of utilities on new setups.',
             job2Li4: '› Reduced average ticket resolution time (SLA) through FAQ documentation.',
             job3Date: '2022 - 2024',
-            job3Title: 'Freelance Frontend Developer',
+            job3Title: 'Freelance Web Developer',
             job3Company: 'Independent Projects',
             job3Desc: 'Creation of static websites, corporate portfolios, and local e-commerce interfaces, optimizing layouts for mobile viewing and organic SEO.'
         },
@@ -320,7 +320,7 @@ const translations = {
         contact: {
             tag: '08 // CONTACT',
             title: "Let's talk?",
-            subtitle: 'I am always open to professional opportunities, new freelance projects, or answering questions about support and frontend.',
+            subtitle: 'I am always open to professional opportunities, new freelance projects, or answering questions about support and web development.',
             email: 'Email',
             linkedin: 'LinkedIn',
             linkedinValue: 'Connect professionally',
@@ -352,14 +352,14 @@ const translations = {
 };
 
 const STORAGE_KEY = 'site-lang';
-let currentLang = 'pt';
+let currentLang = 'en';
 
 function getNestedValue(obj, path) {
     return path.split('.').reduce((acc, key) => acc?.[key], obj);
 }
 
 function t(key) {
-    return getNestedValue(translations[currentLang], key) ?? getNestedValue(translations.pt, key) ?? key;
+    return getNestedValue(translations[currentLang], key) ?? getNestedValue(translations.en, key) ?? key;
 }
 
 function updateMeta() {
