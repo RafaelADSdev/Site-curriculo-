@@ -20,12 +20,23 @@ require $configFile;
 
 if (
     !defined('CONTACT_EMAIL_TO') || CONTACT_EMAIL_TO === '' || CONTACT_EMAIL_TO === 'seu-email@gmail.com' ||
-    !defined('CONTACT_EMAIL_FROM') || CONTACT_EMAIL_FROM === '' || CONTACT_EMAIL_FROM === 'noreply@seudominio.com'
+    !defined('CONTACT_EMAIL_FROM') || CONTACT_EMAIL_FROM === '' || CONTACT_EMAIL_FROM === 'seu-email@seudominio.com'
 ) {
     http_response_code(500);
     echo json_encode(['success' => false, 'message' => 'Invalid server configuration']);
     exit;
 }
+
+$recipientList = array_values(array_filter(array_map('trim', explode(',', CONTACT_EMAIL_TO))));
+$validRecipients = array_filter($recipientList, static fn (string $address) => filter_var($address, FILTER_VALIDATE_EMAIL));
+
+if ($validRecipients === []) {
+    http_response_code(500);
+    echo json_encode(['success' => false, 'message' => 'Invalid server configuration']);
+    exit;
+}
+
+$mailTo = implode(', ', $validRecipients);
 
 if (!empty($_POST['botcheck'])) {
     http_response_code(400);
@@ -65,7 +76,7 @@ $headers = [
     'X-Mailer: PHP/' . phpversion(),
 ];
 
-$sent = mail(CONTACT_EMAIL_TO, $mailSubject, $body, implode("\r\n", $headers));
+$sent = mail($mailTo, $mailSubject, $body, implode("\r\n", $headers));
 
 if (!$sent) {
     http_response_code(500);
