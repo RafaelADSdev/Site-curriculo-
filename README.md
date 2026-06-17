@@ -40,13 +40,17 @@ O conteúdo destaca desenvolvimento web (React, Next.js, Supabase), automações
 ├── assets/
 │   └── avatar.png
 ├── curriculo.pdf
+├── config.example.php
 ├── favicon.svg
 ├── i18n.js
 ├── index.html
 ├── script.js
+├── send-contact.php
 ├── style.css
 └── README.md
 ```
+
+> `config.php` (com a Access Key real) fica **apenas no servidor** e não entra no Git.
 
 ## Como executar localmente
 
@@ -78,15 +82,89 @@ O idioma padrão é **inglês (EN)**. A escolha do usuário é persistida em `lo
 
 ## Formulário de contato
 
-O formulário usa Web3Forms para enviar mensagens para o e-mail configurado na Access Key.
+O formulário envia os dados para `send-contact.php`, um script PHP na própria hospedagem. A **Access Key do Web3Forms fica apenas no servidor**, no arquivo `config.php` (não versionado no Git).
 
-Para trocar a chave ou o destinatário:
+### Configuração local / Hostinger
+
+1. Copie `config.example.php` para `config.php`.
+2. Substitua `SUA_ACCESS_KEY_AQUI` pela sua chave do [Web3Forms](https://web3forms.com).
+3. Mantenha `config.php` **fora do Git** (já está no `.gitignore`).
+
+O `send-contact.php` repassa o formulário para a API do Web3Forms e devolve a resposta em JSON para o `script.js`.
+
+### Hospedagem na Hostinger
+
+Veja o passo a passo completo na seção **Deploy na Hostinger** abaixo.
+
+## Deploy na Hostinger (domínio próprio)
+
+### 1. Enviar os arquivos do site
+
+1. Acesse o [hPanel da Hostinger](https://hpanel.hostinger.com).
+2. Vá em **Websites** → selecione seu domínio → **Gerenciador de arquivos** (File Manager).
+3. Abra a pasta **`public_html`** (raiz do site).
+4. Envie todos os arquivos do projeto para `public_html`:
+   - `index.html`, `style.css`, `script.js`, `i18n.js`
+   - `favicon.svg`, `curriculo.pdf`
+   - pasta `assets/` com `avatar.png`
+   - **`send-contact.php`**
+
+> Se já existir um `index.html` antigo, substitua pelos arquivos novos.
+
+### 2. Criar o `config.php` (chave secreta)
+
+1. No Gerenciador de arquivos, dentro de `public_html`, clique em **Novo arquivo**.
+2. Nomeie como **`config.php`**.
+3. Edite o arquivo e cole:
+
+```php
+<?php
+define('WEB3FORMS_ACCESS_KEY', 'COLE_SUA_ACCESS_KEY_AQUI');
+```
+
+4. Troque `COLE_SUA_ACCESS_KEY_AQUI` pela chave real do Web3Forms.
+5. Salve.
+
+**Importante:** não faça upload do `config.php` para o GitHub. Crie ele só na Hostinger.
+
+### 3. Gerar uma nova Access Key (recomendado)
+
+Como a chave antiga já ficou pública no GitHub:
 
 1. Acesse [web3forms.com](https://web3forms.com).
-2. Gere uma nova Access Key para o e-mail desejado.
-3. Substitua o valor do campo `access_key` no `index.html`.
+2. Gere uma **nova Access Key** para seu e-mail.
+3. Use a chave nova no `config.php` da Hostinger.
+4. Em **Allowed Domains**, adicione seu domínio:
+   - `seudominio.com`
+   - `www.seudominio.com`
 
-O envio é feito via `fetch` no `script.js`, sem recarregar a página.
+### 4. Verificar se o PHP está ativo
+
+O plano Business da Hostinger suporta PHP. Para testar:
+
+1. Acesse `https://seudominio.com/send-contact.php` no navegador.
+2. Deve aparecer um JSON com `"success": false` e `"Method not allowed"` — isso é normal (o script só aceita POST).
+
+Se aparecer erro 404, confira se `send-contact.php` está em `public_html`.
+
+### 5. Testar o formulário
+
+1. Abra `https://seudominio.com`.
+2. Vá até a seção **Contato**.
+3. Preencha e envie uma mensagem de teste.
+4. Confira se o e-mail chegou e se a mensagem de sucesso aparece no site.
+
+### 6. Atualizar o site no futuro
+
+- **Pelo Git:** faça push no repositório e envie os arquivos atualizados para `public_html` (FTP, File Manager ou Git deploy, se configurar).
+- **Sempre preserve** o `config.php` na Hostinger — não apague ao atualizar os outros arquivos.
+
+### Publicar via FTP (opcional)
+
+1. No hPanel: **Arquivos** → **Contas FTP** → crie ou use uma conta existente.
+2. Use o FileZilla (ou similar) com host, usuário e senha FTP.
+3. Conecte e envie os arquivos para `public_html`.
+4. Crie o `config.php` manualmente no servidor (passo 2 acima).
 
 ## Currículo em PDF
 
@@ -110,7 +188,7 @@ Os principais pontos para editar são:
 
 ## Deploy
 
-O projeto pode ser publicado em qualquer hospedagem de site estático (por exemplo, Netlify ou GitHub Pages), apontando a raiz do repositório como pasta de publicação.
+O projeto pode ser publicado em hospedagem estática ou em **Hostinger com PHP** (recomendado para o formulário de contato seguro). Veja a seção **Deploy na Hostinger** acima.
 
 ## Contato
 
