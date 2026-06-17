@@ -18,7 +18,10 @@ if (!is_file($configFile)) {
 
 require $configFile;
 
-if (!defined('WEB3FORMS_ACCESS_KEY') || WEB3FORMS_ACCESS_KEY === '' || WEB3FORMS_ACCESS_KEY === 'SUA_ACCESS_KEY_AQUI') {
+if (
+    !defined('CONTACT_EMAIL_TO') || CONTACT_EMAIL_TO === '' || CONTACT_EMAIL_TO === 'seu-email@gmail.com' ||
+    !defined('CONTACT_EMAIL_FROM') || CONTACT_EMAIL_FROM === '' || CONTACT_EMAIL_FROM === 'noreply@seudominio.com'
+) {
     http_response_code(500);
     echo json_encode(['success' => false, 'message' => 'Invalid server configuration']);
     exit;
@@ -34,7 +37,7 @@ $name = trim((string) ($_POST['name'] ?? ''));
 $email = trim((string) ($_POST['email'] ?? ''));
 $message = trim((string) ($_POST['message'] ?? ''));
 $subject = trim((string) ($_POST['subject'] ?? 'Nova mensagem pelo site'));
-$fromName = trim((string) ($_POST['from_name'] ?? 'Site'));
+$fromName = defined('CONTACT_FROM_NAME') ? CONTACT_FROM_NAME : 'Site';
 
 if ($name === '' || $email === '' || $message === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     http_response_code(400);
@@ -42,40 +45,32 @@ if ($name === '' || $email === '' || $message === '' || !filter_var($email, FILT
     exit;
 }
 
-$payload = http_build_query([
-    'access_key' => WEB3FORMS_ACCESS_KEY,
-    'name' => $name,
-    'email' => $email,
-    'message' => $message,
-    'subject' => $subject,
-    'from_name' => $fromName,
-]);
-
-if (!function_exists('curl_init')) {
+if (!function_exists('mail')) {
     http_response_code(500);
-    echo json_encode(['success' => false, 'message' => 'cURL is not available on this server']);
+    echo json_encode(['success' => false, 'message' => 'Mail function is not available on this server']);
     exit;
 }
 
-$ch = curl_init('https://api.web3forms.com/submit');
-curl_setopt_array($ch, [
-    CURLOPT_POST => true,
-    CURLOPT_POSTFIELDS => $payload,
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_HTTPHEADER => ['Accept: application/json', 'Content-Type: application/x-www-form-urlencoded'],
-    CURLOPT_TIMEOUT => 20,
-]);
+$mailSubject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
+$body = "Nome: {$name}\r\n";
+$body .= "E-mail: {$email}\r\n\r\n";
+$body .= "Mensagem:\r\n{$message}\r\n";
 
-$response = curl_exec($ch);
-$httpCode = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
-$curlError = curl_error($ch);
-curl_close($ch);
+$headers = [
+    'MIME-Version: 1.0',
+    'Content-Type: text/plain; charset=UTF-8',
+    'Content-Transfer-Encoding: 8bit',
+    'From: ' . $fromName . ' <' . CONTACT_EMAIL_FROM . '>',
+    'Reply-To: ' . $name . ' <' . $email . '>',
+    'X-Mailer: PHP/' . phpversion(),
+];
 
-if ($response === false) {
-    http_response_code(502);
-    echo json_encode(['success' => false, 'message' => $curlError !== '' ? $curlError : 'Could not reach email service']);
+$sent = mail(CONTACT_EMAIL_TO, $mailSubject, $body, implode("\r\n", $headers));
+
+if (!$sent) {
+    http_response_code(500);
+    echo json_encode(['success' => false, 'message' => 'Could not send email']);
     exit;
 }
 
-http_response_code($httpCode >= 400 ? $httpCode : 200);
-echo $response;
+echo json_encode(['success' => true, 'message' => 'Email sent successfully']);

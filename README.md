@@ -17,7 +17,7 @@ O conteúdo destaca desenvolvimento web (React, Next.js, Supabase), automações
 - Seções de sobre, serviços, stack tecnológica, carreira e formação.
 - Área de certificados e cursos.
 - Projetos em destaque com filtros por categoria.
-- Formulário de contato integrado ao Web3Forms.
+- Formulário de contato via PHP (`send-contact.php`) na Hostinger.
 - Botão para download do currículo em PDF.
 - Layout responsivo para desktop, tablet e celular.
 - Estados acessíveis para navegação por teclado e redução de movimento.
@@ -29,7 +29,7 @@ O conteúdo destaca desenvolvimento web (React, Next.js, Supabase), automações
 - CSS3
 - JavaScript (vanilla)
 - i18n.js (traduções PT/EN)
-- Web3Forms
+- PHP (envio de e-mail na Hostinger)
 - Lucide Icons via CDN
 - Google Fonts
 
@@ -50,7 +50,7 @@ O conteúdo destaca desenvolvimento web (React, Next.js, Supabase), automações
 └── README.md
 ```
 
-> `config.php` (com a Access Key real) fica **apenas no servidor** e não entra no Git.
+> `config.php` (com os e-mails de envio) fica **apenas no servidor** e não entra no Git.
 
 ## Como executar localmente
 
@@ -82,15 +82,24 @@ O idioma padrão é **inglês (EN)**. A escolha do usuário é persistida em `lo
 
 ## Formulário de contato
 
-O formulário envia os dados para `send-contact.php`, um script PHP na própria hospedagem. A **Access Key do Web3Forms fica apenas no servidor**, no arquivo `config.php` (não versionado no Git).
+O formulário envia os dados para `send-contact.php`, que usa a função `mail()` do PHP na Hostinger. **Nenhuma API key fica exposta** no site ou no GitHub.
 
-### Configuração local / Hostinger
+### Configuração na Hostinger
 
-1. Copie `config.example.php` para `config.php`.
-2. Substitua `SUA_ACCESS_KEY_AQUI` pela sua chave do [Web3Forms](https://web3forms.com).
-3. Mantenha `config.php` **fora do Git** (já está no `.gitignore`).
+1. Crie um e-mail no seu domínio (ex.: `noreply@rafaeladsdev.com`) em **hPanel → E-mails → Contas de e-mail**.
+2. Dentro de `public_html`, crie o arquivo `config.php` (não versionado no Git):
 
-O `send-contact.php` repassa o formulário para a API do Web3Forms e devolve a resposta em JSON para o `script.js`.
+```php
+<?php
+define('CONTACT_EMAIL_TO', 'rafaelarcanjods05@gmail.com');
+define('CONTACT_EMAIL_FROM', 'noreply@rafaeladsdev.com');
+define('CONTACT_FROM_NAME', 'Site Rafael Arcanjo');
+```
+
+3. Envie o `send-contact.php` atualizado para `public_html`.
+4. Teste o formulário na seção **Contato**.
+
+> O Web3Forms no plano gratuito **não permite** envio pelo servidor (PHP). Por isso o formulário usa o e-mail da própria Hostinger.
 
 ### Hospedagem na Hostinger
 
@@ -111,45 +120,41 @@ Veja o passo a passo completo na seção **Deploy na Hostinger** abaixo.
 
 > Se já existir um `index.html` antigo, substitua pelos arquivos novos.
 
-### 2. Criar o `config.php` (chave secreta)
+### 2. Criar e-mail no domínio
 
-1. No Gerenciador de arquivos, dentro de `public_html`, clique em **Novo arquivo**.
+1. No hPanel: **E-mails** → **Contas de e-mail** → **Criar conta de e-mail**.
+2. Crie algo como `noreply@rafaeladsdev.com` (ou `contato@rafaeladsdev.com`).
+3. Anote a senha — você pode precisar depois se for usar SMTP.
+
+### 3. Criar o `config.php` (dentro de `public_html`)
+
+1. No Gerenciador de arquivos, dentro de **`public_html`**, clique em **Novo arquivo**.
 2. Nomeie como **`config.php`**.
 3. Edite o arquivo e cole:
 
 ```php
 <?php
-define('WEB3FORMS_ACCESS_KEY', 'COLE_SUA_ACCESS_KEY_AQUI');
+define('CONTACT_EMAIL_TO', 'rafaelarcanjods05@gmail.com');
+define('CONTACT_EMAIL_FROM', 'noreply@rafaeladsdev.com');
+define('CONTACT_FROM_NAME', 'Site Rafael Arcanjo');
 ```
 
-4. Troque `COLE_SUA_ACCESS_KEY_AQUI` pela chave real do Web3Forms.
-5. Salve.
+4. Ajuste os e-mails se necessário e **salve**.
 
-**Importante:** não faça upload do `config.php` para o GitHub. Crie ele só na Hostinger.
-
-### 3. Gerar uma nova Access Key (recomendado)
-
-Como a chave antiga já ficou pública no GitHub:
-
-1. Acesse [web3forms.com](https://web3forms.com).
-2. Gere uma **nova Access Key** para seu e-mail.
-3. Use a chave nova no `config.php` da Hostinger.
-4. Em **Allowed Domains**, adicione seu domínio:
-   - `seudominio.com`
-   - `www.seudominio.com`
+**Importante:** o `config.php` deve ficar em `public_html`, na mesma pasta que `send-contact.php`. Não envie para o GitHub.
 
 ### 4. Verificar se o PHP está ativo
 
 O plano Business da Hostinger suporta PHP. Para testar:
 
-1. Acesse `https://seudominio.com/send-contact.php` no navegador.
+1. Acesse `https://rafaeladsdev.com/send-contact.php` no navegador.
 2. Deve aparecer um JSON com `"success": false` e `"Method not allowed"` — isso é normal (o script só aceita POST).
 
 Se aparecer erro 404, confira se `send-contact.php` está em `public_html`.
 
 ### 5. Testar o formulário
 
-1. Abra `https://seudominio.com`.
+1. Abra `https://rafaeladsdev.com`.
 2. Vá até a seção **Contato**.
 3. Preencha e envie uma mensagem de teste.
 4. Confira se o e-mail chegou e se a mensagem de sucesso aparece no site.
