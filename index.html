@@ -16,18 +16,18 @@
     <meta property="og:site_name" content="Rafael Arcanjo">
     <meta property="og:title" content="Rafael Arcanjo | Desenvolvedor Web — Automações e IA Aplicada">
     <meta property="og:description" content="Projetos, experiência, certificados e formas de contato de Rafael Arcanjo.">
-    <meta property="og:image" content="assets/avatar.png">
+    <meta property="og:image" content="https://rafaeladsdev.com/assets/avatar.png">
     <meta property="og:image:alt" content="Foto profissional de Rafael Arcanjo">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Rafael Arcanjo | Desenvolvedor Web — Automações e IA Aplicada">
     <meta name="twitter:description" content="Currículo digital com projetos, experiência e certificados.">
-    <meta name="twitter:image" content="assets/avatar.png">
+    <meta name="twitter:image" content="https://rafaeladsdev.com/assets/avatar.png">
 
     <!-- Google Fonts: Outfit (Display), Inter (Body) and JetBrains Mono (Code/Badges) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="preload" as="image" href="assets/avatar.png">
+    <link rel="preload" as="image" href="/assets/avatar.png" fetchpriority="high">
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -133,10 +133,10 @@
                     </div>
                 </div>
                 
-                <div class="hero-image-wrapper fade-in-up delay-200">
+                <div class="hero-image-wrapper">
                     <div class="avatar-container">
-                        <div class="avatar-border-glow"></div>
-                        <img src="assets/avatar.png" alt="Rafael Arcanjo" class="avatar-image" width="270" height="270" decoding="async" fetchpriority="high">
+                        <div class="avatar-border-glow" aria-hidden="true"></div>
+                        <img src="/assets/avatar.png" alt="Rafael Arcanjo" class="avatar-image" width="270" height="270" loading="eager" decoding="sync" fetchpriority="high">
                     </div>
                 </div>
             </div>
