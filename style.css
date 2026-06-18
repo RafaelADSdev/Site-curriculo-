@@ -694,7 +694,7 @@ section {
    ========================================================================== */
 .stack-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(6, 1fr);
     gap: 24px;
 }
 
@@ -704,6 +704,15 @@ section {
     border-radius: 16px;
     padding: 30px;
     transition: var(--transition-normal);
+    grid-column: span 2;
+}
+
+.stack-category:nth-child(4) {
+    grid-column: 2 / span 2;
+}
+
+.stack-category:nth-child(5) {
+    grid-column: 4 / span 2;
 }
 
 .stack-category:hover {
@@ -1257,6 +1266,12 @@ section {
     .stack-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+    }
+
+    .stack-category,
+    .stack-category:nth-child(4),
+    .stack-category:nth-child(5) {
+        grid-column: auto;
     }
     
     .timeline-grid-layout {
