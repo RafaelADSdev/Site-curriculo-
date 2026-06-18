@@ -23,33 +23,17 @@
     <meta name="twitter:description" content="Currículo digital com projetos, experiência e certificados.">
     <meta name="twitter:image" content="https://rafaeladsdev.com/assets/avatar.png">
 
-    <!-- Google Fonts (async, pesos reduzidos) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
-    <link rel="preload" as="image" href="/assets/avatar.webp" type="image/webp" fetchpriority="high">
-    
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=4">
+    <!-- CSS crítico + stylesheet assíncrono (sem Google Fonts — system fonts) -->
+    <link rel="preload" as="image" href="/assets/avatar-220.webp" type="image/webp" media="(max-width: 768px)" fetchpriority="high">
+    <link rel="preload" as="image" href="/assets/avatar.webp" type="image/webp" media="(min-width: 769px)" fetchpriority="high">
+    <style>
+:root{--bg-dark:#030303;--text-primary:#fff;--text-secondary:#9ca3af;--primary:#a855f7;--primary-light:#c084fc;--secondary:#3b82f6;--border-color:rgba(255,255,255,.06);--font-heading:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;--font-body:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;--font-code:ui-monospace,'Cascadia Code','Segoe UI Mono',monospace}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{font-size:16px}body{background:var(--bg-dark);color:var(--text-secondary);font-family:var(--font-body);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased;overflow-x:hidden}a{color:inherit;text-decoration:none}.container{max-width:1120px;margin:0 auto;padding:0 24px;width:100%}.navbar{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:14px 0;background:rgba(3,3,3,.96)}.nav-container{max-width:1120px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}.logo{display:flex;align-items:center;font-family:var(--font-heading);font-weight:800;font-size:1.3rem}.logo-text{color:var(--text-primary)}.logo-bracket{color:var(--primary-light);font-family:var(--font-code)}.nav-menu{display:none}.nav-actions{display:flex;align-items:center;gap:16px}.lang-toggle{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:8px;color:var(--text-secondary);font-size:.78rem;border:none;cursor:pointer}.mobile-toggle{display:flex;background:transparent;border:none;color:var(--text-primary);padding:6px;cursor:pointer}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 24px;border-radius:9999px;font-weight:600;font-size:.9rem;border:none;cursor:pointer}.btn-sm{padding:8px 16px;font-size:.82rem}.btn-gradient{background:linear-gradient(135deg,var(--primary) 0%,var(--secondary) 100%);color:var(--text-primary)}.btn-ghost{background:transparent;border:1px solid var(--border-color);color:var(--text-primary)}.hero-section{min-height:100vh;display:flex;align-items:center;padding:140px 0 80px}.hero-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:center;text-align:center}.hero-image-wrapper{order:-1;display:flex;justify-content:center}.hero-content{display:flex;flex-direction:column;align-items:center}.badge-tag{background:rgba(168,85,247,.08);border:1px solid rgba(168,85,247,.25);padding:6px 14px;border-radius:100px;font-size:.75rem;color:var(--primary-light);display:inline-flex;align-items:center;gap:8px;margin-bottom:24px}.pulse-dot{width:7px;height:7px;background:#22c55e;border-radius:50%}.hero-title{font-family:var(--font-heading);font-size:clamp(2rem,8vw,2.8rem);font-weight:900;color:var(--text-primary);line-height:1.05;margin-bottom:14px}.hero-subtitle{font-size:clamp(1.1rem,4vw,1.4rem);font-weight:500;color:var(--text-primary);margin-bottom:24px}.hero-description{font-size:1rem;color:var(--text-secondary);margin-bottom:32px;max-width:560px;line-height:1.7}.hero-buttons{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center}.avatar-container{position:relative;width:220px;height:220px;border-radius:50%;display:flex;align-items:center;justify-content:center;isolation:isolate}.avatar-border-glow{position:absolute;width:102%;height:102%;border-radius:50%;background:linear-gradient(135deg,var(--primary) 0%,var(--secondary) 100%);opacity:.45;z-index:0}.avatar-image{position:relative;z-index:1;width:100%;height:100%;border-radius:50%;object-fit:cover;border:4px solid var(--bg-dark)}.icon{width:24px;height:24px;stroke:currentColor;fill:none;flex-shrink:0}@media(min-width:993px){.nav-menu{display:flex;align-items:center;gap:28px}.mobile-toggle{display:none}.hero-grid{grid-template-columns:1.2fr .8fr;text-align:left}.hero-content{align-items:flex-start}.hero-image-wrapper{order:0}.hero-buttons{justify-content:flex-start}.navbar{background:transparent;padding:24px 0}.avatar-container{width:270px;height:270px}}
+    </style>
+    <link rel="preload" href="style.css?v=5" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css?v=5"></noscript>
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Rafael Arcanjo",
-        "jobTitle": "Desenvolvedor Web — Automações e IA Aplicada",
-        "email": "mailto:rafaelarcanjods05@gmail.com",
-        "sameAs": [
-            "https://github.com/RafaelADSdev",
-            "www.linkedin.com/in/rafaeladsdev"
-        ],
-        "knowsAbout": ["React", "Next.js", "TypeScript", "Supabase", "n8n", "IA Aplicada", "Automações"]
-    }
-    </script>
 </head>
 <body>
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
@@ -110,7 +94,7 @@
         <!-- 1. Hero Section -->
         <section id="home" class="hero-section">
             <div class="container hero-grid">
-                <div class="hero-content fade-in-up">
+                <div class="hero-content">
                     <div class="badge-tag">
                         <span class="pulse-dot"></span>
                         <span data-i18n="hero.badge">Disponível para novos projetos</span>
@@ -149,8 +133,9 @@
                     <div class="avatar-container">
                         <div class="avatar-border-glow" aria-hidden="true"></div>
                         <picture>
+                            <source media="(max-width: 768px)" srcset="/assets/avatar-220.webp" type="image/webp" width="220" height="220">
                             <source srcset="/assets/avatar-540.webp 2x, /assets/avatar.webp 1x" type="image/webp">
-                            <img src="/assets/avatar.png" alt="Rafael Arcanjo" class="avatar-image" width="270" height="270" loading="eager" decoding="async" fetchpriority="high">
+                            <img src="/assets/avatar.png" alt="Rafael Arcanjo" class="avatar-image" width="270" height="270" sizes="(max-width: 768px) 220px, 270px" loading="eager" decoding="async" fetchpriority="high">
                         </picture>
                     </div>
                 </div>
@@ -879,6 +864,20 @@
     </footer>
 
     <!-- Script Files -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Rafael Arcanjo",
+        "jobTitle": "Desenvolvedor Web — Automações e IA Aplicada",
+        "email": "mailto:rafaelarcanjods05@gmail.com",
+        "sameAs": [
+            "https://github.com/RafaelADSdev",
+            "www.linkedin.com/in/rafaeladsdev"
+        ],
+        "knowsAbout": ["React", "Next.js", "TypeScript", "Supabase", "n8n", "IA Aplicada", "Automações"]
+    }
+    </script>
     <script src="i18n.js" defer></script>
     <script src="script.js" defer></script>
 </body>

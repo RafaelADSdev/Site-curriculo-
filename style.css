@@ -21,9 +21,9 @@
     --text-muted: #6b7280;               /* Slate Gray 500 */
     
     /* Typography */
-    --font-heading: 'Outfit', system-ui, sans-serif;
-    --font-body: 'Inter', system-ui, sans-serif;
-    --font-code: 'JetBrains Mono', ui-monospace, monospace;
+    --font-heading: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-code: ui-monospace, 'Cascadia Code', 'Segoe UI Mono', monospace;
     
     /* Transitions & Curves */
     --ease-normal: cubic-bezier(0.16, 1, 0.3, 1);
