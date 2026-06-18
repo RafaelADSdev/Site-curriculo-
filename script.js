@@ -1,31 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize Lucide Icons
-    if (window.lucide) {
-        lucide.createIcons();
-    }
-
     /* ==========================================================================
        MOBILE MENU TOGGLE
        ========================================================================== */
     const mobileToggle = document.getElementById('mobileToggle');
     const navMenu = document.getElementById('navMenu');
     const menuIcon = document.getElementById('menuIcon');
+    const menuIconUse = menuIcon ? menuIcon.querySelector('use') : null;
+
+    const setMenuIcon = (isOpen) => {
+        if (!menuIconUse) return;
+        menuIconUse.setAttribute('href', isOpen ? '#icon-x' : '#icon-menu');
+    };
 
     if (mobileToggle && navMenu) {
         mobileToggle.addEventListener('click', () => {
             const isOpen = navMenu.classList.toggle('open');
             mobileToggle.setAttribute('aria-expanded', String(isOpen));
+            setMenuIcon(isOpen);
             
-            // Toggle icon menu / close
             if (isOpen) {
-                menuIcon.setAttribute('data-lucide', 'x');
-                document.body.style.overflow = 'hidden'; // Lock scrolling
+                document.body.style.overflow = 'hidden';
             } else {
-                menuIcon.setAttribute('data-lucide', 'menu');
                 document.body.style.overflow = '';
-            }
-            if (window.lucide) {
-                lucide.createIcons();
             }
         });
 
@@ -35,13 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('open');
                 mobileToggle.setAttribute('aria-expanded', 'false');
-                if (menuIcon) {
-                    menuIcon.setAttribute('data-lucide', 'menu');
-                }
+                setMenuIcon(false);
                 document.body.style.overflow = '';
-                if (window.lucide) {
-                    lucide.createIcons();
-                }
             });
         });
     }

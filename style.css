@@ -21,9 +21,9 @@
     --text-muted: #6b7280;               /* Slate Gray 500 */
     
     /* Typography */
-    --font-heading: 'Outfit', sans-serif;
-    --font-body: 'Inter', sans-serif;
-    --font-code: 'JetBrains Mono', monospace;
+    --font-heading: 'Outfit', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-code: 'JetBrains Mono', ui-monospace, monospace;
     
     /* Transitions & Curves */
     --ease-normal: cubic-bezier(0.16, 1, 0.3, 1);
@@ -590,6 +590,19 @@ section {
     animation: bounce 2s infinite;
 }
 
+.icon {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    fill: none;
+    flex-shrink: 0;
+}
+
+.cert-hours .icon {
+    width: 14px;
+    height: 14px;
+}
+
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
     40% { transform: translateY(-8px); }
@@ -679,6 +692,10 @@ section {
     background: rgba(168, 85, 247, 0.08);
     border: 1px solid rgba(168, 85, 247, 0.25);
     margin-bottom: 20px;
+}
+
+.card-icon-box .icon {
+    color: var(--primary-light);
 }
 
 .ref-card h3 {
@@ -1663,6 +1680,44 @@ section {
 
     a {
         color: var(--text-primary) !important;
+    }
+}
+
+.about-section,
+.services-section,
+.stack-section,
+.timeline-section,
+.certifications-section,
+.projects-section,
+.contact-section {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
+}
+
+@media (max-width: 768px) {
+    .aurora {
+        display: none;
+    }
+
+    .navbar,
+    .nav-menu.open {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: rgba(3, 3, 3, 0.96);
+    }
+
+    .avatar-border-glow {
+        filter: none;
+        opacity: 0.45;
+    }
+
+    .card-glow {
+        display: none;
+    }
+
+    .bounce-arrow,
+    .pulse-dot {
+        animation: none;
     }
 }
 

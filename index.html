@@ -23,20 +23,19 @@
     <meta name="twitter:description" content="Currículo digital com projetos, experiência e certificados.">
     <meta name="twitter:image" content="https://rafaeladsdev.com/assets/avatar.png">
 
-    <!-- Google Fonts: Outfit (Display), Inter (Body) and JetBrains Mono (Code/Badges) -->
+    <!-- Google Fonts (async, pesos reduzidos) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="preload" as="image" href="/assets/avatar.png" fetchpriority="high">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
+    <link rel="preload" as="image" href="/assets/avatar.webp" type="image/webp" fetchpriority="high">
     
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     
-    <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -53,6 +52,19 @@
     </script>
 </head>
 <body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+        <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></symbol>
+        <symbol id="icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+        <symbol id="icon-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+        <symbol id="icon-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+        <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+        <symbol id="icon-brain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></symbol>
+        <symbol id="icon-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></symbol>
+        <symbol id="icon-cpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></symbol>
+        <symbol id="icon-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+        <symbol id="icon-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+        <symbol id="icon-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></symbol>
+    </svg>
     <!-- Aurora background glows -->
     <div class="aurora aurora-1"></div>
     <div class="aurora aurora-2"></div>
@@ -86,7 +98,7 @@
                     <span data-i18n="nav.cv">Currículo</span>
                 </a>
                 <button type="button" class="mobile-toggle" id="mobileToggle" data-i18n-aria="nav.openMenu" aria-label="Abrir Menu" aria-controls="navMenu" aria-expanded="false">
-                    <i data-lucide="menu" id="menuIcon"></i>
+                    <svg class="icon" id="menuIcon" aria-hidden="true"><use href="#icon-menu"></use></svg>
                 </button>
             </div>
         </div>
@@ -136,13 +148,16 @@
                 <div class="hero-image-wrapper">
                     <div class="avatar-container">
                         <div class="avatar-border-glow" aria-hidden="true"></div>
-                        <img src="/assets/avatar.png" alt="Rafael Arcanjo" class="avatar-image" width="270" height="270" loading="eager" decoding="sync" fetchpriority="high">
+                        <picture>
+                            <source srcset="/assets/avatar-540.webp 2x, /assets/avatar.webp 1x" type="image/webp">
+                            <img src="/assets/avatar.png" alt="Rafael Arcanjo" class="avatar-image" width="270" height="270" loading="eager" decoding="async" fetchpriority="high">
+                        </picture>
                     </div>
                 </div>
             </div>
             
             <a href="#about" class="scroll-indicator" data-i18n-aria="hero.scrollAbout" aria-label="Ir para Sobre mim">
-                <i data-lucide="chevron-down" class="bounce-arrow"></i>
+                <svg class="icon bounce-arrow" aria-hidden="true"><use href="#icon-chevron-down"></use></svg>
             </a>
         </section>
 
@@ -415,7 +430,7 @@
                         <div class="card-glow"></div>
                         <div class="cert-header">
                             <div class="card-icon-box text-purple">
-                                <i data-lucide="code"></i>
+                                <svg class="icon" aria-hidden="true"><use href="#icon-code"></use></svg>
                             </div>
                             <div class="cert-meta">
                                 <span class="cert-issuer">Udemy</span>
@@ -425,7 +440,7 @@
                         <h3 class="cert-title" data-i18n="certifications.cert1Title">Formação Front-end - HTML, CSS, JavaScript, React e +</h3>
                         <div class="cert-details">
                             <span class="cert-hours">
-                                <i data-lucide="clock"></i> 51.5 <span data-i18n="certifications.hours">horas</span>
+                                <svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg> 51.5 <span data-i18n="certifications.hours">horas</span>
                             </span>
                             <p class="cert-topics" data-i18n="certifications.cert1Topics">HTML5, CSS3, JavaScript ES6+, React, Hooks, Redux, Node.js e ferramentas do ecossistema.</p>
                         </div>
@@ -439,7 +454,7 @@
                         <div class="card-glow"></div>
                         <div class="cert-header">
                             <div class="card-icon-box text-purple">
-                                <i data-lucide="brain"></i>
+                                <svg class="icon" aria-hidden="true"><use href="#icon-brain"></use></svg>
                             </div>
                             <div class="cert-meta">
                                 <span class="cert-issuer">Fundação Bradesco &amp; Microsoft</span>
@@ -449,7 +464,7 @@
                         <h3 class="cert-title" data-i18n="certifications.cert2Title">AI-900 - Fundamentos de IA no Azure</h3>
                         <div class="cert-details">
                             <span class="cert-hours">
-                                <i data-lucide="clock"></i> 16 <span data-i18n="certifications.hours">horas</span>
+                                <svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg> 16 <span data-i18n="certifications.hours">horas</span>
                             </span>
                             <p class="cert-topics" data-i18n="certifications.cert2Topics">Conceitos fundamentais de Inteligência Artificial, Machine Learning, Visão Computacional, NLP e serviços da Azure AI.</p>
                         </div>
@@ -463,7 +478,7 @@
                         <div class="card-glow"></div>
                         <div class="cert-header">
                             <div class="card-icon-box text-purple">
-                                <i data-lucide="zap"></i>
+                                <svg class="icon" aria-hidden="true"><use href="#icon-zap"></use></svg>
                             </div>
                             <div class="cert-meta">
                                 <span class="cert-issuer">Rocketseat</span>
@@ -473,7 +488,7 @@
                         <h3 class="cert-title" data-i18n="certifications.cert3Title">Automação com n8n</h3>
                         <div class="cert-details">
                             <span class="cert-hours">
-                                <i data-lucide="clock"></i> 3 <span data-i18n="certifications.hours">horas</span>
+                                <svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg> 3 <span data-i18n="certifications.hours">horas</span>
                             </span>
                             <p class="cert-topics" data-i18n="certifications.cert3Topics">Automação de processos, tratamento e validação de dados, controle de fluxo (If, Loop, Merge) e integrações de APIs externas.</p>
                         </div>
@@ -487,7 +502,7 @@
                         <div class="card-glow"></div>
                         <div class="cert-header">
                             <div class="card-icon-box text-purple">
-                                <i data-lucide="cpu"></i>
+                                <svg class="icon" aria-hidden="true"><use href="#icon-cpu"></use></svg>
                             </div>
                             <div class="cert-meta">
                                 <span class="cert-issuer">Rocketseat &amp; SENAC</span>
@@ -497,7 +512,7 @@
                         <h3 class="cert-title" data-i18n="certifications.cert4Title">SENAC TakeOff 2025.2</h3>
                         <div class="cert-details">
                             <span class="cert-hours">
-                                <i data-lucide="clock"></i> 8 <span data-i18n="certifications.hours">horas</span>
+                                <svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg> 8 <span data-i18n="certifications.hours">horas</span>
                             </span>
                             <p class="cert-topics" data-i18n="certifications.cert4Topics">Tecnologias Emergentes, Learning Agility, Fundamentos de DevOps, Primeiros passos com Docker e Prompt Engineering.</p>
                         </div>
@@ -511,7 +526,7 @@
                         <div class="card-glow"></div>
                         <div class="cert-header">
                             <div class="card-icon-box text-purple">
-                                <i data-lucide="shield"></i>
+                                <svg class="icon" aria-hidden="true"><use href="#icon-shield"></use></svg>
                             </div>
                             <div class="cert-meta">
                                 <span class="cert-issuer">Cisco Networking Academy</span>
@@ -521,7 +536,7 @@
                         <h3 class="cert-title" data-i18n="certifications.cert5Title">Gerenciamento de Ameaças Cibernéticas</h3>
                         <div class="cert-details">
                             <span class="cert-hours">
-                                <i data-lucide="clock"></i> <span data-i18n="certifications.fullLoad">Carga Completa</span>
+                                <svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg> <span data-i18n="certifications.fullLoad">Carga Completa</span>
                             </span>
                             <p class="cert-topics" data-i18n="certifications.cert5Topics">Princípios de segurança da informação, detecção de ameaças cibernéticas, proteção de dados e políticas de segurança em rede.</p>
                         </div>
@@ -535,7 +550,7 @@
                         <div class="card-glow"></div>
                         <div class="cert-header">
                             <div class="card-icon-box text-purple">
-                                <i data-lucide="github"></i>
+                                <svg class="icon" aria-hidden="true"><use href="#icon-github"></use></svg>
                             </div>
                             <div class="cert-meta">
                                 <span class="cert-issuer">Fundação Bradesco &amp; Microsoft</span>
@@ -545,7 +560,7 @@
                         <h3 class="cert-title" data-i18n="certifications.cert6Title">Soluções de IA no GitHub</h3>
                         <div class="cert-details">
                             <span class="cert-hours">
-                                <i data-lucide="clock"></i> 15 <span data-i18n="certifications.hours">horas</span>
+                                <svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg> 15 <span data-i18n="certifications.hours">horas</span>
                             </span>
                             <p class="cert-topics" data-i18n="certifications.cert6Topics">IA Generativa no desenvolvimento, automações com GitHub Actions, Copilot e práticas modernas no controle de versão Git.</p>
                         </div>
@@ -559,7 +574,7 @@
                         <div class="card-glow"></div>
                         <div class="cert-header">
                             <div class="card-icon-box text-purple">
-                                <i data-lucide="calendar"></i>
+                                <svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg>
                             </div>
                             <div class="cert-meta">
                                 <span class="cert-issuer">Campus Party Brasil</span>
@@ -569,7 +584,7 @@
                         <h3 class="cert-title" data-i18n="certifications.cert7Title">CPNordeste - Participante</h3>
                         <div class="cert-details">
                             <span class="cert-hours">
-                                <i data-lucide="clock"></i> 33 <span data-i18n="certifications.hours">horas</span>
+                                <svg class="icon" aria-hidden="true"><use href="#icon-clock"></use></svg> 33 <span data-i18n="certifications.hours">horas</span>
                             </span>
                             <p class="cert-topics" data-i18n="certifications.cert7Topics">Participação presencial em workshops, hackathons e palestras de inovação, empreendedorismo e desenvolvimento na Campus Party.</p>
                         </div>
@@ -864,7 +879,7 @@
     </footer>
 
     <!-- Script Files -->
-    <script src="i18n.js"></script>
-    <script src="script.js"></script>
+    <script src="i18n.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
