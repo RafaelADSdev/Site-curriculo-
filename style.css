@@ -696,8 +696,9 @@ section {
    4. STACK TECNOLÓGICA
    ========================================================================== */
 .stack-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 24px;
 }
 
@@ -707,15 +708,15 @@ section {
     border-radius: 16px;
     padding: 30px;
     transition: var(--transition-normal);
-    grid-column: span 2;
+    flex: 1 1 100%;
+    max-width: 100%;
 }
 
-.stack-category:nth-child(4) {
-    grid-column: 2 / span 2;
-}
-
-.stack-category:nth-child(5) {
-    grid-column: 4 / span 2;
+@media (min-width: 993px) {
+    .stack-category {
+        flex: 1 1 calc((100% - 48px) / 3);
+        max-width: calc((100% - 48px) / 3);
+    }
 }
 
 .stack-category:hover {
@@ -1267,14 +1268,12 @@ section {
     }
     
     .stack-grid {
-        grid-template-columns: 1fr;
         gap: 20px;
     }
 
-    .stack-category,
-    .stack-category:nth-child(4),
-    .stack-category:nth-child(5) {
-        grid-column: auto;
+    .stack-category {
+        flex: 1 1 100%;
+        max-width: 100%;
     }
     
     .timeline-grid-layout {
