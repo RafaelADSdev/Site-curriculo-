@@ -144,7 +144,11 @@ const translations = {
             p5Desc: 'Plataforma PWA para gestão de casos e laudos, com apoio de análise preditiva por inteligência artificial.',
             p5Li1: '› Registro e acompanhamento de ocorrências integrando backend Python (Flask) ao fluxo web.',
             p5Li2: '› Classificação preditiva de tipos de ocorrência com base em perfil e contexto do caso.',
-            p5Li3: '› Modelo de Regressão Logística integrado à aplicação, com suporte offline via PWA Service Worker.'
+            p5Li3: '› Modelo de Regressão Logística integrado à aplicação, com suporte offline via PWA Service Worker.',
+            p6Desc: 'Painel em tempo real para exibição em TV no salão — fila de atendimento presencial integrada ao Bitrix24, com dados sincronizados via Supabase Realtime.',
+            p6Li1: '› Fila FIFO de suportes presenciais com atualização instantânea via Supabase Realtime, sem refresh manual.',
+            p6Li2: '› Integração Bitrix24 via Edge Function (webhook de deals) com identificação automática de solicitante, equipe e superintendência.',
+            p6Li3: '› Painel TV com ticket ativo, último resolvido, fila completa, filtros por superintendência e sincronização automática a cada 3 minutos.'
         },
         contact: {
             tag: '08 // CONTATO',
@@ -323,7 +327,11 @@ const translations = {
             p5Desc: 'PWA platform for case and report management, with predictive analysis support through artificial intelligence.',
             p5Li1: '› Registration and tracking of incidents integrating a Python (Flask) backend into the web flow.',
             p5Li2: '› Predictive classification of incident types based on profile and case context.',
-            p5Li3: '› Logistic Regression model integrated into the application, with offline support via PWA Service Worker.'
+            p5Li3: '› Logistic Regression model integrated into the application, with offline support via PWA Service Worker.',
+            p6Desc: 'Real-time dashboard for TV display in the office — on-site support queue integrated with Bitrix24, with data synced via Supabase Realtime.',
+            p6Li1: '› FIFO queue for on-site support with instant updates via Supabase Realtime, no manual refresh needed.',
+            p6Li2: '› Bitrix24 integration via Edge Function (deal webhooks) with automatic identification of requester, team, and superintendency.',
+            p6Li3: '› TV panel with active ticket, last resolved case, full queue, superintendency filters, and automatic sync every 3 minutes.'
         },
         contact: {
             tag: '08 // CONTACT',
