@@ -148,7 +148,11 @@ const translations = {
             p6Desc: 'Painel em tempo real para exibição em TV no salão — fila de atendimento presencial integrada ao Bitrix24, com dados sincronizados via Supabase Realtime.',
             p6Li1: '› Fila FIFO de suportes presenciais com atualização instantânea via Supabase Realtime, sem refresh manual.',
             p6Li2: '› Integração Bitrix24 via Edge Function (webhook de deals) com identificação automática de solicitante, equipe e superintendência.',
-            p6Li3: '› Painel TV com ticket ativo, último resolvido, fila completa, filtros por superintendência e sincronização automática a cada 3 minutos.'
+            p6Li3: '› Painel TV com ticket ativo, último resolvido, fila completa, filtros por superintendência e sincronização automática a cada 3 minutos.',
+            p7Desc: 'Painel operacional para acompanhar negociações do Bitrix24 da Superintendência Stüpp — KPIs, funis comerciais, Kanban com drag-and-drop e exportação de relatórios.',
+            p7Li1: '› KPIs consolidados de duas esteiras comerciais, funis, evolução temporal e leads por diretoria, equipe e fonte.',
+            p7Li2: '› Kanban operacional com arrastar e soltar, transferência individual e em lote, sincronizado diretamente com o CRM Bitrix24.',
+            p7Li3: '› Filtros por período, diretoria, equipe e roleta; exportação PDF/Excel; auth via Supabase e atualização automática a cada 10 segundos.'
         },
         contact: {
             tag: '08 // CONTATO',
@@ -331,7 +335,11 @@ const translations = {
             p6Desc: 'Real-time dashboard for TV display in the office — on-site support queue integrated with Bitrix24, with data synced via Supabase Realtime.',
             p6Li1: '› FIFO queue for on-site support with instant updates via Supabase Realtime, no manual refresh needed.',
             p6Li2: '› Bitrix24 integration via Edge Function (deal webhooks) with automatic identification of requester, team, and superintendency.',
-            p6Li3: '› TV panel with active ticket, last resolved case, full queue, superintendency filters, and automatic sync every 3 minutes.'
+            p6Li3: '› TV panel with active ticket, last resolved case, full queue, superintendency filters, and automatic sync every 3 minutes.',
+            p7Desc: 'Operational dashboard to track Bitrix24 deals for the Stüpp Superintendency — KPIs, commercial funnels, drag-and-drop Kanban, and report export.',
+            p7Li1: '› Consolidated KPIs across two commercial pipelines, funnels, timeline evolution, and leads by directorate, team, and source.',
+            p7Li2: '› Operational Kanban with drag-and-drop, single and batch transfers synced directly with the Bitrix24 CRM.',
+            p7Li3: '› Filters by period, directorate, team, and roulette; PDF/Excel export; Supabase auth and automatic refresh every 10 seconds.'
         },
         contact: {
             tag: '08 // CONTACT',
