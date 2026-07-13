@@ -152,7 +152,11 @@ const translations = {
             p7Desc: 'Painel operacional para acompanhar negociações do Bitrix24 da Superintendência Stüpp — KPIs, funis comerciais, Kanban com drag-and-drop e exportação de relatórios.',
             p7Li1: '› KPIs consolidados de duas esteiras comerciais, funis, evolução temporal e leads por diretoria, equipe e fonte.',
             p7Li2: '› Kanban operacional com arrastar e soltar, transferência individual e em lote, sincronizado diretamente com o CRM Bitrix24.',
-            p7Li3: '› Filtros por período, diretoria, equipe e roleta; exportação PDF/Excel; auth via Supabase e atualização automática a cada 10 segundos.'
+            p7Li3: '› Filtros por período, diretoria, equipe e roleta; exportação PDF/Excel; auth via Supabase e atualização automática a cada 10 segundos.',
+            p8Desc: 'Plataforma interna da Hub ON para gestão comercial — consolida leads, vendas, metas de VGV, campanhas Meta Ads, verbas, secretaria de vendas e portal para construtoras.',
+            p8Li1: '› Módulos integrados: Leads, Vendas, Metas, Meta Ads, Roletas Bitrix, Secretaria (CCA/SV) e Portal Construtora.',
+            p8Li2: '› Controle de acesso por módulo, sub-abas e RLS por cargo (admin, superintendente, diretor, gerente, corretor).',
+            p8Li3: '› Stack full stack com React 19 + Vite, backend Express, MariaDB e integrações Meta Ads API e FlyStart XML.'
         },
         contact: {
             tag: '08 // CONTATO',
@@ -339,7 +343,11 @@ const translations = {
             p7Desc: 'Operational dashboard to track Bitrix24 deals for the Stüpp Superintendency — KPIs, commercial funnels, drag-and-drop Kanban, and report export.',
             p7Li1: '› Consolidated KPIs across two commercial pipelines, funnels, timeline evolution, and leads by directorate, team, and source.',
             p7Li2: '› Operational Kanban with drag-and-drop, single and batch transfers synced directly with the Bitrix24 CRM.',
-            p7Li3: '› Filters by period, directorate, team, and roulette; PDF/Excel export; Supabase auth and automatic refresh every 10 seconds.'
+            p7Li3: '› Filters by period, directorate, team, and roulette; PDF/Excel export; Supabase auth and automatic refresh every 10 seconds.',
+            p8Desc: 'Internal Hub ON platform for commercial management — consolidates leads, sales, VGV targets, Meta Ads campaigns, budgets, sales secretary, and construction company portal.',
+            p8Li1: '› Integrated modules: Leads, Sales, Targets, Meta Ads, Bitrix Roulettes, Secretary (CCA/SV), and Construction Company Portal.',
+            p8Li2: '› Access control by module, sub-tabs, and row-level security by role (admin, superintendency, director, manager, broker).',
+            p8Li3: '› Full stack with React 19 + Vite, Express backend, MariaDB, and Meta Ads API and FlyStart XML integrations.'
         },
         contact: {
             tag: '08 // CONTACT',
