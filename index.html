@@ -319,7 +319,7 @@
                             <div class="ref-timeline-item">
                                 <div class="timeline-dot-active"></div>
                                 <span class="timeline-tag-date" data-i18n="experience.job1Date">01/Mai/2026 - Atual</span>
-                                <h3 data-i18n="experience.job1Title">Desenvolvedor Web</h3>
+                                <h3 data-i18n="experience.job1Title">Estágio em Desenvolvimento</h3>
                                 <span class="timeline-sub-company">HubON</span>
                                 <div class="timeline-desc">
                                     <p data-i18n="experience.job1Intro">Atuação no desenvolvimento e manutenção de aplicações web e sistemas internos da empresa, com foco em interfaces, integrações e melhoria de fluxos:</p>
@@ -336,7 +336,7 @@
                             <div class="ref-timeline-item">
                                 <div class="timeline-dot"></div>
                                 <span class="timeline-tag-date" data-i18n="experience.job2Date">05/Jan/2026 - 30/Abr/2026</span>
-                                <h3 data-i18n="experience.job2Title">Suporte de TI</h3>
+                                <h3 data-i18n="experience.job2Title">Estágio em Suporte N1</h3>
                                 <span class="timeline-sub-company">HubON</span>
                                 <div class="timeline-desc">
                                     <p data-i18n="experience.job2Intro">Experiência complementar em suporte corporativo, atendimento a usuários e manutenção de sistemas internos:</p>
@@ -346,17 +346,6 @@
                                         <li data-i18n="experience.job2Li3">› Criação de scripts Shell para automatizar instalações e tarefas repetitivas em novos setups.</li>
                                         <li data-i18n="experience.job2Li4">› Documentação de FAQ e padronização de atendimentos para reduzir o tempo médio de resolução (SLA).</li>
                                     </ul>
-                                </div>
-                            </div>
-
-                            <!-- Job 3: Freelancer -->
-                            <div class="ref-timeline-item">
-                                <div class="timeline-dot"></div>
-                                <span class="timeline-tag-date" data-i18n="experience.job3Date">2022 - 2024</span>
-                                <h3 data-i18n="experience.job3Title">Desenvolvedor Web Freelance</h3>
-                                <span class="timeline-sub-company" data-i18n="experience.job3Company">Projetos Autônomos</span>
-                                <div class="timeline-desc">
-                                    <p data-i18n="experience.job3Desc">Criação de websites estáticos, portfólios corporativos e interfaces de e-commerce locais, otimizando o layout para visualização mobile e SEO orgânico.</p>
                                 </div>
                             </div>
                         </div>
@@ -597,10 +586,106 @@
                 </div>
 
                 <div class="projects-grid">
-                    <!-- Project 1: Dashboard de Suportes Presenciais -->
+                    <!-- Project 1: Flow Focus -->
                     <div class="ref-project-card" data-category="frontend data">
                         <div class="project-header-box">
                             <span class="project-num">01</span>
+                            <span class="project-tag-cat">Next.js / Supabase / Bitrix24</span>
+                        </div>
+                        <h3>Flow Focus</h3>
+                        <p class="project-short-desc" data-i18n="projects.p9Desc">Plataforma de redistribuição e auditoria de oportunidades comerciais da Diretoria Focus — captura atômica no bolsão Bitrix24, roletas, produtividade e geofencing no escritório.</p>
+                        
+                        <ul class="project-bullet-details">
+                            <li data-i18n="projects.p9Li1">› Captura de oportunidades com RPC transacional, limite diário, auditoria (aprova/reprova) e sincronização Bitrix24 via Edge Function.</li>
+                            <li data-i18n="projects.p9Li2">› Auth Supabase com RLS por perfil/equipe, dashboard de produtividade real e roleta por valor de “Roleta Atual”.</li>
+                            <li data-i18n="projects.p9Li3">› Cerca virtual (geofencing) com sessão curta assinada — rotas operacionais só liberam dentro do perímetro do escritório.</li>
+                        </ul>
+                        
+                        <div class="project-footer-box">
+                            <div class="project-tech-tags">
+                                <span>Next.js</span>
+                                <span>TypeScript</span>
+                                <span>Supabase</span>
+                                <span>Bitrix24</span>
+                                <span>TanStack Query</span>
+                            </div>
+                            <div class="project-action-links">
+                                <a href="https://github.com/RafaelADSdev/Flow-focus" target="_blank" rel="noopener" class="project-link" aria-label="Ver Código no Github">
+                                    <span data-i18n="projects.github">GitHub</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Central de Demandas -->
+                    <div class="ref-project-card" data-category="frontend">
+                        <div class="project-header-box">
+                            <span class="project-num">02</span>
+                            <span class="project-tag-cat">React / TypeScript / Supabase</span>
+                        </div>
+                        <h3>Central de Demandas</h3>
+                        <p class="project-short-desc" data-i18n="projects.p10Desc">Sistema de gestão de demandas com projetos macro, microtarefas, tarefas avulsas, calendário, desempenho e cadastros — sincronizado com Supabase e cache local.</p>
+                        
+                        <ul class="project-bullet-details">
+                            <li data-i18n="projects.p10Li1">› Organização de demandas em projetos macro, microtarefas e tarefas avulsas com visão de calendário e desempenho.</li>
+                            <li data-i18n="projects.p10Li2">› Persistência em Supabase (tabela JSON) com localStorage como cache/fallback e migração automática na primeira sincronização.</li>
+                            <li data-i18n="projects.p10Li3">› Stack Vite + React 19 + TypeScript, pronta para deploy estático na Vercel ou Netlify.</li>
+                        </ul>
+                        
+                        <div class="project-footer-box">
+                            <div class="project-tech-tags">
+                                <span>React 19</span>
+                                <span>TypeScript</span>
+                                <span>Vite</span>
+                                <span>Supabase</span>
+                                <span>localStorage</span>
+                            </div>
+                            <div class="project-action-links">
+                                <a href="https://github.com/RafaelADSdev/central-demandas" target="_blank" rel="noopener" class="project-link" aria-label="Ver Código no Github">
+                                    <span data-i18n="projects.github">GitHub</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Dashboard Litoralize -->
+                    <div class="ref-project-card" data-category="frontend data">
+                        <div class="project-header-box">
+                            <span class="project-num">03</span>
+                            <span class="project-tag-cat">TanStack Start / Bitrix24 / Supabase</span>
+                        </div>
+                        <h3>Dashboard Litoralize</h3>
+                        <p class="project-short-desc" data-i18n="projects.p11Desc">Dashboard comercial da Hub ON para panoramas da Superintendência Jordão — consolida leads do Bitrix24 por esteira, equipe, fase do funil e corretor.</p>
+                        
+                        <ul class="project-bullet-details">
+                            <li data-i18n="projects.p11Li1">› Duas esteiras Bitrix (Comercial Geral e Econômico) com KPIs, gráfico mensal, funil ativo vs. perdas e detalhe por corretor.</li>
+                            <li data-i18n="projects.p11Li2">› Auth Supabase com papéis (Superintendente, Admin, Diretor, Líder) e gestão de acesso por visão, páginas e esteira.</li>
+                            <li data-i18n="projects.p11Li3">› Cache de 15 minutos, fallback local e proteção contra HTTP 429 — pensado para projeção em reuniões de panorama.</li>
+                        </ul>
+                        
+                        <div class="project-footer-box">
+                            <div class="project-tech-tags">
+                                <span>React 19</span>
+                                <span>TanStack Start</span>
+                                <span>TypeScript</span>
+                                <span>Bitrix24</span>
+                                <span>Supabase</span>
+                            </div>
+                            <div class="project-action-links">
+                                <a href="https://github.com/RafaelADSdev/Dashboard-Litoralize" target="_blank" rel="noopener" class="project-link" aria-label="Ver Código no Github">
+                                    <span data-i18n="projects.github">GitHub</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Dashboard de Suportes Presenciais -->
+                    <div class="ref-project-card" data-category="frontend data">
+                        <div class="project-header-box">
+                            <span class="project-num">04</span>
                             <span class="project-tag-cat">React / Supabase / Bitrix24</span>
                         </div>
                         <h3>Dashboard de Suportes Presenciais</h3>
@@ -625,18 +710,14 @@
                                     <span data-i18n="projects.github">GitHub</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                                 </a>
-                                <a href="https://dashsuportespresenciais.vercel.app" target="_blank" rel="noopener" class="project-link" aria-label="Ver Demonstração">
-                                    <span data-i18n="projects.demo">Demo</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                </a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 2: Dashboard Superintendência Stüpp -->
+                    <!-- Project 5: Dashboard Superintendência Stüpp -->
                     <div class="ref-project-card" data-category="frontend data">
                         <div class="project-header-box">
-                            <span class="project-num">02</span>
+                            <span class="project-num">05</span>
                             <span class="project-tag-cat">Next.js / Bitrix24 / Supabase</span>
                         </div>
                         <h3>Dashboard Superintendência Stüpp</h3>
@@ -661,81 +742,14 @@
                                     <span data-i18n="projects.github">GitHub</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                                 </a>
-                                <a href="https://dashboard-st-pp.vercel.app" target="_blank" rel="noopener" class="project-link" aria-label="Ver Demonstração">
-                                    <span data-i18n="projects.demo">Demo</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                </a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 3: Conta Gotas CRM -->
-                    <div class="ref-project-card" data-category="frontend data">
-                        <div class="project-header-box">
-                            <span class="project-num">03</span>
-                            <span class="project-tag-cat">React / TypeScript</span>
-                        </div>
-                        <h3>Conta Gotas CRM</h3>
-                        <p class="project-short-desc" data-i18n="projects.p1Desc">Sistema desenvolvido para organizar e acompanhar leads comerciais por meio de um painel visual e controle financeiro.</p>
-                        
-                        <ul class="project-bullet-details">
-                            <li data-i18n="projects.p1Li1">› Kanban interativo com drag-and-drop para gestão de status e priorização de leads.</li>
-                            <li data-i18n="projects.p1Li2">› Painel analítico com faturamento mensal e indicadores de conversão para apoio à operação comercial.</li>
-                            <li data-i18n="projects.p1Li3">› Interface em React e TypeScript com Context API, focada em usabilidade e organização de dados.</li>
-                        </ul>
-                        
-                        <div class="project-footer-box">
-                            <div class="project-tech-tags">
-                                <span>React</span>
-                                <span>TypeScript</span>
-                                <span>Context API</span>
-                                <span>CSS Grid</span>
-                                <span>BI</span>
-                            </div>
-                            <div class="project-action-links">
-                                <a href="#contact" class="project-link project-link-internal" aria-label="Solicitar detalhes sobre o projeto Conta Gotas CRM">
-                                    <span data-i18n="projects.requestDetails">Pedir detalhes</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 4: DevFlow Portfolio -->
+                    <!-- Project 6: Gestão de Patrimônio HubON -->
                     <div class="ref-project-card" data-category="frontend">
                         <div class="project-header-box">
-                            <span class="project-num">04</span>
-                            <span class="project-tag-cat">HTML5 / CSS / Vanilla JS</span>
-                        </div>
-                        <h3>DevFlow Portfolio</h3>
-                        <p class="project-short-desc" data-i18n="projects.p2Desc">Template de portfólio estático desenvolvido para apresentar projetos com alto desempenho e boa experiência em dispositivos móveis.</p>
-                        
-                        <ul class="project-bullet-details">
-                            <li data-i18n="projects.p2Li1">› Layout responsivo com estrutura otimizada para leitura e navegação em telas menores.</li>
-                            <li data-i18n="projects.p2Li2">› Pontuação de 100/100 no Google Lighthouse em Performance, Acessibilidade e SEO.</li>
-                            <li data-i18n="projects.p2Li3">› Animações em JavaScript puro, sem dependências pesadas, preservando leveza e fluidez.</li>
-                        </ul>
-                        
-                        <div class="project-footer-box">
-                            <div class="project-tech-tags">
-                                <span>HTML5</span>
-                                <span>CSS Variables</span>
-                                <span>JavaScript ES6</span>
-                                <span>Lighthouse 100</span>
-                            </div>
-                            <div class="project-action-links">
-                                <a href="#home" class="project-link project-link-internal" aria-label="Ver este portfólio em execução">
-                                    <span data-i18n="projects.viewPage">Ver página</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 5: Gestão de Patrimônio HubON -->
-                    <div class="ref-project-card" data-category="frontend">
-                        <div class="project-header-box">
-                            <span class="project-num">05</span>
+                            <span class="project-num">06</span>
                             <span class="project-tag-cat">HTML5 / CSS3 / Vanilla JS</span>
                         </div>
                         <h3>Gestão de Patrimônio HubON</h3>
@@ -760,18 +774,14 @@
                                     <span data-i18n="projects.github">GitHub</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                                 </a>
-                                <a href="https://gestao-de-patrimonio-hub-on.vercel.app" target="_blank" rel="noopener" class="project-link" aria-label="Ver Demonstração">
-                                    <span data-i18n="projects.demo">Demo</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                </a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 6: BBTS – Crédito de Carbono -->
+                    <!-- Project 7: BBTS – Crédito de Carbono -->
                     <div class="ref-project-card" data-category="frontend">
                         <div class="project-header-box">
-                            <span class="project-num">06</span>
+                            <span class="project-num">07</span>
                             <span class="project-tag-cat">JavaScript / Blockchain</span>
                         </div>
                         <h3>BBTS – Carbon Credits</h3>
@@ -796,18 +806,14 @@
                                     <span data-i18n="projects.github">GitHub</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                                 </a>
-                                <a href="https://bbtscompensacao.netlify.app/" target="_blank" rel="noopener" class="project-link" aria-label="Ver Demonstração">
-                                    <span data-i18n="projects.demo">Demo</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                </a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 7: Dashboard Focus -->
+                    <!-- Project 8: Dashboard Focus -->
                     <div class="ref-project-card" data-category="frontend data">
                         <div class="project-header-box">
-                            <span class="project-num">07</span>
+                            <span class="project-num">08</span>
                             <span class="project-tag-cat">TanStack Start / React / Bitrix24</span>
                         </div>
                         <h3>Dashboard Focus</h3>
@@ -832,18 +838,14 @@
                                     <span data-i18n="projects.github">GitHub</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                                 </a>
-                                <a href="https://sales-compass-visual.vercel.app" target="_blank" rel="noopener" class="project-link" aria-label="Ver Demonstração">
-                                    <span data-i18n="projects.demo">Demo</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                </a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 8: HubCore Dashboard -->
+                    <!-- Project 9: HubCore Dashboard -->
                     <div class="ref-project-card" data-category="frontend data">
                         <div class="project-header-box">
-                            <span class="project-num">08</span>
+                            <span class="project-num">09</span>
                             <span class="project-tag-cat">React / Express / MariaDB</span>
                         </div>
                         <h3>HubCore Dashboard</h3>
