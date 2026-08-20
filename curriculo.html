@@ -4,95 +4,97 @@
     <meta charset="UTF-8">
     <title>Rafael Arcanjo — Desenvolvedor Web &amp; IA Aplicada</title>
     <style>
-        @page { size: A4; margin: 14mm 16mm; }
+        @page { size: A4; margin: 12mm 14mm; }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: "Segoe UI", Inter, Arial, sans-serif;
-            font-size: 10pt;
-            line-height: 1.45;
+            font-size: 9.4pt;
+            line-height: 1.4;
             color: #1f2937;
             background: #fff;
         }
-        h1 { font-size: 22pt; font-weight: 700; color: #111827; letter-spacing: -0.02em; }
+        h1 { font-size: 20pt; font-weight: 700; color: #111827; letter-spacing: -0.02em; }
         h2 {
-            font-size: 9pt;
+            font-size: 8.5pt;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: #7c3aed;
             border-bottom: 1.5px solid #e5e7eb;
-            padding-bottom: 4px;
-            margin: 14px 0 8px;
+            padding-bottom: 3px;
+            margin: 11px 0 7px;
         }
-        h3 { font-size: 10.5pt; font-weight: 600; color: #111827; }
-        p { margin-bottom: 6px; color: #374151; }
-        ul { margin: 4px 0 8px 16px; color: #374151; }
-        li { margin-bottom: 3px; }
-        .header { margin-bottom: 12px; }
-        .subtitle { font-size: 11pt; font-weight: 600; color: #4b5563; margin: 4px 0 8px; }
+        h3 { font-size: 10pt; font-weight: 600; color: #111827; }
+        p { margin-bottom: 5px; color: #374151; }
+        ul { margin: 3px 0 6px 15px; color: #374151; }
+        li { margin-bottom: 2px; }
+        .header { margin-bottom: 8px; }
+        .subtitle { font-size: 10.5pt; font-weight: 600; color: #4b5563; margin: 3px 0 6px; }
         .contact {
-            font-size: 9pt;
+            font-size: 8.5pt;
             color: #4b5563;
-            margin-bottom: 4px;
-            line-height: 1.6;
+            margin-bottom: 2px;
+            line-height: 1.55;
         }
         .contact span + span::before {
             content: " · ";
             color: #9ca3af;
         }
-        .summary { font-size: 10pt; }
-        .meta { font-size: 9pt; color: #6b7280; margin-bottom: 2px; }
-        .company { font-size: 9.5pt; color: #7c3aed; font-weight: 600; margin-bottom: 4px; }
-        .job { margin-bottom: 10px; page-break-inside: avoid; }
+        .summary { font-size: 9.4pt; }
+        .meta { font-size: 8.5pt; color: #6b7280; margin-bottom: 1px; }
+        .company { font-size: 9pt; color: #7c3aed; font-weight: 600; margin-bottom: 3px; }
+        .job { margin-bottom: 8px; page-break-inside: avoid; }
         .skills-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 8px 16px;
+            gap: 6px 16px;
             margin-bottom: 4px;
         }
         .skill-group strong {
             display: block;
-            font-size: 9pt;
+            font-size: 8.5pt;
             color: #111827;
-            margin-bottom: 3px;
+            margin-bottom: 2px;
         }
-        .skill-group span { font-size: 9pt; color: #4b5563; }
-        .pills { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+        .skill-group span { font-size: 8.5pt; color: #4b5563; }
+        .pills { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 5px; }
         .pill {
-            font-size: 8pt;
+            font-size: 7.5pt;
             background: #f3f4f6;
             border: 1px solid #e5e7eb;
             border-radius: 4px;
-            padding: 2px 6px;
+            padding: 1px 6px;
             color: #374151;
         }
-        .project { margin-bottom: 8px; page-break-inside: avoid; }
-        .project h3 { margin-bottom: 2px; }
+        .project { margin-bottom: 6px; page-break-inside: avoid; }
+        .project h3 { margin-bottom: 1px; }
+        .project .stack { font-weight: 400; color: #6b7280; font-size: 8.5pt; }
+        .project p { margin-bottom: 0; font-size: 9pt; }
         .two-col {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 12px;
         }
-        .cert-list { font-size: 9pt; }
-        .cert-list li { margin-bottom: 4px; }
+        .cert-list { font-size: 8.5pt; }
+        .cert-list li { margin-bottom: 3px; }
         .highlight { color: #111827; font-weight: 600; }
         .badge {
             display: inline-block;
-            font-size: 8pt;
+            font-size: 7.5pt;
             font-weight: 600;
             color: #7c3aed;
             background: #f5f3ff;
             border: 1px solid #ddd6fe;
             border-radius: 4px;
             padding: 2px 8px;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
     </style>
 </head>
 <body>
 
     <header class="header">
-        <span class="badge">Disponível para novas oportunidades · Recife, PE</span>
+        <span class="badge">Disponível para novos projetos · Recife, PE</span>
         <h1>Rafael Arcanjo</h1>
         <p class="subtitle">Desenvolvedor Web · Automações e IA Aplicada</p>
         <p class="contact">
@@ -106,11 +108,12 @@
     <section>
         <h2>Resumo profissional</h2>
         <p class="summary">
-            Desenvolvedor web formado em Análise e Desenvolvimento de Sistemas (Senac PE, 2026.1), com foco em
-            construir aplicações, automações e produtos digitais usando <span class="highlight">React, TypeScript, Supabase, n8n</span>
-            e <span class="highlight">IA generativa (Cursor, LLMs)</span> como acelerador de entrega. Perfil híbrido entre
-            produto e técnico: entendo o problema do usuário, prototipo rápido e entrego soluções funcionais em ciclos curtos.
-            Atualmente atuo na HubON com interfaces web, integrações via APIs e evolução de produtos corporativos.
+            Desenvolvedor web formado em Análise e Desenvolvimento de Sistemas (Senac PE, 2026.1).
+            Crio aplicações web, dashboards e automações integradas a APIs, bancos de dados e ferramentas corporativas,
+            com <span class="highlight">React, Next.js, TypeScript, Supabase, n8n</span> e
+            <span class="highlight">IA aplicada</span> (Cursor, Copilot, LLMs) como acelerador de entrega.
+            Atuo na HubON com interfaces, integrações e evolução de produtos internos — unindo visão de produto,
+            tecnologia e processos. Experiência anterior em suporte técnico reforça diagnóstico e entendimento de sistemas corporativos.
         </p>
     </section>
 
@@ -118,29 +121,33 @@
         <h2>Stack &amp; ferramentas</h2>
         <div class="skills-grid">
             <div class="skill-group">
-                <strong>Desenvolvimento</strong>
-                <span>React · TypeScript · JavaScript ES6+ · HTML5 · CSS3 · Next.js · Git/GitHub</span>
+                <strong>Front-end</strong>
+                <span>HTML5 · CSS3 · JavaScript ES6+ · React · Next.js · TypeScript · Tailwind CSS</span>
             </div>
             <div class="skill-group">
-                <strong>Backend &amp; dados</strong>
-                <span>Supabase · PostgreSQL · SQL · APIs REST · Webhooks</span>
-            </div>
-            <div class="skill-group">
-                <strong>Automações</strong>
-                <span>n8n · Bitrix CRM · Google Sheets · automação de processos</span>
+                <strong>Automações &amp; integrações</strong>
+                <span>n8n · Webhooks · APIs REST · Supabase · Bitrix CRM · Google Sheets</span>
             </div>
             <div class="skill-group">
                 <strong>IA aplicada</strong>
-                <span>Cursor · GitHub Copilot · OpenAI/Gemini/Claude · Prompt Engineering · IA generativa</span>
+                <span>Prompt Engineering · IA generativa · OpenAI / Gemini / Claude · GitHub Copilot · Cursor</span>
+            </div>
+            <div class="skill-group">
+                <strong>Dados &amp; ferramentas</strong>
+                <span>PostgreSQL · SQL · Excel Avançado · Power BI · DBeaver · Git / GitHub</span>
+            </div>
+            <div class="skill-group">
+                <strong>Suporte &amp; sistemas</strong>
+                <span>Windows · Linux · Active Directory · Redes · Hardware · Shell Scripting</span>
             </div>
         </div>
         <div class="pills">
+            <span class="pill">Desenvolvimento Web</span>
+            <span class="pill">Automações &amp; Integrações</span>
+            <span class="pill">IA Aplicada</span>
+            <span class="pill">Dashboards corporativos</span>
             <span class="pill">MVPs &amp; PoCs</span>
-            <span class="pill">Integrações rápidas</span>
-            <span class="pill">Documentação técnica</span>
-            <span class="pill">Vibe coding</span>
             <span class="pill">Entrega iterativa</span>
-            <span class="pill">Visão de produto</span>
         </div>
     </section>
 
@@ -164,8 +171,9 @@
             <h3>Estágio em Suporte N1</h3>
             <div class="company">HubON</div>
             <ul>
-                <li>Diagnóstico de falhas em hardware, software e redes; suporte ao CRM Bitrix e Active Directory.</li>
-                <li>Scripts Shell para automatizar tarefas repetitivas; documentação de FAQ para reduzir SLA.</li>
+                <li>Atendimento técnico e diagnóstico de falhas em hardware, software e redes locais.</li>
+                <li>Administração de usuários no Active Directory, suporte ao CRM Bitrix e gestão de permissões.</li>
+                <li>Scripts Shell para automatizar instalações e tarefas repetitivas; documentação de FAQ para reduzir SLA.</li>
             </ul>
         </article>
     </section>
@@ -174,11 +182,48 @@
         <h2>Projetos em destaque</h2>
 
         <article class="project">
-            <h3>Gestão de Patrimônio HubON <span style="font-weight:400;color:#6b7280;">— Vanilla JS</span></h3>
-            <ul>
-                <li>Sistema interno de inventário de ativos com CRUD, busca em tempo real, upload de fotos e exportação CSV.</li>
-                <li>Código no GitHub.</li>
-            </ul>
+            <h3>Flow Focus <span class="stack">— Next.js · TypeScript · Supabase · Bitrix24</span></h3>
+            <p>Redistribuição e auditoria de oportunidades comerciais: captura atômica no bolsão Bitrix24, roletas, RLS por perfil e geofencing no escritório.</p>
+        </article>
+
+        <article class="project">
+            <h3>HubCore Dashboard <span class="stack">— React 19 · Express · MariaDB · Bitrix24</span></h3>
+            <p>Dashboard interno da Hub Nogueira / FlyStart: leads, vendas, metas de VGV, Meta Ads, roletas Bitrix, secretaria de vendas e portal para construtoras.</p>
+        </article>
+
+        <article class="project">
+            <h3>Dashboard Superintendência Stüpp <span class="stack">— Next.js · Bitrix24 · Supabase</span></h3>
+            <p>Painel operacional com KPIs, funis comerciais, Kanban com drag-and-drop, exportação PDF/Excel e atualização automática.</p>
+        </article>
+
+        <article class="project">
+            <h3>Dashboard Litoralize <span class="stack">— TanStack Start · Bitrix24 · Supabase</span></h3>
+            <p>Dashboard comercial da Superintendência Jordão: duas esteiras Bitrix, KPIs, funil ativo vs. perdas e auth com papéis.</p>
+        </article>
+
+        <article class="project">
+            <h3>Dashboard de Suportes Presenciais <span class="stack">— React · Supabase Realtime · Bitrix24</span></h3>
+            <p>Painel em tempo real para TV no salão: fila FIFO de atendimento presencial sincronizada via webhook e Realtime.</p>
+        </article>
+
+        <article class="project">
+            <h3>Central de Demandas <span class="stack">— React 19 · TypeScript · Vite · Supabase</span></h3>
+            <p>Gestão de demandas com projetos macro, microtarefas, calendário e desempenho — persistência em Supabase e cache local.</p>
+        </article>
+
+        <article class="project">
+            <h3>Dashboard Focus <span class="stack">— TanStack Start · React · Bitrix24</span></h3>
+            <p>Dashboard comercial para panoramas das equipes Focus: KPIs do funil, leads por mês/equipe/corretor e cache com fallback.</p>
+        </article>
+
+        <article class="project">
+            <h3>Gestão de Patrimônio HubON <span class="stack">— HTML5 · CSS3 · Vanilla JS</span></h3>
+            <p>Inventário de ativos corporativos com CRUD, busca em tempo real, upload de fotos e exportação CSV (operação offline).</p>
+        </article>
+
+        <article class="project">
+            <h3>BBTS – Carbon Credits <span class="stack">— JavaScript · MetaMask · Ethereum</span></h3>
+            <p>Plataforma para monitorar emissões de CO₂ e tokenizar créditos de carbono na rede Ethereum.</p>
         </article>
     </section>
 
@@ -200,11 +245,13 @@
         <section>
             <h2>Certificações relevantes</h2>
             <ul class="cert-list">
+                <li><strong>Formação Front-end</strong> — React, TypeScript, Node.js (Udemy, 51,5h)</li>
                 <li><strong>AI-900</strong> — Fundamentos de IA no Azure (Microsoft/Bradesco)</li>
-                <li><strong>Automação com n8n</strong> — Rocketseat</li>
                 <li><strong>Soluções de IA no GitHub</strong> — Copilot, Actions, IA generativa</li>
-                <li><strong>Formação Front-end</strong> — React, TypeScript, Node.js (Udemy, 51h)</li>
+                <li><strong>Automação com n8n</strong> — Rocketseat</li>
                 <li><strong>SENAC TakeOff 2025.2</strong> — Prompt Engineering, DevOps, Docker</li>
+                <li><strong>Gerenciamento de Ameaças Cibernéticas</strong> — Cisco</li>
+                <li><strong>CPNordeste</strong> — Campus Party Brasil (participação presencial)</li>
             </ul>
         </section>
     </div>
