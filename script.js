@@ -1,273 +1,281 @@
 document.addEventListener('DOMContentLoaded', () => {
-    /* ==========================================================================
-       MOBILE MENU TOGGLE
-       ========================================================================== */
-    const mobileToggle = document.getElementById('mobileToggle');
-    const navMenu = document.getElementById('navMenu');
-    const menuIcon = document.getElementById('menuIcon');
-    const menuIconUse = menuIcon ? menuIcon.querySelector('use') : null;
+    const translate = (key, fallback) => window.i18n?.t(key) ?? fallback;
+    const languageSwitch = document.querySelector('.language-switch');
+    if (window.i18n) languageSwitch.hidden = false;
 
-    const setMenuIcon = (isOpen) => {
-        if (!menuIconUse) return;
-        menuIconUse.setAttribute('href', isOpen ? '#icon-x' : '#icon-menu');
-    };
+    const menuToggle = document.getElementById('mobileToggle');
+    const menu = document.getElementById('navMenu');
+    const mobile = window.matchMedia('(max-width: 760px)');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-    if (mobileToggle && navMenu) {
-        mobileToggle.addEventListener('click', () => {
-            const isOpen = navMenu.classList.toggle('open');
-            mobileToggle.setAttribute('aria-expanded', String(isOpen));
-            setMenuIcon(isOpen);
-            
-            if (isOpen) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
-            }
-        });
-
-        // Close menu when clicking on a link
-        const navLinks = navMenu.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('open');
-                mobileToggle.setAttribute('aria-expanded', 'false');
-                setMenuIcon(false);
-                document.body.style.overflow = '';
-            });
-        });
+    function setMenu(open) {
+        const key = open ? 'nav.closeMenu' : 'nav.openMenu';
+        menu.classList.toggle('is-open', open);
+        menu.inert = mobile.matches && !open;
+        menuToggle.setAttribute('aria-expanded', String(open));
+        menuToggle.dataset.i18nAria = key;
+        menuToggle.setAttribute('aria-label', translate(key, open ? 'Fechar menu' : 'Abrir menu'));
     }
 
-    /* ==========================================================================
-       NAVBAR SCROLL EFFECT
-       ========================================================================== */
-    const navbar = document.querySelector('.navbar');
-    
-    const handleScrollNavbar = () => {
-        if (!navbar) return;
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
+    setMenu(false);
+    document.documentElement.classList.add('has-menu');
+    menuToggle.hidden = false;
+    menuToggle.addEventListener('click', () => setMenu(!menu.classList.contains('is-open')));
+    mobile.addEventListener('change', () => setMenu(false));
+    document.addEventListener('click', (event) => {
+        if (menu.classList.contains('is-open') && !event.target.closest('.masthead')) {
+            setMenu(false);
         }
-    };
-    
-    window.addEventListener('scroll', handleScrollNavbar);
-    handleScrollNavbar(); // Initial check
-
-    /* ==========================================================================
-       INTERSECTION OBSERVER (SCROLL ANIMATIONS)
-       ========================================================================== */
-    const revealElements = document.querySelectorAll('.scroll-reveal');
-    
-    const revealCallback = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target); // Stop observing once animated
-            }
-        });
-    };
-
-    const revealObserver = new IntersectionObserver(revealCallback, {
-        root: null,
-        threshold: 0.1,
-        rootMargin: '0px 0px -40px 0px'
+    });
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && menu.classList.contains('is-open')) {
+            setMenu(false);
+            menuToggle.focus();
+        }
     });
 
-    revealElements.forEach(el => revealObserver.observe(el));
-
-    /* ==========================================================================
-       ACTIVE NAV LINK ON SCROLL
-       ========================================================================== */
-    const sections = document.querySelectorAll('section');
-    const navLinksList = document.querySelectorAll('.nav-link');
-
-    const activeLinkObserverCallback = (entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const id = entry.target.getAttribute('id');
-                navLinksList.forEach(link => {
-                    if (link.getAttribute('href') === `#${id}`) {
-                        link.classList.add('active');
-                    } else {
-                        link.classList.remove('active');
-                    }
-                });
-            }
-        });
-    };
-
-    const activeLinkObserver = new IntersectionObserver(activeLinkObserverCallback, {
-        root: null,
-        threshold: 0.4,
-        rootMargin: '-10% 0px -40% 0px'
-    });
-
-    sections.forEach(sec => activeLinkObserver.observe(sec));
-
-    /* ==========================================================================
-       PROJECTS GRID FILTER
-       ========================================================================== */
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.ref-project-card');
-
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Remove active class from other buttons
-            filterButtons.forEach(b => {
-                b.classList.remove('active');
-                b.setAttribute('aria-pressed', 'false');
-            });
-            btn.classList.add('active');
-            btn.setAttribute('aria-pressed', 'true');
-
-            const category = btn.getAttribute('data-filter');
-
-            projectCards.forEach(card => {
-                const cardCategory = card.getAttribute('data-category');
-                const categories = cardCategory ? cardCategory.split(' ') : [];
-                
-                if (category === 'all' || categories.includes(category)) {
-                    card.classList.remove('hide');
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(15px)';
-                    // Trigger reflow for transition
-                    setTimeout(() => {
-                        card.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    }, 50);
-                } else {
-                    card.classList.add('hide');
-                }
-            });
-        });
-    });
-
-    /* ==========================================================================
-       COPY EMAIL TO CLIPBOARD
-       ========================================================================== */
-    const btnCopyEmail = document.getElementById('btnCopyEmail');
-    if (btnCopyEmail) {
-        const getCopyLabel = () => (window.i18n ? window.i18n.t('contact.copyEmail') : 'Copiar e-mail');
-        const getCopiedLabel = () => (window.i18n ? window.i18n.t('contact.emailCopied') : 'E-mail copiado!');
-
-        btnCopyEmail.addEventListener('click', () => {
-            const email = 'rafaelarcanjods05@gmail.com';
-            const copyText = btnCopyEmail.querySelector('.copy-text');
-            const restoreCopyState = () => {
-                if (copyText) copyText.textContent = getCopyLabel();
-                btnCopyEmail.style.color = '';
-            };
-            
-            const onCopySuccess = () => {
-                if (copyText) copyText.textContent = getCopiedLabel();
-                btnCopyEmail.style.color = 'var(--text-primary)';
-                setTimeout(restoreCopyState, 2000);
-            };
-
-            if (navigator.clipboard && window.isSecureContext) {
-                navigator.clipboard.writeText(email).then(onCopySuccess).catch(err => {
-                    console.error('Falha ao copiar e-mail: ', err);
-                });
-                return;
-            }
-
-            const fallbackInput = document.createElement('textarea');
-            fallbackInput.value = email;
-            fallbackInput.setAttribute('readonly', '');
-            fallbackInput.style.position = 'fixed';
-            fallbackInput.style.opacity = '0';
-            document.body.appendChild(fallbackInput);
-            fallbackInput.select();
-
-            try {
-                document.execCommand('copy');
-                onCopySuccess();
-            } catch (err) {
-                console.error('Falha ao copiar e-mail: ', err);
-            } finally {
-                fallbackInput.remove();
+    function followLocation() {
+        const hash = window.location.hash;
+        const target = document.getElementById(hash.slice(1));
+        if (target instanceof HTMLDetailsElement) {
+            target.open = true;
+        }
+        menu.querySelectorAll('a').forEach((link) => {
+            if (link.hash === hash) {
+                link.setAttribute('aria-current', 'location');
+            } else {
+                link.removeAttribute('aria-current');
             }
         });
     }
 
-    /* ==========================================================================
-       WEB3FORMS CONTACT FORM SUBMISSION
-       ========================================================================== */
-    const contactForm = document.getElementById('contactForm');
-    const formFeedback = document.getElementById('formFeedback');
-    const feedbackText = document.getElementById('feedbackText');
-    const btnSubmitForm = document.getElementById('btnSubmitForm');
+    let scrollFrame;
 
-    if (contactForm && btnSubmitForm) {
-        const submitLabel = btnSubmitForm.querySelector('span');
-        const getSubmitText = () => (window.i18n ? window.i18n.t('contact.submit') : 'Enviar mensagem');
+    function stopAnchorScroll() {
+        cancelAnimationFrame(scrollFrame);
+    }
 
-        const showFormFeedback = (message, type = 'success') => {
-            if (!formFeedback) return;
+    function scrollToAnchor(target, immediate) {
+        const root = document.documentElement;
+        const start = window.scrollY;
+        const padding = parseFloat(getComputedStyle(root).scrollPaddingTop) || 0;
+        const targetTop = target.id === 'home' ? 0 : start + target.getBoundingClientRect().top - padding;
+        const end = Math.max(0, Math.min(targetTop, root.scrollHeight - root.clientHeight));
+        const distance = end - start;
+        const scrollTo = (top) => window.scrollTo({ top, behavior: 'instant' });
 
-            formFeedback.classList.remove('hidden', 'success', 'error');
-            formFeedback.classList.add(type);
+        stopAnchorScroll();
+        if (immediate || reducedMotion.matches || Math.abs(distance) < 2) {
+            scrollTo(end);
+            return;
+        }
 
-            if (feedbackText) {
-                feedbackText.textContent = message;
+        const duration = Math.min(1050, 480 + Math.sqrt(Math.abs(distance)) * 8);
+        const started = performance.now();
+
+        function update(now) {
+            const progress = reducedMotion.matches ? 1 : Math.min(1, (now - started) / duration);
+            const eased = (1 - Math.cos(progress * Math.PI)) / 2;
+            scrollTo(start + distance * eased);
+            if (progress < 1) scrollFrame = requestAnimationFrame(update);
+        }
+
+        scrollFrame = requestAnimationFrame(update);
+    }
+
+    document.addEventListener('click', (event) => {
+        if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        const link = event.target.closest('a[href^="#"]');
+        if (!link) return;
+        const target = document.getElementById(link.hash.slice(1));
+        if (!target) return;
+
+        event.preventDefault();
+        if (menu.classList.contains('is-open')) setMenu(false);
+        if (window.location.hash !== link.hash) window.history.pushState(null, '', link.hash);
+        followLocation();
+
+        if (!target.hasAttribute('tabindex')) target.tabIndex = -1;
+        target.focus({ preventScroll: true });
+        scrollToAnchor(target, link.classList.contains('skip-link'));
+    });
+
+    window.addEventListener('wheel', stopAnchorScroll, { passive: true });
+    window.addEventListener('pointerdown', stopAnchorScroll, { passive: true });
+    window.addEventListener('keydown', stopAnchorScroll);
+    window.addEventListener('popstate', stopAnchorScroll);
+    window.addEventListener('hashchange', () => {
+        stopAnchorScroll();
+        followLocation();
+    });
+    followLocation();
+
+    if ('IntersectionObserver' in window && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+        requestAnimationFrame(() => {
+            const viewportBottom = window.innerHeight;
+            const pending = Array.from(document.querySelectorAll('[data-reveal]')).filter((element) => {
+                return element.getBoundingClientRect().top > viewportBottom;
+            });
+            const observer = new IntersectionObserver((entries) => {
+                for (const entry of entries) {
+                    if (!entry.isIntersecting) continue;
+                    entry.target.classList.remove('is-awaiting-reveal');
+                    observer.unobserve(entry.target);
+                }
+            }, { rootMargin: '0px 0px -16px 0px' });
+
+            for (const element of pending) {
+                element.classList.add('is-awaiting-reveal');
+                observer.observe(element);
             }
+        });
+    }
 
-            setTimeout(() => {
-                formFeedback.classList.add('hidden');
-                formFeedback.classList.remove('success', 'error');
-            }, 6000);
+    const filterBar = document.querySelector('.filter-bar');
+    const filters = Array.from(filterBar.querySelectorAll('button'));
+    const archiveItems = document.querySelectorAll('.archive-list > [data-category]');
+    const archiveAnimations = new Map();
+    filterBar.hidden = false;
+
+    function showArchiveItem(item, visible) {
+        const active = archiveAnimations.get(item);
+        const animate = !reducedMotion.matches && typeof item.animate === 'function';
+        if (active ? animate && active.visible === visible : item.hidden === !visible) return;
+
+        const startHeight = animate && !item.hidden ? item.getBoundingClientRect().height : 0;
+        const startOpacity = animate && !item.hidden ? getComputedStyle(item).opacity : 0;
+        active?.animation.cancel();
+        archiveAnimations.delete(item);
+        item.inert = !visible;
+
+        if (!animate) {
+            item.hidden = !visible;
+            return;
+        }
+
+        item.hidden = false;
+        const endHeight = visible ? item.getBoundingClientRect().height : 0;
+        const animation = item.animate([
+            { height: `${startHeight}px`, opacity: startOpacity, overflow: 'clip' },
+            { height: `${endHeight}px`, opacity: visible ? 1 : 0, overflow: 'clip' }
+        ], {
+            duration: visible ? 380 : 330,
+            easing: 'cubic-bezier(.42, 0, .35, 1)',
+            fill: 'both'
+        });
+        archiveAnimations.set(item, { animation, visible });
+        animation.onfinish = () => {
+            if (archiveAnimations.get(item)?.animation !== animation) return;
+            item.hidden = !visible;
+            archiveAnimations.delete(item);
+            animation.cancel();
         };
+    }
 
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
+    reducedMotion.addEventListener('change', () => {
+        if (!reducedMotion.matches) return;
+        for (const { animation } of archiveAnimations.values()) animation.finish();
+    });
 
-            const botcheck = contactForm.querySelector('[name="botcheck"]');
-            if (botcheck && botcheck.checked) {
-                return;
-            }
+    filterBar.addEventListener('click', (event) => {
+        const filter = event.target.closest('button[data-filter]');
+        if (!filter) return;
 
-            btnSubmitForm.disabled = true;
-            if (submitLabel) submitLabel.textContent = window.i18n ? window.i18n.t('contact.sending') : 'Enviando...';
+        const category = filter.dataset.filter;
+        for (const button of filters) {
+            button.setAttribute('aria-pressed', String(button === filter));
+        }
+        for (const item of archiveItems) {
+            const visible = category === 'all' || item.dataset.category.split(' ').includes(category);
+            if (!visible && item.contains(document.activeElement)) filter.focus({ preventScroll: true });
+            showArchiveItem(item, visible);
+        }
+    });
 
-            try {
-                const response = await fetch(contactForm.action, {
-                    method: 'POST',
-                    body: new FormData(contactForm),
-                    headers: {
-                        Accept: 'application/json'
-                    }
-                });
-                const result = await response.json();
+    const copyButton = document.getElementById('btnCopyEmail');
+    const copyLabel = copyButton.querySelector('[data-i18n]');
+    const copyFeedback = document.getElementById('copyFeedback');
+    const emailLink = document.getElementById('contactEmail');
+    const defaultCopyLabel = copyLabel.textContent;
+    let copyTimer;
+    copyButton.hidden = false;
 
-                if (response.ok && result.success) {
-                    contactForm.reset();
-                    showFormFeedback(window.i18n ? window.i18n.t('contact.success') : 'Mensagem enviada com sucesso. Obrigado pelo contato!');
+    copyButton.addEventListener('click', async () => {
+        const email = emailLink.getAttribute('href').slice('mailto:'.length);
+        if (copyTimer) window.clearTimeout(copyTimer);
+
+        let key = 'contact.emailCopied';
+        let fallback = 'E-mail copiado!';
+        try {
+            await navigator.clipboard.writeText(email);
+        } catch {
+            const range = document.createRange();
+            range.selectNodeContents(emailLink);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            key = 'contact.copyError';
+            fallback = 'Selecione o endereço para copiá-lo.';
+        }
+
+        copyLabel.dataset.i18n = key;
+        copyLabel.textContent = translate(key, fallback);
+        copyFeedback.textContent = copyLabel.textContent;
+        copyTimer = window.setTimeout(() => {
+            copyLabel.dataset.i18n = 'contact.copyEmail';
+            copyLabel.textContent = translate('contact.copyEmail', defaultCopyLabel);
+            copyFeedback.textContent = '';
+        }, 2600);
+    });
+
+    const form = document.getElementById('contactForm');
+    const submitButton = document.getElementById('btnSubmitForm');
+    const submitLabel = submitButton.querySelector('[data-i18n]');
+    const feedback = document.getElementById('formFeedback');
+    const defaultSubmitLabel = submitLabel.textContent;
+
+    function setFeedback(key, fallback, state) {
+        feedback.dataset.i18n = key;
+        feedback.dataset.state = state;
+        feedback.textContent = translate(key, fallback);
+    }
+
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        if (submitButton.disabled || form.elements.botcheck.checked) return;
+
+        delete feedback.dataset.i18n;
+        feedback.textContent = '';
+        submitButton.disabled = true;
+        submitLabel.dataset.i18n = 'contact.sending';
+        submitLabel.textContent = translate('contact.sending', 'Enviando…');
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { Accept: 'application/json' }
+            });
+            const result = await response.json();
+
+            if (response.ok && result.success === true) {
+                form.reset();
+                if (result.code === 'preview_received') {
+                    setFeedback('contact.previewReceived', 'Mensagem recebida na caixa de teste desta prévia.', 'success');
                 } else {
-                    const errorMessage = result.message || (window.i18n ? window.i18n.t('contact.errorGeneric') : 'Não foi possível enviar a mensagem agora. Tente novamente em instantes.');
-                    showFormFeedback(errorMessage, 'error');
+                    setFeedback('contact.success', 'Mensagem enviada. Obrigado pelo contato!', 'success');
                 }
-            } catch (err) {
-                console.error('Falha ao enviar mensagem: ', err);
-                showFormFeedback(window.i18n ? window.i18n.t('contact.errorConnection') : 'Não foi possível conectar ao serviço de envio. Verifique sua conexão e tente novamente.', 'error');
-            } finally {
-                btnSubmitForm.disabled = false;
-                if (submitLabel) submitLabel.textContent = getSubmitText();
+            } else if (result.code === 'invalid_fields') {
+                setFeedback('contact.errorInvalid', 'Confira o nome, o e-mail e a mensagem e tente novamente.', 'error');
+            } else {
+                setFeedback('contact.errorGeneric', 'Não foi possível enviar a mensagem agora.', 'error');
             }
-        });
-    }
-
-    /* ==========================================================================
-        DOWNLOAD CV ACTIONS
-       ========================================================================== */
-    const downloadCvBtn = document.getElementById('downloadCv');
-    if (downloadCvBtn) {
-        downloadCvBtn.addEventListener('click', (e) => {
-            if (downloadCvBtn.getAttribute('href') === '#') {
-                e.preventDefault();
-                alert(window.i18n ? window.i18n.t('ui.cvUnavailable') : 'Currículo em PDF indisponível no momento.');
-            }
-        });
-    }
+        } catch {
+            setFeedback('contact.errorConnection', 'Não foi possível conectar ao serviço de envio.', 'error');
+        } finally {
+            submitLabel.dataset.i18n = 'contact.submit';
+            submitLabel.textContent = translate('contact.submit', defaultSubmitLabel);
+            submitButton.disabled = false;
+        }
+    });
 });

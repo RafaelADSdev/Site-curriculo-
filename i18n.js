@@ -1,39 +1,47 @@
 const translations = {
     pt: {
         meta: {
-            title: 'Rafael Arcanjo | Desenvolvedor Web — Automações e IA Aplicada',
-            description: 'Currículo digital de Rafael Arcanjo, desenvolvedor web com foco em automações, IA aplicada, React, Next.js, Supabase e n8n para soluções digitais corporativas.',
-            ogDescription: 'Projetos, experiência, certificados e formas de contato de Rafael Arcanjo.',
-            twitterDescription: 'Currículo digital com projetos, experiência e certificados.'
+            title: 'Rafael Arcanjo | Desenvolvimento Web, Automação e IA Aplicada',
+            description: 'Portfólio de Rafael Arcanjo, desenvolvedor de aplicações web, automações e integrações. Conheça os projetos, a trajetória e as formas de contato.',
+            ogDescription: 'Aplicações web, automações e integrações desenvolvidas por Rafael Arcanjo.',
+            twitterDescription: 'Projetos de desenvolvimento web, automação e IA aplicada de Rafael Arcanjo.'
         },
         nav: {
             home: 'Início',
             about: 'Sobre',
             services: 'Serviços',
             stack: 'Stack',
-            experience: 'Carreira',
+            experience: 'Trajetória',
             certifications: 'Certificados',
             projects: 'Projetos',
             contact: 'Contato',
             cv: 'Currículo',
             goHome: 'Ir para o início',
-            openMenu: 'Abrir Menu',
+            openMenu: 'Abrir menu',
+            closeMenu: 'Fechar menu',
+            language: 'Idioma',
             downloadCv: 'Baixar currículo em PDF',
             switchLang: 'Mudar idioma para inglês'
         },
         hero: {
+            eyebrow: 'Rafael Arcanjo / Desenvolvedor web',
+            line1: 'Crio sistemas',
+            line2: 'que simplificam',
+            line3: 'o trabalho.',
             badge: 'Disponível para novos projetos',
             subtitle: 'Desenvolvedor Web | Automações e IA Aplicada',
-            description: 'Crio aplicações web modernas, dashboards e automações integradas a APIs, bancos de dados e ferramentas corporativas. Tenho experiência com React, Next.js, Supabase, n8n e suporte técnico, unindo visão de produto, tecnologia e processos para entregar soluções úteis no dia a dia das empresas.',
+            description: 'Desenvolvo aplicações web, automações e integrações para equipes que precisam de menos etapas manuais.',
             viewProjects: 'Ver projetos',
+            contact: 'Entrar em contato',
             contactMe: 'Falar comigo',
             scrollAbout: 'Ir para Sobre mim'
         },
         about: {
-            tag: '01 // SOBRE MIM',
-            title: 'Minha Trajetória',
+            tag: 'Sobre mim',
+            title: 'Web, automação e IA aplicada.',
+            cv: 'Ver currículo completo',
             lead: 'Desenvolvedor web em evolução, com foco em construir aplicações funcionais, automações inteligentes e soluções digitais que simplificam processos reais.',
-            p1: 'Formado em Análise e Desenvolvimento de Sistemas pela Faculdade Senac PE, atuo como desenvolvedor web na HubON, criando e mantendo interfaces web com React, integrações com Supabase e fluxos automatizados com n8n.',
+            p1: 'Sou formado em Análise e Desenvolvimento de Sistemas pela Faculdade Senac PE. Hoje atuo como desenvolvedor de sistemas na Claivor e sou sócio da Vercuno.',
             p2: 'Também aplico IA de forma prática para apoiar análise de dados, produtividade e melhoria de processos internos. Minha experiência anterior em suporte técnico reforça minha visão de usuário, diagnóstico de problemas e entendimento de sistemas corporativos — um diferencial complementar à minha atuação em desenvolvimento.',
             stat1: 'Formado em ADS — Senac PE',
             stat2: 'Projetos Desenvolvidos',
@@ -51,24 +59,30 @@ const translations = {
         },
         stack: {
             tag: '03 // HARD SKILLS',
-            title: 'Stack Tecnológica',
+            title: 'Tecnologias e ferramentas',
             frontend: 'Front-end',
+            backend: 'Back-end',
             automation: 'Automações & Integrações',
             ai: 'IA Aplicada',
-            dataTools: 'Dados & Ferramentas',
+            dataTools: 'Bancos de dados & análise',
+            deployment: 'Versionamento & deploy',
             support: 'Suporte & Sistemas'
         },
         experience: {
-            tag: '04 // CARREIRA',
+            tag: 'Trajetória',
             title: 'Experiência Profissional',
-            job1Date: '01/Mai/2026 - Atual',
+            vercunoTitle: 'Sócio',
+            vercunoDate: 'set/2026 – atual',
+            claivorTitle: 'Desenvolvedor de Sistemas',
+            claivorDate: 'ago/2026 – atual',
+            job1Date: '01/05/2026 – ago/2026',
             job1Title: 'Estágio em Desenvolvimento',
             job1Intro: 'Atuação no desenvolvimento e manutenção de aplicações web e sistemas internos da empresa, com foco em interfaces, integrações e melhoria de fluxos:',
             job1Li1: '› Desenvolvimento e manutenção de interfaces com React, HTML5 e CSS3, com componentização e ajustes de responsividade.',
             job1Li2: '› Integração de soluções com Supabase e automações de processos via n8n, webhooks e APIs.',
             job1Li3: '› Correção de bugs visuais e de fluxo de dados, com apoio em testes de interface e sistemas internos.',
             job1Li4: '› Colaboração na melhoria da experiência do usuário e na evolução de produtos digitais corporativos.',
-            job2Date: '05/Jan/2026 - 30/Abr/2026',
+            job2Date: '05/01/2026 – 30/04/2026',
             job2Title: 'Estágio em Suporte N1',
             job2Intro: 'Experiência complementar em suporte corporativo, atendimento a usuários e manutenção de sistemas internos:',
             job2Li1: '› Atendimento técnico, diagnóstico de falhas em hardware, software e redes locais.',
@@ -90,7 +104,7 @@ const translations = {
         },
         certifications: {
             tag: '06 // CREDENCIAIS',
-            title: 'Certificados & Cursos',
+            title: 'Certificados e cursos',
             hours: 'horas',
             fullLoad: 'Carga Completa',
             credential: 'Credencial',
@@ -113,10 +127,34 @@ const translations = {
         },
         projects: {
             tag: '07 // TRABALHOS',
-            title: 'Projetos em destaque',
+            title: 'Projetos selecionados',
+            subtitle: 'Sistemas, automações e sites que desenvolvi.',
+            moreSites: 'Outros projetos publicados',
+            archive: 'Projetos corporativos e acadêmicos',
+            archiveIntro: 'Dashboards, integrações e outros projetos da minha trajetória.',
+            filterLabel: 'Filtrar projetos',
             filterAll: 'Todos',
             filterFrontend: 'Frontend',
             filterData: 'Dados / BI',
+            finCategory: 'Sistema financeiro',
+            zeloCategory: 'Automação de atendimento',
+            siteCategory: 'Site institucional',
+            photoCategory: 'Portfólio de fotografia',
+            caseLink: 'Ver estudo de caso',
+            liveLink: 'Ver site',
+            codeLink: 'Ver código',
+            prumoDesc: 'Gestão financeira com fluxo de caixa, cadastro de clientes e agenda de serviços.',
+            zeloDesc: 'Atendimento via WhatsApp com catálogo, histórico de conversas e respostas automatizadas.',
+            vercunoDesc: 'Site da marca com serviços e estudos de caso sobre produtos digitais.',
+            fotografiaDesc: 'Portfólio de ensaios com galerias por categoria e agendamento pelo WhatsApp.',
+            caioDesc: 'Site para apresentar o trabalho do psicólogo e facilitar o contato para atendimento online.',
+            nauticaDesc: 'Site de serviços de engenharia com projetos e solicitação de orçamento pelo WhatsApp.',
+            prumoAlt: 'Painel financeiro do Prumo',
+            zeloAlt: 'Painel de atendimento do Zelo',
+            vercunoAlt: 'Página inicial da Vercuno',
+            fotografiaAlt: 'Página inicial do portfólio de Suzzy Alves Fotografia',
+            caioAlt: 'Página inicial do site de Caio Leonardi',
+            nauticaAlt: 'Página inicial da Náutica Engenharia',
             requestDetails: 'Pedir detalhes',
             github: 'GitHub',
             p3Desc: 'Sistema web para inventário e controle de ativos tecnológicos corporativos, com operação offline e foco em uso interno.',
@@ -157,7 +195,7 @@ const translations = {
             p11Li3: '› Cache de 15 minutos, fallback local e proteção contra HTTP 429 — pensado para projeção em reuniões de panorama.'
         },
         contact: {
-            tag: '08 // CONTATO',
+            tag: 'Contato',
             title: 'Vamos conversar?',
             subtitle: 'Estou aberto a oportunidades, projetos e conexões profissionais envolvendo desenvolvimento web, automações, IA aplicada e melhoria de processos digitais.',
             email: 'E-mail',
@@ -166,6 +204,8 @@ const translations = {
             github: 'GitHub',
             copyEmail: 'Copiar e-mail',
             emailCopied: 'E-mail copiado!',
+            copyError: 'Selecione o endereço para copiá-lo.',
+            formOpen: 'Escrever uma mensagem',
             formName: 'Seu Nome',
             formEmail: 'Seu E-mail',
             formMessage: 'Sua Mensagem',
@@ -174,26 +214,28 @@ const translations = {
             formPlaceholderMessage: 'Escreva sua mensagem...',
             submit: 'Enviar mensagem',
             sending: 'Enviando...',
-            success: 'Mensagem enviada com sucesso. Obrigado pelo contato!',
-            errorGeneric: 'Não foi possível enviar a mensagem agora. Tente novamente em instantes.',
-            errorConnection: 'Não foi possível conectar ao serviço de envio. Verifique sua conexão e tente novamente.',
-            formSubject: 'Nova mensagem pelo currículo digital - Rafael Arcanjo',
-            formFromName: 'Currículo Digital Rafael Arcanjo'
+            success: 'Mensagem enviada. Obrigado pelo contato!',
+            previewReceived: 'Mensagem recebida na caixa de teste desta prévia.',
+            errorInvalid: 'Confira o nome, o e-mail e a mensagem e tente novamente.',
+            errorGeneric: 'Não foi possível enviar agora. Você também pode usar o endereço de e-mail acima.',
+            errorConnection: 'Não foi possível conectar ao serviço de envio. Tente novamente ou use o endereço de e-mail acima.'
         },
         footer: {
             backHome: 'Voltar ao início',
-            rights: '© 2026 Rafael Arcanjo. Todos os direitos reservados.'
+            rights: '© 2026 Rafael Arcanjo',
+            top: 'Voltar ao topo'
         },
         ui: {
+            skip: 'Ir para o conteúdo',
             cvUnavailable: 'Currículo em PDF indisponível no momento.'
         }
     },
     en: {
         meta: {
-            title: 'Rafael Arcanjo | Web Developer — Automation & Applied AI',
-            description: 'Digital resume of Rafael Arcanjo, web developer focused on automation, applied AI, React, Next.js, Supabase, and n8n for corporate digital solutions.',
-            ogDescription: 'Projects, experience, certifications, and contact information for Rafael Arcanjo.',
-            twitterDescription: 'Digital resume with projects, experience, and certifications.'
+            title: 'Rafael Arcanjo | Web Development, Automation & Applied AI',
+            description: 'Portfolio of Rafael Arcanjo, a developer working on web applications, automation, and integrations. Explore selected projects, experience, and contact details.',
+            ogDescription: 'Web applications, automation, and integrations built by Rafael Arcanjo.',
+            twitterDescription: 'Web development, automation, and applied AI projects by Rafael Arcanjo.'
         },
         nav: {
             home: 'Home',
@@ -207,22 +249,30 @@ const translations = {
             cv: 'Resume',
             goHome: 'Go to home',
             openMenu: 'Open menu',
+            closeMenu: 'Close menu',
+            language: 'Language',
             downloadCv: 'Download resume as PDF',
             switchLang: 'Switch language to Portuguese'
         },
         hero: {
+            eyebrow: 'Rafael Arcanjo / Web developer',
+            line1: 'I build systems',
+            line2: 'that simplify',
+            line3: 'the work.',
             badge: 'Available for new projects',
             subtitle: 'Web Developer | Automation & Applied AI',
-            description: 'I build modern web applications, dashboards, and automations integrated with APIs, databases, and corporate tools. I work with React, Next.js, Supabase, n8n, and technical support, combining product vision, technology, and processes to deliver practical solutions for everyday business needs.',
+            description: 'I build web applications, automation, and integrations for teams that want fewer manual steps.',
             viewProjects: 'View projects',
+            contact: 'Get in touch',
             contactMe: 'Get in touch',
             scrollAbout: 'Go to About me'
         },
         about: {
-            tag: '01 // ABOUT ME',
-            title: 'My Journey',
+            tag: 'About me',
+            title: 'Web, automation, and applied AI.',
+            cv: 'View full résumé',
             lead: 'Web developer in growth, focused on building functional applications, smart automations, and digital solutions that simplify real-world processes.',
-            p1: 'Graduated in Systems Analysis and Development from Faculdade Senac PE, I work as a web developer at HubON, building and maintaining web interfaces with React, Supabase integrations, and automated flows with n8n.',
+            p1: 'I have a degree in Systems Analysis and Development from Faculdade Senac PE. I work as a systems developer at Claivor and am a partner at Vercuno.',
             p2: 'I also apply AI in practical ways to support data analysis, productivity, and internal process improvement. My previous experience in technical support strengthens my user perspective, problem diagnosis, and understanding of corporate systems — a complementary edge to my development work.',
             stat1: 'ADS Graduate — Senac PE',
             stat2: 'Projects Developed',
@@ -240,24 +290,30 @@ const translations = {
         },
         stack: {
             tag: '03 // HARD SKILLS',
-            title: 'Tech Stack',
+            title: 'Technologies and tools',
             frontend: 'Front-end',
+            backend: 'Back-end',
             automation: 'Automation & Integrations',
             ai: 'Applied AI',
-            dataTools: 'Data & Tools',
+            dataTools: 'Databases & analytics',
+            deployment: 'Version control & deployment',
             support: 'Support & Systems'
         },
         experience: {
-            tag: '04 // CAREER',
+            tag: 'Career',
             title: 'Professional Experience',
-            job1Date: 'May/01/2026 - Present',
+            vercunoTitle: 'Partner',
+            vercunoDate: 'Sep 2026 – present',
+            claivorTitle: 'Systems Developer',
+            claivorDate: 'Aug 2026 – present',
+            job1Date: 'May 1, 2026 – Aug 2026',
             job1Title: 'Development Internship',
             job1Intro: 'Working on development and maintenance of web applications and internal systems, focusing on interfaces, integrations, and workflow improvements:',
             job1Li1: '› Development and maintenance of interfaces with React, HTML5, and CSS3, including componentization and responsiveness.',
             job1Li2: '› Integration with Supabase and process automations via n8n, webhooks, and APIs.',
             job1Li3: '› Fixing visual and data flow bugs, with support in interface testing and internal systems.',
             job1Li4: '› Collaboration on user experience improvements and evolution of corporate digital products.',
-            job2Date: 'Jan/05/2026 - Apr/30/2026',
+            job2Date: 'Jan 5, 2026 – Apr 30, 2026',
             job2Title: 'N1 Support Internship',
             job2Intro: 'Complementary experience in corporate support, user assistance, and internal system maintenance:',
             job2Li1: '› Technical support and diagnostics for hardware, software, and local network issues.',
@@ -279,7 +335,7 @@ const translations = {
         },
         certifications: {
             tag: '06 // CREDENTIALS',
-            title: 'Certifications & Courses',
+            title: 'Certifications and courses',
             hours: 'hours',
             fullLoad: 'Full Course',
             credential: 'Credential',
@@ -302,10 +358,34 @@ const translations = {
         },
         projects: {
             tag: '07 // WORK',
-            title: 'Featured projects',
+            title: 'Selected projects',
+            subtitle: 'Systems, automations, and websites I’ve built.',
+            moreSites: 'More live projects',
+            archive: 'Corporate and academic projects',
+            archiveIntro: 'Dashboards, integrations, and other projects from my career.',
+            filterLabel: 'Filter projects',
             filterAll: 'All',
             filterFrontend: 'Frontend',
             filterData: 'Data / BI',
+            finCategory: 'Financial management',
+            zeloCategory: 'Customer service automation',
+            siteCategory: 'Business website',
+            photoCategory: 'Photography portfolio',
+            caseLink: 'View case study',
+            liveLink: 'Visit website',
+            codeLink: 'View source code',
+            prumoDesc: 'Financial management with cash flow, client records, and service scheduling.',
+            zeloDesc: 'Customer service on WhatsApp with a catalog, conversation history, and automated replies.',
+            vercunoDesc: 'Brand website featuring digital services and case studies.',
+            fotografiaDesc: 'Photography portfolio with galleries by category and booking through WhatsApp.',
+            caioDesc: 'Website presenting the psychologist’s work and making it easier to get in touch about online therapy.',
+            nauticaDesc: 'Engineering services website featuring project examples and quote requests via WhatsApp.',
+            prumoAlt: 'Prumo financial dashboard',
+            zeloAlt: 'Zelo customer service dashboard',
+            vercunoAlt: 'Vercuno homepage',
+            fotografiaAlt: 'Suzzy Alves Fotografia portfolio homepage',
+            caioAlt: 'Caio Leonardi’s homepage',
+            nauticaAlt: 'Náutica Engenharia homepage',
             requestDetails: 'Request details',
             github: 'GitHub',
             p3Desc: 'Web system for inventory and control of corporate technology assets, with offline operation and internal use focus.',
@@ -346,7 +426,7 @@ const translations = {
             p11Li3: '› 15-minute cache, local fallback, and HTTP 429 protection — built for projection in overview meetings.'
         },
         contact: {
-            tag: '08 // CONTACT',
+            tag: 'Contact',
             title: "Let's talk?",
             subtitle: 'I am open to opportunities, projects, and professional connections involving web development, automation, applied AI, and digital process improvement.',
             email: 'Email',
@@ -355,6 +435,8 @@ const translations = {
             github: 'GitHub',
             copyEmail: 'Copy email',
             emailCopied: 'Email copied!',
+            copyError: 'Select the email address to copy it.',
+            formOpen: 'Write a message',
             formName: 'Your Name',
             formEmail: 'Your Email',
             formMessage: 'Your Message',
@@ -363,31 +445,43 @@ const translations = {
             formPlaceholderMessage: 'Write your message...',
             submit: 'Send message',
             sending: 'Sending...',
-            success: 'Message sent successfully. Thank you for reaching out!',
-            errorGeneric: 'Could not send the message right now. Please try again shortly.',
-            errorConnection: 'Could not connect to the sending service. Check your connection and try again.',
-            formSubject: 'New message from digital resume - Rafael Arcanjo',
-            formFromName: 'Rafael Arcanjo Digital Resume'
+            success: 'Message sent. Thank you for reaching out!',
+            previewReceived: 'Message received in this preview’s test inbox.',
+            errorInvalid: 'Check your name, email address, and message, then try again.',
+            errorGeneric: 'The message could not be sent. You can also use the email address above.',
+            errorConnection: 'Could not connect to the sending service. Try again or use the email address above.'
         },
         footer: {
             backHome: 'Back to home',
-            rights: '© 2026 Rafael Arcanjo. All rights reserved.'
+            rights: '© 2026 Rafael Arcanjo',
+            top: 'Back to top'
         },
         ui: {
+            skip: 'Skip to content',
             cvUnavailable: 'PDF resume is currently unavailable.'
         }
     }
 };
 
 const STORAGE_KEY = 'site-lang';
+const TRANSLATED_ATTRIBUTES = [
+    ['data-i18n-placeholder', 'placeholder'],
+    ['data-i18n-aria', 'aria-label'],
+    ['data-i18n-alt', 'alt'],
+    ['data-i18n-title', 'title']
+];
 let currentLang = 'en';
 
 function getNestedValue(obj, path) {
     return path.split('.').reduce((acc, key) => acc?.[key], obj);
 }
 
+function findTranslation(key) {
+    return getNestedValue(translations[currentLang], key) ?? getNestedValue(translations.en, key);
+}
+
 function t(key) {
-    return getNestedValue(translations[currentLang], key) ?? getNestedValue(translations.en, key) ?? key;
+    return findTranslation(key) ?? key;
 }
 
 function updateMeta() {
@@ -415,49 +509,37 @@ function updateMeta() {
 }
 
 function applyTranslations() {
-    document.querySelectorAll('[data-i18n]').forEach((el) => {
-        const key = el.getAttribute('data-i18n');
-        const value = t(key);
-        if (value) el.textContent = value;
+    document.querySelectorAll('[data-i18n]').forEach((element) => {
+        const value = findTranslation(element.getAttribute('data-i18n'));
+        if (typeof value === 'string') element.textContent = value;
     });
 
-    document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
-        const key = el.getAttribute('data-i18n-placeholder');
-        const value = t(key);
-        if (value) el.setAttribute('placeholder', value);
+    for (const [keyAttribute, targetAttribute] of TRANSLATED_ATTRIBUTES) {
+        document.querySelectorAll(`[${keyAttribute}]`).forEach((element) => {
+            const value = findTranslation(element.getAttribute(keyAttribute));
+            if (typeof value === 'string') element.setAttribute(targetAttribute, value);
+        });
+    }
+
+    document.querySelectorAll('[data-language]').forEach((button) => {
+        button.setAttribute('aria-pressed', String(button.dataset.language === currentLang));
     });
-
-    document.querySelectorAll('[data-i18n-aria]').forEach((el) => {
-        const key = el.getAttribute('data-i18n-aria');
-        const value = t(key);
-        if (value) el.setAttribute('aria-label', value);
-    });
-
-    const formSubject = document.querySelector('input[name="subject"]');
-    if (formSubject) formSubject.value = t('contact.formSubject');
-
-    const formFromName = document.querySelector('input[name="from_name"]');
-    if (formFromName) formFromName.value = t('contact.formFromName');
 
     updateMeta();
-    updateLangToggle();
 }
 
-function updateLangToggle() {
-    const langToggle = document.getElementById('langToggle');
-    const langLabel = document.getElementById('langLabel');
-    if (!langToggle || !langLabel) return;
-
-    const nextLang = currentLang === 'pt' ? 'en' : 'pt';
-    langLabel.textContent = nextLang.toUpperCase();
-    langToggle.setAttribute('aria-label', t('nav.switchLang'));
-    langToggle.setAttribute('title', t('nav.switchLang'));
+function isSupportedLanguage(lang) {
+    return lang === 'en' || lang === 'pt';
 }
 
 function setLanguage(lang) {
-    if (!translations[lang]) return;
+    if (!isSupportedLanguage(lang)) return;
     currentLang = lang;
-    localStorage.setItem(STORAGE_KEY, lang);
+    try {
+        window.localStorage.setItem(STORAGE_KEY, lang);
+    } catch {
+        // Keep the selection for this page when storage is unavailable.
+    }
     applyTranslations();
     document.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
 }
@@ -467,16 +549,17 @@ function toggleLanguage() {
 }
 
 function initI18n() {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved && translations[saved]) {
-        currentLang = saved;
+    try {
+        const saved = window.localStorage.getItem(STORAGE_KEY);
+        if (isSupportedLanguage(saved)) currentLang = saved;
+    } catch {
+        // Use the default language when storage is unavailable.
     }
-    applyTranslations();
 
-    const langToggle = document.getElementById('langToggle');
-    if (langToggle) {
-        langToggle.addEventListener('click', toggleLanguage);
-    }
+    document.querySelectorAll('[data-language]').forEach((button) => {
+        button.addEventListener('click', () => setLanguage(button.dataset.language));
+    });
+    applyTranslations();
 }
 
 window.i18n = { t, setLanguage, toggleLanguage, getLanguage: () => currentLang };
