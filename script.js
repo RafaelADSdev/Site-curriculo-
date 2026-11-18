@@ -6,7 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.getElementById('mobileToggle');
     const menu = document.getElementById('navMenu');
     const mobile = window.matchMedia('(max-width: 760px)');
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const motion = window.portfolioMotion;
+    const systemMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const prefersReducedMotion = () => motion?.reduced ?? systemMotion.matches;
 
     function setMenu(open) {
         const key = open ? 'nav.closeMenu' : 'nav.openMenu';
@@ -65,17 +67,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const scrollTo = (top) => window.scrollTo({ top, behavior: 'instant' });
 
         stopAnchorScroll();
-        if (immediate || reducedMotion.matches || Math.abs(distance) < 2) {
+        if (immediate || prefersReducedMotion() || Math.abs(distance) < 2) {
             scrollTo(end);
             return;
         }
 
-        const duration = Math.min(1050, 480 + Math.sqrt(Math.abs(distance)) * 8);
+        const duration = Math.min(1250, Math.max(700, Math.abs(distance) * .16));
         const started = performance.now();
 
         function update(now) {
-            const progress = reducedMotion.matches ? 1 : Math.min(1, (now - started) / duration);
-            const eased = (1 - Math.cos(progress * Math.PI)) / 2;
+            const progress = prefersReducedMotion() ? 1 : Math.min(1, (now - started) / duration);
+            const eased = progress * progress * (3 - 2 * progress);
             scrollTo(start + distance * eased);
             if (progress < 1) scrollFrame = requestAnimationFrame(update);
         }
@@ -110,26 +112,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     followLocation();
 
-    if ('IntersectionObserver' in window && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
-        requestAnimationFrame(() => {
-            const viewportBottom = window.innerHeight;
-            const pending = Array.from(document.querySelectorAll('[data-reveal]')).filter((element) => {
-                return element.getBoundingClientRect().top > viewportBottom;
-            });
-            const observer = new IntersectionObserver((entries) => {
-                for (const entry of entries) {
-                    if (!entry.isIntersecting) continue;
-                    entry.target.classList.remove('is-awaiting-reveal');
-                    observer.unobserve(entry.target);
-                }
-            }, { rootMargin: '0px 0px -16px 0px' });
+    const revealItems = new Set(document.querySelectorAll('[data-reveal]'));
+    const revealObserver = 'IntersectionObserver' in window ? new IntersectionObserver((entries, observer) => {
+        for (const entry of entries) {
+            if (!entry.isIntersecting || prefersReducedMotion()) continue;
+            entry.target.classList.remove('is-awaiting-reveal');
+            revealItems.delete(entry.target);
+            observer.unobserve(entry.target);
+        }
+    }, { rootMargin: '0px 0px -16px 0px' }) : null;
 
-            for (const element of pending) {
+    function syncReveals() {
+        if (!revealObserver) return;
+        if (prefersReducedMotion()) {
+            revealObserver.disconnect();
+            for (const element of revealItems) element.classList.remove('is-awaiting-reveal');
+            return;
+        }
+
+        requestAnimationFrame(() => {
+            if (prefersReducedMotion()) return;
+            for (const element of revealItems) {
+                if (element.getBoundingClientRect().top <= window.innerHeight) {
+                    revealItems.delete(element);
+                    continue;
+                }
                 element.classList.add('is-awaiting-reveal');
-                observer.observe(element);
+                revealObserver.observe(element);
             }
         });
     }
+
+    syncReveals();
 
     const filterBar = document.querySelector('.filter-bar');
     const filters = Array.from(filterBar.querySelectorAll('button'));
@@ -139,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showArchiveItem(item, visible) {
         const active = archiveAnimations.get(item);
-        const animate = !reducedMotion.matches && typeof item.animate === 'function';
+        const animate = !prefersReducedMotion() && typeof item.animate === 'function';
         if (active ? animate && active.visible === visible : item.hidden === !visible) return;
 
         const startHeight = animate && !item.hidden ? item.getBoundingClientRect().height : 0;
@@ -172,10 +186,14 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
-    reducedMotion.addEventListener('change', () => {
-        if (!reducedMotion.matches) return;
+    function updateMotion() {
+        syncReveals();
+        if (!prefersReducedMotion()) return;
         for (const { animation } of archiveAnimations.values()) animation.finish();
-    });
+    }
+
+    if (motion) window.addEventListener('portfolio:motion-change', updateMotion);
+    else systemMotion.addEventListener('change', updateMotion);
 
     filterBar.addEventListener('click', (event) => {
         const filter = event.target.closest('button[data-filter]');

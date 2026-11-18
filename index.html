@@ -22,10 +22,11 @@
     <meta name="twitter:image" content="https://rafaeladsdev.com/assets/avatar-540.webp">
     <link rel="icon" href="favicon.svg?v=5" type="image/svg+xml">
     <link rel="preload" href="assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="style.css?v=13">
-    <script src="i18n.js?v=5" defer></script>
-    <script src="script.js?v=5" defer></script>
-    <script src="disclosures.js?v=1" defer></script>
+    <link rel="stylesheet" href="style.css?v=14">
+    <script src="motion.js?v=1" defer></script>
+    <script src="i18n.js?v=6" defer></script>
+    <script src="script.js?v=6" defer></script>
+    <script src="disclosures.js?v=2" defer></script>
 </head>
 <body>
     <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" class="icon-library" aria-hidden="true">
@@ -618,7 +619,12 @@
     <footer class="footer">
         <div class="shell footer-inner" data-reveal>
             <span data-i18n="footer.rights">© 2026 Rafael Arcanjo</span>
-            <a class="text-link" href="#home"><span data-i18n="footer.top">Voltar ao topo</span> <svg class="icon" aria-hidden="true"><use href="#icon-up"></use></svg></a>
+            <div class="footer-actions">
+                <button type="button" class="motion-toggle" id="motionToggle" role="switch" aria-checked="false" hidden>
+                    <span data-i18n="footer.motion">Animações do site</span>
+                </button>
+                <a class="text-link" href="#home"><span data-i18n="footer.top">Voltar ao topo</span> <svg class="icon" aria-hidden="true"><use href="#icon-up"></use></svg></a>
+            </div>
         </div>
     </footer>
 

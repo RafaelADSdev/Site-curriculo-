@@ -223,6 +223,7 @@ const translations = {
         footer: {
             backHome: 'Voltar ao início',
             rights: '© 2026 Rafael Arcanjo',
+            motion: 'Animações do site',
             top: 'Voltar ao topo'
         },
         ui: {
@@ -454,6 +455,7 @@ const translations = {
         footer: {
             backHome: 'Back to home',
             rights: '© 2026 Rafael Arcanjo',
+            motion: 'Site animations',
             top: 'Back to top'
         },
         ui: {

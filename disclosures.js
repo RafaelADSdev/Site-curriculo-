@@ -1,5 +1,6 @@
 if (typeof Element.prototype.getAnimations === 'function') {
-    const allowMotion = window.matchMedia('screen and (prefers-reduced-motion: no-preference)');
+    const screen = window.matchMedia('screen');
+    const systemMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
     for (const details of document.querySelectorAll('main details')) {
         const summary = details.firstElementChild;
@@ -34,7 +35,7 @@ if (typeof Element.prototype.getAnimations === 'function') {
             if (!expanded && track.contains(document.activeElement)) {
                 summary.focus({ preventScroll: true });
             }
-            if (!allowMotion.matches) {
+            if (!screen.matches || (window.portfolioMotion?.reduced ?? systemMotion.matches)) {
                 finish();
                 return;
             }
